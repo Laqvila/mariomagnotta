@@ -1,0 +1,17 @@
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*~
+
+# Server di anteprima locale (non serve in produzione)
+.preview-server.ps1
+
+# Log e temporanei
+*.log
+tmp/
