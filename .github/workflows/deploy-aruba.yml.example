@@ -1,0 +1,40 @@
+# ============================================================
+# DEPLOY AUTOMATICO SU ARUBA VIA FTP (opzionale)
+# ------------------------------------------------------------
+# Per attivarlo:
+# 1. Su GitHub → repo → Settings → Secrets and variables → Actions
+#    crea questi 3 secret:
+#      FTP_SERVER   → es. ftp.mariomagnotta.com (dal pannello Aruba)
+#      FTP_USERNAME → utente FTP Aruba
+#      FTP_PASSWORD → password FTP Aruba
+# 2. Rinomina questo file da "deploy-aruba.yml.example" a "deploy-aruba.yml"
+# 3. Da quel momento OGNI push su main pubblica il sito su Aruba da solo.
+# ============================================================
+name: Deploy su Aruba (FTP)
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Pubblica via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./
+          server-dir: /www.mariomagnotta.com/   # adatta alla cartella del tuo hosting Aruba
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.github/**
+            .preview-server.ps1
+            *.md

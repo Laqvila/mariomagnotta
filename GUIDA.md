@@ -76,3 +76,23 @@ Questo sta in `js/data.js`, sezione `GRUPPI`. Copia un blocco video e cambia l'`
   (banner in basso): è richiesto dalla legge sulla privacy.
 
 Buon lavoro! 🧺📞
+
+---
+
+## 🤖 Aggiornare il sito tramite Claude (automatico)
+Da Claude Code, nella cartella di lavoro, scrivi:
+
+```
+/aggiorna-sito aggiungi alla rassegna stampa questo articolo: https://...
+/aggiorna-sito aggiungi questa notizia: <testo o link>
+/aggiorna-sito aggiungi questa foto: <percorso o URL> con didascalia "..."
+```
+
+Claude modifica i file giusti, verifica l'anteprima e fa **commit + push su GitHub da solo**.
+Se la GitHub Action FTP è attiva (vedi `.github/workflows/deploy-aruba.yml.example`),
+il push pubblica anche sul sito live Aruba automaticamente.
+
+## 💬 Modificare il CHATBOT «Chatta con Mario»
+Le risposte sono in `js/contenuti.js`, sezione `CHAT_REGOLE`:
+ogni blocco ha `k:` (parole chiave da cercare nel messaggio) e `r:` (risposte possibili, scelte a caso).
+`CHAT_BENVENUTO` = saluti iniziali; `CHAT_FALLBACK` = risposte quando nessuna parola corrisponde.

@@ -1,5 +1,5 @@
 /* =========================================================
-   MARIO MAGNOTTA — sito ufficiale v2 (mariomagnotta.it)
+   MARIO MAGNOTTA — sito ufficiale v2 (mariomagnotta.com)
    Dati multilingua (IT / EN / ES). I video provengono dal
    canale YouTube ufficiale @MarioMagnotta-aq.
    ========================================================= */
@@ -23,12 +23,18 @@ const I18N = {
   "nav.news":     { it:"News", en:"News", es:"Noticias" },
   "nav.shop":     { it:"Shop", en:"Shop", es:"Tienda" },
 
-  "official.bar": { it:"Sito ufficiale — l'<strong>unico vero</strong> sito ufficiale di Mario Magnotta", en:"Official website — the <strong>one and only</strong> official website of Mario Magnotta", es:"Sitio oficial — el <strong>único</strong> sitio oficial de Mario Magnotta" },
+  "official.bar": { it:"L'<strong>unico</strong> sito ufficiale di Mario Magnotta — approvato dalla figlia <strong>Romina Magnotta</strong>", en:"The <strong>one and only</strong> official website of Mario Magnotta — endorsed by his daughter <strong>Romina Magnotta</strong>", es:"El <strong>único</strong> sitio oficial de Mario Magnotta — aprobado por su hija <strong>Romina Magnotta</strong>" },
   "official.badge":{ it:"UFFICIALE", en:"OFFICIAL", es:"OFICIAL" },
-  "official.seal":{ it:"UNICO SITO UFFICIALE", en:"THE ONLY OFFICIAL SITE", es:"ÚNICO SITIO OFICIAL" },
-  "foot.official":{ it:"Questo è l'<strong>unico sito ufficiale</strong> di Mario Magnotta. Diffida delle imitazioni.", en:"This is the <strong>only official website</strong> of Mario Magnotta. Beware of imitations.", es:"Este es el <strong>único sitio oficial</strong> de Mario Magnotta. Desconfía de las imitaciones." },
+  "official.endorse":{ it:"Approvato da Romina Magnotta", en:"Endorsed by Romina Magnotta", es:"Aprobado por Romina Magnotta" },
+  "foot.official":{ it:"Questo è l'<strong>unico sito ufficiale</strong> di Mario Magnotta, realizzato con l'<strong>approvazione di Romina Magnotta</strong>, figlia di Mario e titolare dei diritti. Ogni altro sito non è autorizzato: diffida delle imitazioni.", en:"This is the <strong>only official website</strong> of Mario Magnotta, made with the <strong>approval of Romina Magnotta</strong>, Mario's daughter and rights holder. Any other site is unauthorised: beware of imitations.", es:"Este es el <strong>único sitio oficial</strong> de Mario Magnotta, realizado con la <strong>aprobación de Romina Magnotta</strong>, hija de Mario y titular de los derechos. Cualquier otro sitio no está autorizado: desconfía de las imitaciones." },
 
-  "hero.kicker":  { it:"★ L'unico sito ufficiale · mariomagnotta.it ★", en:"★ The only official website · mariomagnotta.it ★", es:"★ El único sitio oficial · mariomagnotta.it ★" },
+  "chat.title":   { it:"📞 Chatta con Mario", en:"📞 Chat with Mario", es:"📞 Chatea con Mario" },
+  "chat.sub":     { it:"Risposte automatiche con le sue frasi storiche · parodia affettuosa", en:"Automatic replies with his historic quotes · affectionate parody", es:"Respuestas automáticas con sus frases históricas · parodia cariñosa" },
+  "chat.placeholder":{ it:"Scrivi a Mario… (es. «la lavatrice»)", en:"Write to Mario… (e.g. \"washing machine\")", es:"Escribe a Mario… (ej. «la lavadora»)" },
+  "chat.send":    { it:"Invia", en:"Send", es:"Enviar" },
+  "chat.open":    { it:"Chatta con Mario", en:"Chat with Mario", es:"Chatea con Mario" },
+
+  "hero.kicker":  { it:"★ L'unico sito ufficiale · mariomagnotta.com ★", en:"★ The only official website · mariomagnotta.com ★", es:"★ El único sitio oficial · mariomagnotta.com ★" },
   "hero.sub":     {
     it:"Il bidello dell'Aquila che, senza volerlo, ha fatto ridere tutta Italia. Lo scherzo della lavatrice del 1987: <strong>il primo meme italiano della storia.</strong>",
     en:"The school janitor from L'Aquila who, without meaning to, made all of Italy laugh. The 1987 washing-machine prank: <strong>the first Italian meme in history.</strong>",
@@ -153,7 +159,7 @@ const I18N = {
   "prod.magnet":  { it:"Calamita Lavatrice San Giorgio", en:"San Giorgio washing-machine magnet", es:"Imán lavadora San Giorgio" },
   "prod.cap":     { it:"Cappellino «Semplice Cliente»", en:"Cap «Semplice Cliente»", es:"Gorra «Semplice Cliente»" },
 
-  "foot.tag":     { it:"Il sito ufficiale del primo meme italiano.<br>mariomagnotta.it", en:"The official website of the first Italian meme.<br>mariomagnotta.it", es:"El sitio oficial del primer meme italiano.<br>mariomagnotta.it" },
+  "foot.tag":     { it:"Il sito ufficiale del primo meme italiano.<br>mariomagnotta.com", en:"The official website of the first Italian meme.<br>mariomagnotta.com", es:"El sitio oficial del primer meme italiano.<br>mariomagnotta.com" },
   "foot.naviga":  { it:"Naviga", en:"Browse", es:"Navega" },
   "foot.link":    { it:"Link ufficiali", en:"Official links", es:"Enlaces oficiales" },
   "foot.progetto":{ it:"Progetto", en:"Project", es:"Proyecto" },
@@ -177,9 +183,9 @@ const I18N = {
 
   "privacy.title":{ it:"Privacy & Cookie Policy", en:"Privacy & Cookie Policy", es:"Política de Privacidad y Cookies" },
   "privacy.body": {
-    it:"<p>Questo sito non raccoglie dati personali a fini di marketing e non usa cookie di profilazione. Vengono utilizzati esclusivamente <strong>cookie tecnici</strong> necessari al funzionamento e, se acconsenti, il <code>localStorage</code> per ricordare la lingua e la tua scelta sui cookie.</p><p>I <strong>video e gli audio</strong> sono incorporati da <strong>YouTube</strong> (Google Ireland Ltd.) in modalità privacy avanzata e vengono caricati <strong>solo dopo il tuo consenso esplicito</strong>. Quando li carichi, YouTube può installare propri cookie secondo la <a href='https://policies.google.com/privacy' target='_blank' rel='noopener'>privacy policy di Google</a>.</p><p>Puoi revocare il consenso in qualsiasi momento cancellando i dati del sito dal tuo browser. Titolare: mariomagnotta.it — contatto: info@mariomagnotta.it.</p>",
-    en:"<p>This website does not collect personal data for marketing and uses no profiling cookies. Only <strong>technical cookies</strong> necessary for operation are used and, with your consent, <code>localStorage</code> to remember your language and cookie choice.</p><p><strong>Videos and audio</strong> are embedded from <strong>YouTube</strong> (Google Ireland Ltd.) in privacy-enhanced mode and load <strong>only after your explicit consent</strong>. Once loaded, YouTube may set its own cookies under <a href='https://policies.google.com/privacy' target='_blank' rel='noopener'>Google's privacy policy</a>.</p><p>You can withdraw consent at any time by clearing the site data from your browser. Controller: mariomagnotta.it — contact: info@mariomagnotta.it.</p>",
-    es:"<p>Este sitio no recoge datos personales con fines de marketing y no usa cookies de perfilado. Solo se utilizan <strong>cookies técnicas</strong> necesarias para el funcionamiento y, con tu consentimiento, <code>localStorage</code> para recordar el idioma y tu elección sobre las cookies.</p><p>Los <strong>vídeos y audios</strong> están incrustados desde <strong>YouTube</strong> (Google Ireland Ltd.) en modo de privacidad mejorada y se cargan <strong>solo tras tu consentimiento explícito</strong>. Al cargarlos, YouTube puede instalar sus propias cookies según la <a href='https://policies.google.com/privacy' target='_blank' rel='noopener'>política de privacidad de Google</a>.</p><p>Puedes retirar el consentimiento en cualquier momento borrando los datos del sitio en tu navegador. Responsable: mariomagnotta.it — contacto: info@mariomagnotta.it.</p>" },
+    it:"<p>Questo sito non raccoglie dati personali a fini di marketing e non usa cookie di profilazione. Vengono utilizzati esclusivamente <strong>cookie tecnici</strong> necessari al funzionamento e, se acconsenti, il <code>localStorage</code> per ricordare la lingua e la tua scelta sui cookie.</p><p>I <strong>video e gli audio</strong> sono incorporati da <strong>YouTube</strong> (Google Ireland Ltd.) in modalità privacy avanzata e vengono caricati <strong>solo dopo il tuo consenso esplicito</strong>. Quando li carichi, YouTube può installare propri cookie secondo la <a href='https://policies.google.com/privacy' target='_blank' rel='noopener'>privacy policy di Google</a>.</p><p>Puoi revocare il consenso in qualsiasi momento cancellando i dati del sito dal tuo browser. Titolare: mariomagnotta.com — contatto: info@mariomagnotta.com.</p>",
+    en:"<p>This website does not collect personal data for marketing and uses no profiling cookies. Only <strong>technical cookies</strong> necessary for operation are used and, with your consent, <code>localStorage</code> to remember your language and cookie choice.</p><p><strong>Videos and audio</strong> are embedded from <strong>YouTube</strong> (Google Ireland Ltd.) in privacy-enhanced mode and load <strong>only after your explicit consent</strong>. Once loaded, YouTube may set its own cookies under <a href='https://policies.google.com/privacy' target='_blank' rel='noopener'>Google's privacy policy</a>.</p><p>You can withdraw consent at any time by clearing the site data from your browser. Controller: mariomagnotta.com — contact: info@mariomagnotta.com.</p>",
+    es:"<p>Este sitio no recoge datos personales con fines de marketing y no usa cookies de perfilado. Solo se utilizan <strong>cookies técnicas</strong> necesarias para el funcionamiento y, con tu consentimiento, <code>localStorage</code> para recordar el idioma y tu elección sobre las cookies.</p><p>Los <strong>vídeos y audios</strong> están incrustados desde <strong>YouTube</strong> (Google Ireland Ltd.) en modo de privacidad mejorada y se cargan <strong>solo tras tu consentimiento explícito</strong>. Al cargarlos, YouTube puede instalar sus propias cookies según la <a href='https://policies.google.com/privacy' target='_blank' rel='noopener'>política de privacidad de Google</a>.</p><p>Puedes retirar el consentimiento en cualquier momento borrando los datos del sitio en tu navegador. Responsable: mariomagnotta.com — contacto: info@mariomagnotta.com.</p>" },
   "privacy.close":{ it:"Ho capito", en:"Got it", es:"Entendido" }
 };
 

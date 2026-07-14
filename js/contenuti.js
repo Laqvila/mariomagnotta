@@ -142,3 +142,67 @@ const RASSEGNA = [
   { data:"Archivio", testata:"magnotta.it", titolo:"L'archivio storico: telefonate, remix, video, foto e tutte le news su Mario", url:"https://magnotta.it/" },
   { data:"Archivio", testata:"Wikipedia", titolo:"Mario Magnotta — la voce sull'enciclopedia libera", url:"https://it.wikipedia.org/wiki/Mario_Magnotta" }
 ];
+
+
+/* ============================================================
+   6) CHATBOT «Chatta con Mario» — parodia con frasi storiche
+   Il bot cerca le PAROLE CHIAVE (k) nel messaggio dell'utente
+   e risponde con una delle frasi (r), scelta a caso.
+   Per aggiungere un argomento: copia un blocco { k:[...], r:[...] },
+   Se nessuna parola corrisponde, usa CHAT_FALLBACK.
+   ============================================================ */
+const CHAT_BENVENUTO = [
+  "Pronto?! Chi è?! …Ah, no, so' Magnotta. Che vò?",
+  "Pronto! Qua è Magnotta. Se è pe' la lavatrice, attacca subito!"
+];
+const CHAT_REGOLE = [
+  { k:["lavatrice","san giorgio","elettrodomestic","bucato","lavaggio"],
+    r:["Ma che lavatrice e lavatrice! Io non la voglio la lavatrice, va bene?!",
+       "O freghète! Quella lavatrice dell'81 io te la so' pagata!",
+       "La presi e te la pagai! Quattrocentomila lire, porca miseria!",
+       "E portamela… ma chi, e chi te la paga?!"] },
+  { k:["contratto","firmato","firma","documento","clausola"],
+    r:["Ma quale contratto, io non ho firmato niente!",
+       "Non pago perché io… senti! Io non ho firmato NIENTE!"] },
+  { k:["barzetti","marzandelli","direttore","ditta","ufficio","dirigente"],
+    r:["Barzetti?! Marzandelli?! Ma chi siete?! Perché sei un truffatore tu!",
+       "Senti, di' al direttore tuo che pe' me... Magnotta è morto!"] },
+  { k:["ciao","salve","buongiorno","buonasera","pronto","hey","ehi"],
+    r:["Pronto?! E chi è mo?! …No, so' Magnotta.",
+       "Sci, pronto! Che vò a quest'ora?"] },
+  { k:["come stai","come va","tutto bene","che fai"],
+    r:["E come sto?! M'avete fatto diventà matto co' ste telefonate!",
+       "Se, mo vengo esso… sto benissimo, no vedi?"] },
+  { k:["arrabbi","calma","tranquillo","nervoso","pazzo","matto"],
+    r:["Tu sei pazzo, completamente pazzo!",
+       "Mo m'hai rotto proprio i coglioni!",
+       "Io non ci sto a 'sto gioco!"] },
+  { k:["terrorist","bomba","iscriv"],
+    r:["Io vi metto una bomba se mi chiamate ancora! Veramente… M'ISCRIVO AI TERRORISTI!",
+       "M'iscrivo ai terroristi, hai capito?! M'ISCRIVO!"] },
+  { k:["moglie","separat","matrimonio","sposat"],
+    r:["La moglie?! Nooo… io non me piglio niente, pijolo te!",
+       "Embè? E che vò da me? Chiedi a essa, no a me!"] },
+  { k:["scherzo","ridere","divertent","battuta","risata","prank"],
+    r:["Bello ju scherzo, sci! I' steng'a fa' ju strunzu, sci!",
+       "Ridete, ridete… tanto pe' voi Magnotta è morto!"] },
+  { k:["film","cinema","docufilm","semplice cliente","romina"],
+    r:["Ah, mo so' pure na star der cinema! «Semplice Cliente», va' a vederlo!",
+       "La fija mia Romina v'aspetta ar cinema. Semplice cliente… semplice cliente!"] },
+  { k:["aquila","abruzzo","murale","citt"],
+    r:["L'Aquila è casa mia! M'hanno pure fatto ju murale, 480.000 lire pagabili a vista al portatore!",
+       "Aquilano verace, sci!"] },
+  { k:["grazie","gentile","bravo","mitico","leggenda","forte"],
+    r:["Eh, grazie… ma io so' un semplice cliente, niente de più!",
+       "Vabbè, mo non esagerà… so' Magnotta, mica ju Papa!"] },
+  { k:["ciao ciao","arrivederci","addio","vado","notte"],
+    r:["Vattene, vattene proprio! …Ma torna a trovamme, eh!",
+       "Se, ciao. E NON me chiamà più pe' la lavatrice!"] }
+];
+const CHAT_FALLBACK = [
+  "Eh?! Non t'aggio capito… parla chiaro!",
+  "Senti, io tengo da fa'. Che vò di preciso?",
+  "Ma che stai a di'?! Chiedime della lavatrice, va'…",
+  "Boh?! Io so' bidello, mica professore!",
+  "Ripeti n'attimo, che ju telefono gracchia…"
+];

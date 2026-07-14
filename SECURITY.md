@@ -1,8 +1,8 @@
-# 🔒 Check di sicurezza — mariomagnotta.it (v5)
+# 🔒 Check di sicurezza — mariomagnotta.com (v5)
 
 Sito **statico** (solo HTML/CSS/JS): nessun backend, nessun database, nessun form che invia dati a server. Superficie d'attacco minima.
 
-**Scenario di deploy:** repository **pubblica su GitHub** → hosting **Aruba** → DNS gestito da **Cloudflare** sul dominio **mariomagnotta.it**.
+**Scenario di deploy:** repository **pubblica su GitHub** → hosting **Aruba** → DNS gestito da **Cloudflare** sul dominio **mariomagnotta.com**.
 
 ## ✅ Già a posto nel codice
 - **Nessun segreto**: niente API key, password, token o `.env` (scansione effettuata). ✔
@@ -14,7 +14,7 @@ Sito **statico** (solo HTML/CSS/JS): nessun backend, nessun database, nessun for
 - L'unico contatto è un **`mailto:` (magnotta@mirkorocci.com)**: nessun dato transita dal sito. ✔
 
 ## ☁️ Configurazione Cloudflare (consigliata)
-Nel pannello Cloudflare del dominio **mariomagnotta.it**:
+Nel pannello Cloudflare del dominio **mariomagnotta.com**:
 1. **SSL/TLS → modalità "Full (strict)"** (mai "Flexible": causa redirect loop e traffico in chiaro verso Aruba). Richiede certificato attivo su Aruba.
 2. **Edge Certificates**: attiva **Always Use HTTPS** e **HSTS** (max-age 12 mesi, includeSubdomains; "preload" solo quando sei sicuro).
 3. **Attiva il proxy (nuvoletta arancione)** sui record DNS: nasconde l'IP di Aruba e aggiunge protezione DDoS/WAF gratuita.

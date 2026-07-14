@@ -1,4 +1,4 @@
-# 📞 mariomagnotta.it — Sito ufficiale di Mario Magnotta
+# 📞 mariomagnotta.com — Sito ufficiale di Mario Magnotta
 
 Il sito ufficiale dedicato a **Mario Magnotta** (1942–2009), il bidello dell'Aquila diventato leggenda con lo scherzo della lavatrice del 1987: **il primo meme italiano**.
 
@@ -28,4 +28,4 @@ Vedi [`SECURITY.md`](SECURITY.md) per la configurazione consigliata di **Cloudfl
 - Archivio storico: [magnotta.it](https://magnotta.it)
 - Murale di Daniele Gottastia, L'Aquila
 
-© mariomagnotta.it — Tutti i diritti riservati. Contatti: magnotta@mirkorocci.com
+© mariomagnotta.com — Tutti i diritti riservati. Contatti: magnotta@mirkorocci.com

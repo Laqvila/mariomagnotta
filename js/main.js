@@ -363,11 +363,20 @@
      ========================================================= */
   const yEl = $("#year"); if (yEl) yEl.textContent = new Date().getFullYear();
 
-  // mobile menu
+  // mobile menu (off-canvas con backdrop e scroll lock)
   const menuBtn = $("#menu-toggle"), navLinks = $("#nav-links");
+  const backdrop = $("#nav-backdrop");
+  function setMenu(open) {
+    if (!navLinks) return;
+    navLinks.classList.toggle("open", open);
+    if (menuBtn) { menuBtn.classList.toggle("open", open); menuBtn.setAttribute("aria-expanded", open ? "true" : "false"); }
+    document.body.classList.toggle("menu-open", open);
+  }
   if (menuBtn && navLinks) {
-    menuBtn.addEventListener("click", () => { navLinks.classList.toggle("open"); menuBtn.classList.toggle("open"); });
-    $$("#nav-links a").forEach(a => a.addEventListener("click", () => { navLinks.classList.remove("open"); menuBtn.classList.remove("open"); }));
+    menuBtn.addEventListener("click", () => setMenu(!navLinks.classList.contains("open")));
+    $$("#nav-links a").forEach(a => a.addEventListener("click", () => setMenu(false)));
+    if (backdrop) backdrop.addEventListener("click", () => setMenu(false));
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") setMenu(false); });
   }
   // scroll progress + to top
   const prog = $("#scroll-progress"), toTop = $("#to-top");
