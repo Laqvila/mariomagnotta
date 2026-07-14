@@ -564,6 +564,11 @@ a.newscard:hover .news-link{text-decoration:underline}
 .chat-head-txt small{font-size:.66rem;opacity:.92;display:block}
 .chat-close{flex:none;width:30px;height:30px;border-radius:50%;background:#fff;color:var(--red);
   border:2px solid var(--ink);cursor:pointer;font-weight:700}
+.chat-modes{display:flex;gap:.35rem;padding:.5rem .6rem;background:var(--paper);border-bottom:2px solid var(--ink)}
+.cm-btn{flex:1;font-family:'Fredoka',sans-serif;font-weight:600;font-size:.82rem;cursor:pointer;
+  padding:.4rem .3rem;border:2px solid var(--ink);border-radius:9px;background:#fff;color:var(--ink);transition:.15s}
+.cm-btn:hover{background:var(--yellow)}
+.cm-btn.active{background:var(--red);color:#fff;box-shadow:2px 2px 0 var(--ink)}
 .chat-body{flex:1;overflow-y:auto;padding:.8rem;display:flex;flex-direction:column;gap:.5rem;
   background:radial-gradient(circle, rgba(29,26,23,.06) 1.2px, transparent 1.4px) 0 0/18px 18px, var(--cream)}
 .chat-msg{max-width:82%;padding:.5rem .75rem;border:2px solid var(--ink);border-radius:14px;

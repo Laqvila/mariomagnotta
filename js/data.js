@@ -29,10 +29,13 @@ const I18N = {
   "foot.official":{ it:"Questo è l'<strong>unico sito ufficiale</strong> di Mario Magnotta, realizzato con l'<strong>approvazione di Romina Magnotta</strong>, figlia di Mario e titolare dei diritti. Ogni altro sito non è autorizzato: diffida delle imitazioni.", en:"This is the <strong>only official website</strong> of Mario Magnotta, made with the <strong>approval of Romina Magnotta</strong>, Mario's daughter and rights holder. Any other site is unauthorised: beware of imitations.", es:"Este es el <strong>único sitio oficial</strong> de Mario Magnotta, realizado con la <strong>aprobación de Romina Magnotta</strong>, hija de Mario y titular de los derechos. Cualquier otro sitio no está autorizado: desconfía de las imitaciones." },
 
   "chat.title":   { it:"📞 Chatta con Mario", en:"📞 Chat with Mario", es:"📞 Chatea con Mario" },
-  "chat.sub":     { it:"Risposte automatiche con le sue frasi storiche · parodia affettuosa", en:"Automatic replies with his historic quotes · affectionate parody", es:"Respuestas automáticas con sus frases históricas · parodia cariñosa" },
-  "chat.placeholder":{ it:"Scrivi a Mario… (es. «la lavatrice»)", en:"Write to Mario… (e.g. \"washing machine\")", es:"Escribe a Mario… (ej. «la lavadora»)" },
+  "chat.sub":     { it:"Frasi autentiche delle telefonate del 1987 · parodia · linguaggio d'epoca", en:"Authentic quotes from the 1987 calls · parody · period language", es:"Frases auténticas de las llamadas de 1987 · parodia · lenguaje de época" },
+  "chat.placeholder":{ it:"Fai lo scherzo a Mario…", en:"Prank Mario…", es:"Gástale la broma a Mario…" },
+  "chat.placeholder.dir":{ it:"Rispondi al Direttore…", en:"Reply to the Manager…", es:"Responde al Director…" },
   "chat.send":    { it:"Invia", en:"Send", es:"Enviar" },
   "chat.open":    { it:"Chatta con Mario", en:"Chat with Mario", es:"Chatea con Mario" },
+  "chat.mode.mario":{ it:"📞 Chiama Mario", en:"📞 Call Mario", es:"📞 Llama a Mario" },
+  "chat.mode.dir":{ it:"🎭 Sei tu Mario", en:"🎭 You're Mario", es:"🎭 Eres Mario" },
 
   "hero.kicker":  { it:"★ L'unico sito ufficiale · mariomagnotta.com ★", en:"★ The only official website · mariomagnotta.com ★", es:"★ El único sitio oficial · mariomagnotta.com ★" },
   "hero.sub":     {

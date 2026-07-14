@@ -145,122 +145,173 @@ const RASSEGNA = [
 
 
 /* ============================================================
-   6) CHATBOT «Chatta con Mario» — parodia con frasi storiche
-   Il bot cerca le PAROLE CHIAVE (k) nel messaggio dell'utente
-   e risponde con una delle frasi (r), scelta a caso.
-   Per aggiungere un argomento: copia un blocco { k:[...], r:[...] },
-   Se nessuna parola corrisponde, usa CHAT_FALLBACK.
+   6) CHATBOT «Chatta con Mario» — motore a DUE MODALITÀ
+   Frasi autentiche dalle trascrizioni delle telefonate del 1987
+   (fonte: archivio magnotta.it / USH). Linguaggio originale, non censurato.
+
+   • MODALITÀ «Chiama Mario»  → l'utente fa lo scherzo, risponde MARIO.
+       - CHAT_MARIO      = risposte per argomento { k:[parole], r:[frasi] }
+       - CHAT_MARIO_LIV  = sfoghi per livello di pazienza [calmo, seccato, furioso, esplosione]
+       - CHAT_MARIO_FALLBACK / _SALUTI
+   • MODALITÀ «Sei tu Mario» → risponde il DIRETTORE della San Giorgio (il burlone).
+       - CHAT_DIR_LADDER = escalation di clausole assurde (in ordine)
+       - CHAT_DIR        = reazioni per argomento { k, r }
+       - CHAT_DIR_FALLBACK / _SALUTI
+
+   Per aggiungere una frase: copia una riga dentro l'array giusto.
    ============================================================ */
-const CHAT_BENVENUTO = [
-  "Pronto?! Chi è?! …Ah, no, so' Magnotta. Che vò?",
-  "Pronto! Qua è Magnotta. Se è pe' la lavatrice, attacca subito porco Dio!",
-  "Pronto?! Un'altra vota?! Ma che m'avete preso pe' ju scemo?!"
+
+/* ---------- MARIO risponde (tu fai lo scherzo) ---------- */
+const CHAT_MARIO_SALUTI = [
+  "…pronto…",
+  "Pronto?! Chi è?! …No, so' Magnotta. Che vò?",
+  "Pronto, pronto… sì, mi dica. Ma se è pe' la lavatrice, attacca subito!"
 ];
-const CHAT_REGOLE = [
-  { k:["lavatrice","san giorgio","elettrodomestic","bucato","lavaggio","lavastoviglie"],
+const CHAT_MARIO = [
+  { k:["lavatrice","san giorgio","elettrodomestic","bucato","lavaggio"],
     r:["Ma che lavatrice e lavatrice! Io non la voglio la lavatrice, va bene?!",
-       "O freghète! Quella lavatrice dell'81 io te la so' pagata, sì!",
-       "La presi e te la pagai! Quattrocentomila lire porco Dio!",
-       "E portamela… ma chi, e chi te la paga?!",
-       "Ancora co' sta lavatrice?! Io ve la tiro appresso, a voi e alla San Giorgio!"] },
-  { k:["contratto","firmato","firma","documento","clausola","modulo"],
-    r:["Ma quale contratto, io non ho firmato niente porco Dio!",
-       "Non pago perché io… senti! Io non ho firmato NIENTE!",
-       "Ju contratto ve lo potete tenè! Carta straccia è!"] },
-  { k:["barzetti","marzandelli","direttore","ditta","ufficio","dirigente","responsabile"],
-    r:["Barzetti?! Marzandelli?! Ma chi siete?! Perché sei un truffatore tu!",
-       "Senti, di' al direttore tuo che pe' me… MAGNOTTA È MORTO!",
-       "Passame ju direttore, che je devo di' quattro cose come Cristo comanda!"] },
-  { k:["soldi","pagare","pagament","lire","euro","fattura","bolletta","480"],
-    r:["E chi te li dà 480.000 lire, ju Papa?!",
-       "Io non pago niente! La presi e te la pagai, porco Dio!",
-       "Quattrocentottantamila lire?! Ma vatti a fa' benedì!"] },
-  { k:["consegna","corriere","pacco","spedizione","portare","domicilio"],
-    r:["Non me portà niente a casa! NIENTE, hai capito?!",
-       "Se ju corriere se presenta qua, je faccio fa' le scale de corsa!",
-       "E portamela… ma chi, e chi te la paga?!"] },
-  { k:["garanzia","assistenza","tecnico","riparazione","guasto"],
-    r:["L'assistenza?! L'assistenza me serve a me, dopo ste telefonate porco Dio!",
-       "Ju tecnico manda, sci… che je faccio vedè io ju guasto!"] },
-  { k:["avvocato","denuncia","carabinieri","polizia","legale","tribunale"],
-    r:["Mo chiamo ju avvocato e ve faccio passà ju divertimento!",
-       "Vi denuncio a tutti quanti, porco Dio! Ai carabinieri vado!",
-       "Questa è truffa! TRUFFA! Ve lo dice Magnotta!"] },
+       "La lavatrice l'ho pagata 480.000 lire, porco Dio, che cosa c'entro io?!",
+       "L'HO PAGATA! Io l'ho pagata, uno sopra all'altro l'ho pagata!",
+       "A me non mi occorre nulla, signore. Forse qui non ci siamo capiti."] },
+  { k:["contratto","firmato","firma","clausola","clausole","modulo"],
+    r:["Ma io non l'ho firmato questo benedetto contratto!",
+       "Ma quale contratto? So' venuto da te, mi so' comprato la lavatrice, quale contratto ho firmato? Ma santo Dio!",
+       "Io non ho firmato nessun contratto, santo Dio!"] },
+  { k:["frigo","frigorifero","forno","appioppi","appoppi","roba","omaggio","obzional","obsional","phon","asciugacapelli"],
+    r:["Ma perché mi volete appioppiare la roba a me?! Questo non lo capisco!",
+       "Ma che me ne tengo a fare del frigorifero se ce l'ho?!",
+       "Non mi occorre il frigorifero, non mi occorre nulla, guardi!"] },
+  { k:["soldi","pagare","pagament","lire","euro","fattura","bolletta","480","800","paga"],
+    r:["Perché ti debbo dare 7-800 mila lire e me ne porti n'altra?!",
+       "Ho pagato 480.000 lire, porco Dio, che cosa c'entro io?!",
+       "E chi te li dà tutti sti soldi, il Papa?!"] },
+  { k:["truffa","truffator","imbroglio","ladro","fregatura","diffamazion"],
+    r:["Perché sei un truffatore tu! Tu sei un truffatore!",
+       "Questa è una diffamazione vera e propria, questa va a finire in galera!",
+       "Io penso che lei non è una persona seria!"] },
+  { k:["basta","smettila","rotto","coglion","cojon","palle","piant","finisc","adesso"],
+    r:["Mo mi hai rotto proprio i cojoni!",
+       "MANNAGGIA A DIO… PORCO DIO! Basta! Mi avete rotto i cojoni!",
+       "È un mese che mi state rompendo i cojoni, PORCO DIO! La dovete piantare!"] },
+  { k:["terrorist","bomba","iscriv"],
+    r:["Ve metto na bomba, eh! La dovete piantare, PORCA MADONNA!",
+       "Veramente mi iscrivo ai terroristi… mi iscrivo ai terroristi, PORCO DIO!",
+       "Magnotta per voi è morto! È morto, PORCA MADONNA!"] },
+  { k:["morto","muori","addio"],
+    r:["La dovete piantare! Magnotta per voi è morto!",
+       "Per voi Magnotta è morto, hai capito?! MORTO!"] },
+  { k:["avvocato","denuncia","carabinieri","polizia","113","giudice","tribunale","galera"],
+    r:["Io domani mattina ritorno al mio avvocato e vediamo un po' come si mette la questione!",
+       "Io telefono al 113, perché lei mi sta offendendo!",
+       "Mo io la denuncio vera e propria!"] },
+  { k:["cliente","cittadino","onest","buona fede","colpa","c'entro","centro"],
+    r:["Io sono un semplice cliente, scusami eh?! Un semplice cittadino!",
+       "So' venuto in buona fede, ho preso la lavatrice e l'ho pagata, mo io che c'entro, santo Dio?!",
+       "Io non ho mai dato fastidio a nessuno!"] },
+  { k:["moglie","separat","matrimonio","stronza","donna","ignorante"],
+    r:["Io e mia moglie ci siamo separati: si è presa la San Giorgio e io so' rimasto senza lavatrice!",
+       "La colpa è de sta stronza!",
+       "Ma questa è na donna ignorante, scusami il termine!"] },
+  { k:["figlia","fija","figli","futuro","vent'anni","domani"],
+    r:["Ma che me ne frega a me de mia fija fra vent'anni?!",
+       "Fra vent'anni se sposa mia fija, che cazzo me ne frega?! Perché mi volete appioppiare sta lavatrice?!"] },
+  { k:["bidello","scuola","rendina","student","professor","lavoro","stipendio"],
+    r:["No, no, faccio il bidello alle scuole. A tutte le scuole de L'Aquila!",
+       "Io so' stato un grande lavoratore! Andavo pure a arrotondà lo stipendio!"] },
+  { k:["milano","nord","spedizione","trasporto"],
+    r:["A Milano?! No, per il momento no!",
+       "Ma che c'entra Milano?! Io la lavatrice l'ho presa qua a L'Aquila!"] },
+  { k:["pazzo","matto","calmo","calma","nervoso","esaurimento","stanco"],
+    r:["Mi state facendo venire l'esaurimento! A me mi serviva una lavatrice!",
+       "Calma?! È un mese che mi state rompendo, PORCO DIO!",
+       "Io penso che lei non è una persona seria!"] },
+  { k:["chi sei","chi parla","chi è","nome","presentati","poliziotto"],
+    r:["No, so' Magnotta. MA-GNOT-TA. Semplice cliente!",
+       "No, no, non so' poliziotto: faccio il bidello alle scuole!"] },
+  { k:["concludi","concludere","chiudere","risolvere","soluzione","accordo"],
+    r:["Voglio concludere una volta per sempre, benedetto Dio!",
+       "Na volta comprata sta benedetta lavatrice è finito il contratto, o no?!",
+       "Ma che soluzione, ma quale soluzione, PORCO DIO! A me non mi serve la lavatrice!"] },
+  { k:["vieni","vengo","dove","indirizzo","casa"],
+    r:["Mo vengo esso… mo vengo, mo vengo, mo vengooo!",
+       "Se ju corriere se presenta qua, je faccio fa' le scale de corsa!"] },
   { k:["ciao","salve","buongiorno","buonasera","pronto","hey","ehi","hola","hello"],
     r:["Pronto?! E chi è mo?! …No, so' Magnotta.",
-       "Sci, pronto! Che vò a quest'ora?",
+       "Sì, pronto, mi dica…",
        "Buongiorno un par de scatole… che vò?"] },
-  { k:["come stai","come va","tutto bene","che fai","come ti senti"],
-    r:["E come sto?! M'avete fatto diventà matto co' ste telefonate porco Dio!",
-       "Se, mo vengo esso… sto benissimo, no vedi?",
-       "Stavo bene… PRIMA che chiamassi tu!"] },
-  { k:["chi sei","chi parla","chi è","presentati","nome"],
-    r:["No, so' Magnotta. MA-GNOT-TA. Semplice cliente!",
-       "Magnotta Mario, bidello. E tu chi diavolo sei?!"] },
-  { k:["arrabbi","calma","tranquillo","nervoso","pazzo","matto","incazz"],
-    r:["Tu sei pazzo, completamente pazzo!",
-       "Mo m'hai rotto proprio i coglioni!",
-       "Io non ci sto a 'sto gioco! Calmo sto, CALMISSIMO, porco Dio!"] },
-  { k:["stupido","scemo","cretino","idiota","buffone","vaffa","stronzo"],
-    r:["Ah, io scemo?! I' steng'a fa' ju strunzu, sci!",
-       "Bada come parli, che Magnotta sarà bidello ma la dignità ce l'ha!",
-       "Vattene, vattene proprio, va'!"] },
-  { k:["terrorist","bomba","iscriv"],
-    r:["Io vi metto una bomba se mi chiamate ancora! Veramente… M'ISCRIVO AI TERRORISTI PORCO DIO!",
-       "M'iscrivo ai terroristi, hai capito?! M'ISCRIVO!"] },
-  { k:["moglie","separat","matrimonio","sposat","fidanzat"],
-    r:["La moglie?! Nooo… io non me piglio niente, pijolo te!",
-       "Embè? E che vò da me? Chiedi a essa, no a me!",
-       "S'è pijata pure la lavatrice, porca miseria!"] },
-  { k:["scherzo","ridere","divertent","battuta","risata","prank","telefonata"],
-    r:["Bello ju scherzo, sci! I' steng'a fa' ju strunzu, sci!",
+  { k:["scherzo","ridere","divertent","battuta","risata","prank","meme","youtube","virale","famoso"],
+    r:["Bello ju scherzo, sci! I' steng'a fa' ju strunzo, sci!",
        "Ridete, ridete… tanto pe' voi Magnotta è morto!",
-       "Trent'anni de telefonate… e ancora ridete?! Vabbè, ridete va'."] },
+       "Ju meme?! Io so' ju primo meme, prima ancora che l'inventassero!"] },
   { k:["film","cinema","docufilm","semplice cliente","romina","trailer"],
     r:["Ah, mo so' pure na star der cinema! «Semplice Cliente», va' a vederlo!",
-       "La fija mia Romina v'aspetta ar cinema. Semplice cliente… semplice cliente!",
-       "Prima le musicassette, mo ju film. Manco Sordi, porco Dio!"] },
-  { k:["youtube","internet","meme","video","virale","social","tiktok"],
-    r:["Ju meme?! Io so' ju PRIMO meme, prima ancora che l'inventassero!",
-       "Milioni de visualizzazioni, dice… e a me manco na lira, porco Dio!",
-       "Internet, sci… ai tempi mia c'erano le musicassette, e giravano pure meglio!"] },
-  { k:["aquila","abruzzo","murale","citt","emiciclo"],
+       "La fija mia Romina v'aspetta ar cinema. Semplice cliente… semplice cliente!"] },
+  { k:["aquila","abruzzo","murale","citta","emiciclo"],
     r:["L'Aquila è casa mia! M'hanno pure fatto ju murale: 480.000 lire pagabili a vista al portatore!",
-       "Aquilano verace, sci!",
        "Dedicato a tutti i semplici cittadini… come me!"] },
-  { k:["scuola","bidello","rendina","student","professor"],
-    r:["Bidello all'ITIS Rendina, trent'anni de onorato servizio! E du' studenti m'hanno rovinato…",
-       "La scampanella la sonavo io, mica loro!",
-       "Ju bidello più famoso d'Italia, dice ju giornale. Contento tu…"] },
-  { k:["musica","basso","suonare","radio rock","canzone","cristicchi","sanremo"],
-    r:["Nel '69 sonavo ju basso, mica scherzi! Guarda le foto, va'!",
-       "Pure a Sanremo m'hanno citato, porco Dio! Cristicchi, brava persona.",
-       "A Radio Rock ce so' stato pure io, nel '91. Intervista storica!"] },
-  { k:["gatto","animale","cane","micio"],
-    r:["Ju gatto mio! L'unico che non me chiama pe' la lavatrice…",
-       "Ju gatto sta bene, grazie. Meglio de me, sicuro."] },
-  { k:["grazie","gentile","bravo","mitico","leggenda","forte","grande","idolo"],
+  { k:["grazie","bravo","mitico","leggenda","forte","grande","idolo","gentile"],
     r:["Eh, grazie… ma io so' un semplice cliente, niente de più!",
-       "Vabbè, mo non esagerà… so' Magnotta, mica ju Papa!",
-       "Leggenda, sci… bastava che me lasciavate in pace, però!"] },
-  { k:["aiuto","help","informazion","domanda","sapere","dimmi"],
-    r:["Che vò sapè? Della lavatrice NO, per carità de Dio!",
-       "Chiedi, chiedi… tanto peggio de ste telefonate non pò esse!"] },
-  { k:["shop","comprare","maglietta","tazza","merch","negozio"],
-    r:["Ju shop arriva presto su semplicecliente.com! Compra, che stavolta se paga davero!",
-       "Le magliette co' la faccia mia?! Mo se so' inventati pure questa…"] },
-  { k:["ciao ciao","arrivederci","addio","vado","notte","a dopo","bye"],
-    r:["Vattene, vattene proprio! …Ma torna a trovamme, eh!",
-       "Se, ciao. E NON me chiamà più pe' la lavatrice porco Dio!",
-       "Notte… e se chiama la San Giorgio, di' che so' morto!"] }
+       "Leggenda, sci… bastava che me lasciavate in pace, però!"] }
 ];
-const CHAT_FALLBACK = [
-  "Eh?! Non t'aggio capito… parla chiaro porco Dio!",
-  "Senti, io tengo da fa'. Che vò di preciso?",
-  "Ma che stai a di'?! Chiedime della lavatrice, va'…",
-  "Boh?! Io so' bidello, mica professore!",
-  "Ripeti n'attimo, che ju telefono gracchia…",
+/* Sfoghi generici quando NON c'è una parola chiave: crescono col livello di pazienza (0→3) */
+const CHAT_MARIO_LIV = [
+  [ "Sì… certo… io sono un semplice cliente. Forse qui non ci siamo capiti.",
+    "Guardi, gliel'ho già detto: a me non mi occorre nulla.",
+    "Sì, sì… però io la lavatrice l'ho già pagata, eh." ],
+  [ "Mannaggia la miseria, ma io non ho rotto i cojoni a nessuno!",
+    "Mannaggia a Dio, ma qui mi state facendo venire l'esaurimento!",
+    "Senti, mo m'hai fatto arrabbià… a me mi serviva solo na lavatrice!" ],
+  [ "Mannaggia la Madonna! Basta co' sta lavatrice!",
+    "Ma santo Dio, mo mi hai rotto proprio i cojoni!",
+    "È un mese che mi rompete, PORCO DIO! Io non ci sto a 'sto gioco!" ],
+  [ "PORCO DIO! Magnotta per voi è morto! È MORTO!",
+    "Veramente mi iscrivo ai terroristi, PORCO DIO!",
+    "NOOOO! Non ne voglio sapere… PORCO DIO! Lasciatemi perdere!" ]
+];
+const CHAT_MARIO_FALLBACK = [
+  "Eh?! Non t'aggio capito… parla chiaro!",
   "Mbè?! E parla come magni!",
-  "Questa non l'aggio proprio capita. Sarà ju telefono rotto… come la lavatrice!",
-  "Uhm… senti, chiamame quando sai che di'!"
+  "Ma che stai a di'?! Chiedime della lavatrice, va'…",
+  "Ripeti n'attimo, che ju telefono gracchia…"
+];
+
+/* ---------- IL DIRETTORE ti tormenta (tu sei Mario) ---------- */
+const CHAT_DIR_SALUTI = [
+  "Pronto, buonasera… Milano. È la San Giorgio, il Direttore Generale. Senta, ha provveduto?"
+];
+/* Escalation in ordine: a ogni tua risposta il Direttore rincara la dose */
+const CHAT_DIR_LADDER = [
+  "Senta, lei ha questo benedetto contratto che ha firmato: prevede parecchie clausole.",
+  "Ogni sei o sette anni, a beneficio del consumatore, ritiriamo la vecchia San Giorgio e portiamo la nuova.",
+  "Poi lei paga gli obzional: i bigodini, l'aria calda, l'aria fredda… paga tutto.",
+  "Le portiamo giù pure il frigorifero. Nel '92 prende un frigorifero con lavatrice, nel '95 il forno…",
+  "No, guardi, non facciamo i «teste di cazzo», qui: sono già due telefonate da Milano che facciamo per questa lavatrice.",
+  "La San Giorgio li fa con i controcazzi st'affari, sa? Lei come ha intenzione di pagarla?",
+  "Comunque lei la lavatrice la mette sotto il portone: i cosatori pigliano, via, e le portano la nuova.",
+  "Buonasera, è sempre il Direttore della San Giorgio… no, non abbiamo ancora finito, eh."
+];
+const CHAT_DIR = [
+  { k:["pagato","pagata","pagai","lire","480","pago","soldi"],
+    r:["Eh, lo so signore, però lei quando ha firmato il contratto…",
+       "Sì, va bene, ma resta l'obzional da saldare: l'aria calda, l'aria fredda…"] },
+  { k:["non voglio","basta","smettila","piant","rotto","cojon","coglion","lasciatemi","lasciateme"],
+    r:["Ma no, guardi, è tutto a beneficio suo! Un attimo di pazienza…",
+       "Non parli così, signore, che la San Giorgio è una ditta seria!"] },
+  { k:["avvocato","denuncia","carabinieri","113","giudice","truffa","galera"],
+    r:["Ma quale avvocato, signore! È tutto in regola, ha firmato lei!",
+       "Guardi che qui non c'è niente da denunciare: è un normale contrattino."] },
+  { k:["moglie","separat","stronza"],
+    r:["Ah, questo mi dispiace… ma il contratto resta valido, eh!",
+       "Le dispiaceri familiari non c'entrano con la San Giorgio, signore."] },
+  { k:["contratto","firmato","firma"],
+    r:["Eh no, ha firmato ed è in regola! Il contrattino scade a ottobre.",
+       "Questo contrattino che lei ha firmato prevede parecchie clausole, signore."] },
+  { k:["terrorist","bomba","morto","iscriv"],
+    r:["Ma signore, non si agiti! È solo una lavatrice…",
+       "Ohh, non la mettiamo su questo piano, eh. Riparliamone con calma."] }
+];
+const CHAT_DIR_FALLBACK = [
+  "Sì, sì… ma torniamo alla lavatrice, signore.",
+  "Guardi, il contratto parla chiaro. Lei ha firmato.",
+  "Un attimo di pazienza, che le spiego un'altra clausola…"
 ];
