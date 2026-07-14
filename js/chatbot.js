@@ -13,7 +13,7 @@
 
   const norm = (s) => (s || "").toLowerCase()
     .normalize("NFD").replace(/[̀-ͯ]/g, "")
-    .replace(/[^a-z0-9\s']/gi, " ");
+    .replace(/[^a-z0-9\s']/gi, " ").replace(/\s+/g, " ").trim();
 
   /* picker senza ripetizione immediata (memoria per singolo array) */
   const lastPick = new WeakMap();
@@ -25,36 +25,39 @@
     lastPick.set(arr, i);
     return arr[i];
   }
-  function matchRule(rules, msg) {
-    const m = norm(msg);
-    for (const rule of rules) if (rule.k.some(k => m.includes(norm(k)))) return rule;
-    return null;
+  /* match PIÙ PERTINENTE: sceglie la regola con più parole chiave trovate
+     (a parità, quella con la keyword più lunga = più specifica) */
+  function bestRule(rules, msg) {
+    const m = " " + norm(msg) + " ";
+    let best = null, bestScore = 0;
+    for (const rule of rules) {
+      let hits = 0, maxLen = 0;
+      for (const k of rule.k) { const nk = norm(k); if (m.includes(nk)) { hits++; if (nk.length > maxLen) maxLen = nk.length; } }
+      const score = hits * 100 + maxLen;
+      if (hits > 0 && score > bestScore) { bestScore = score; best = rule; }
+    }
+    return best;
   }
 
   /* ---------- STATO ---------- */
   const state = { mode: "mario", pazienza: 0, dirStep: 0, started: false };
 
-  /* ---------- MOTORE RISPOSTE ---------- */
   function replyAsMario(msg) {
-    const rule = matchRule(CHAT_MARIO, msg);
-    // parole che fanno "salire il sangue": aumentano la pazienza persa
-    const hot = /(lavatric|contratto|frigo|paga|soldi|bomba|terrorist|rotto|cojon|coglion|basta|truffa|appioppi|appoppi|obzional)/i.test(norm(msg));
+    const rule = bestRule(CHAT_MARIO, msg);
+    const hot = /(lavatric|contratto|frigo|paga|soldi|bomba|terrorist|rotto|cojon|coglion|basta|truffa|appioppi|appoppi|obzional|morto|denunc)/.test(norm(msg));
     if (hot) state.pazienza = Math.min(3, state.pazienza + 1);
-    else state.pazienza = Math.min(3, state.pazienza + (Math.random() < 0.4 ? 1 : 0));
-
+    else state.pazienza = Math.min(3, state.pazienza + (Math.random() < 0.35 ? 1 : 0));
+    setMeter();
     if (rule) {
-      // ai livelli alti, ogni tanto rincara con uno sfogo del livello
-      if (state.pazienza >= 2 && Math.random() < 0.45) return pick(CHAT_MARIO_LIV[state.pazienza]);
+      if (state.pazienza >= 2 && Math.random() < 0.4) return pick(CHAT_MARIO_LIV[state.pazienza]);
       return pick(rule.r);
     }
-    // niente parola chiave: sfogo del livello attuale (o fallback se ancora calmo)
     if (state.pazienza === 0 && Math.random() < 0.5) return pick(CHAT_MARIO_FALLBACK);
     return pick(CHAT_MARIO_LIV[state.pazienza]);
   }
   function replyAsDirettore(msg) {
-    const rule = matchRule(CHAT_DIR, msg);
+    const rule = bestRule(CHAT_DIR, msg);
     if (rule && Math.random() < 0.7) return pick(rule.r);
-    // altrimenti sali di un gradino nella scala di clausole assurde
     if (state.dirStep < CHAT_DIR_LADDER.length) return CHAT_DIR_LADDER[state.dirStep++];
     return pick(CHAT_DIR_FALLBACK);
   }
@@ -78,9 +81,14 @@
        <button class="cm-btn active" data-mode="mario">${t("chat.mode.mario")}</button>
        <button class="cm-btn" data-mode="dir">${t("chat.mode.dir")}</button>
      </div>
+     <div class="chat-meter" aria-hidden="true">
+       <span class="me-emoji">😐</span>
+       <span class="me-label">${t("chat.anger")}</span>
+       <span class="me-bar"><i></i></span>
+     </div>
      <div class="chat-body" aria-live="polite"></div>
      <form class="chat-form">
-       <input type="text" maxlength="200" autocomplete="off" placeholder="${t("chat.placeholder")}" aria-label="${t("chat.placeholder")}" />
+       <input type="text" maxlength="200" autocomplete="off" enterkeyhint="send" placeholder="${t("chat.placeholder")}" aria-label="${t("chat.placeholder")}" />
        <button type="submit" class="btn btn-primary btn-xs">${t("chat.send")}</button>
      </form>`;
 
@@ -88,7 +96,17 @@
   document.body.appendChild(panel);
 
   const body = $(".chat-body", panel), form = $(".chat-form", panel),
-        input = $("input", form), closeBtn = $(".chat-close", panel);
+        input = $("input", form), closeBtn = $(".chat-close", panel),
+        meter = $(".chat-meter", panel), meterBar = $(".me-bar i", panel), meterEmoji = $(".me-emoji", panel);
+
+  const ANGER_EMOJI = ["😐", "😠", "😡", "🤬"];
+  function setMeter() {
+    if (state.mode !== "mario") { meter.style.display = "none"; return; }
+    meter.style.display = "flex";
+    meterBar.style.width = ((state.pazienza / 3) * 100) + "%";
+    meter.dataset.lvl = state.pazienza;
+    meterEmoji.textContent = ANGER_EMOJI[state.pazienza];
+  }
 
   function bubble(text, who) {
     const b = document.createElement("div");
@@ -109,10 +127,10 @@
   function resetConversation() {
     body.innerHTML = "";
     state.pazienza = 0; state.dirStep = 0;
+    setMeter();
     botSays(state.mode === "mario" ? pick(CHAT_MARIO_SALUTI) : pick(CHAT_DIR_SALUTI));
   }
 
-  /* mode switch */
   panel.querySelectorAll(".cm-btn").forEach(btn => btn.addEventListener("click", () => {
     if (btn.dataset.mode === state.mode) return;
     panel.querySelectorAll(".cm-btn").forEach(b => b.classList.toggle("active", b === btn));
@@ -121,15 +139,32 @@
     resetConversation();
   }));
 
+  /* ---------- FIT alla tastiera mobile (VisualViewport) ---------- */
+  const isMobile = () => matchMedia("(max-width:600px)").matches;
+  const vv = window.visualViewport;
+  function fitViewport() {
+    if (panel.hidden || !isMobile() || !vv) return;
+    panel.style.height = vv.height + "px";
+    panel.style.top = vv.offsetTop + "px";
+    body.scrollTop = body.scrollHeight;
+  }
+  function clearFit() { panel.style.height = ""; panel.style.top = ""; }
+  if (vv) { vv.addEventListener("resize", fitViewport); vv.addEventListener("scroll", fitViewport); }
+
   function openChat(open) {
     panel.hidden = !open;
     launcher.classList.toggle("hidden", open);
+    document.body.classList.toggle("chat-open", open);
     if (open && !state.started) { state.started = true; resetConversation(); }
-    if (open) setTimeout(() => input.focus(), 120);
+    if (open) { fitViewport(); setTimeout(() => { input.focus(); fitViewport(); }, 130); }
+    else clearFit();
   }
   launcher.addEventListener("click", () => openChat(true));
   closeBtn.addEventListener("click", () => openChat(false));
   document.addEventListener("keydown", e => { if (e.key === "Escape" && !panel.hidden) openChat(false); });
+  // quando l'input prende/perde il focus (tastiera su/giù) riadatta
+  input.addEventListener("focus", () => setTimeout(fitViewport, 150));
+  input.addEventListener("blur", () => setTimeout(() => { fitViewport(); }, 150));
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -138,5 +173,6 @@
     bubble(msg, "user");
     input.value = "";
     botSays(state.mode === "mario" ? replyAsMario(msg) : replyAsDirettore(msg));
+    fitViewport();
   });
 })();

@@ -36,6 +36,7 @@ const I18N = {
   "chat.open":    { it:"Chatta con Mario", en:"Chat with Mario", es:"Chatea con Mario" },
   "chat.mode.mario":{ it:"📞 Chiama Mario", en:"📞 Call Mario", es:"📞 Llama a Mario" },
   "chat.mode.dir":{ it:"🎭 Sei tu Mario", en:"🎭 You're Mario", es:"🎭 Eres Mario" },
+  "chat.anger":   { it:"Incazzatura", en:"Anger level", es:"Cabreo" },
 
   "hero.kicker":  { it:"★ L'unico sito ufficiale · mariomagnotta.com ★", en:"★ The only official website · mariomagnotta.com ★", es:"★ El único sitio oficial · mariomagnotta.com ★" },
   "hero.sub":     {

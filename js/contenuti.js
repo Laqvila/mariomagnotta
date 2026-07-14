@@ -212,7 +212,7 @@ const CHAT_MARIO = [
     r:["Io e mia moglie ci siamo separati: si è presa la San Giorgio e io so' rimasto senza lavatrice!",
        "La colpa è de sta stronza!",
        "Ma questa è na donna ignorante, scusami il termine!"] },
-  { k:["figlia","fija","figli","futuro","vent'anni","domani"],
+  { k:["vent'anni","fra vent","sposa","futuro","fra qualche anno"],
     r:["Ma che me ne frega a me de mia fija fra vent'anni?!",
        "Fra vent'anni se sposa mia fija, che cazzo me ne frega?! Perché mi volete appioppiare sta lavatrice?!"] },
   { k:["bidello","scuola","rendina","student","professor","lavoro","stipendio"],
@@ -228,6 +228,28 @@ const CHAT_MARIO = [
   { k:["chi sei","chi parla","chi è","nome","presentati","poliziotto"],
     r:["No, so' Magnotta. MA-GNOT-TA. Semplice cliente!",
        "No, no, non so' poliziotto: faccio il bidello alle scuole!"] },
+  /* --- Scherzo «La Moglie» / «Telefono Azzurro» --- */
+  { k:["accus","maltratt","difamm","diffam","dice che","dicono","voce","reclamo","reclama","colpa"],
+    r:["Ma non è vero! Questa è una diffamazione vera e propria, va a finire in galera!",
+       "Ma questa è na donna ignorante, scusami il termine!",
+       "Mo io la denuncio vera e propria! Questa sera stessa vado dal mio legale!"] },
+  { k:["figlia","fija","camera","cameretta","bambina"],
+    r:["Mia figlia non ha avuto nessun problema, guardi!",
+       "La camera?! Ma se l'appartamento è quello che m'hanno dato, io mica me lo potevo inventare!"] },
+  { k:["casa","appartamento","affitto","villa","piscina","piccol","provincia"],
+    r:["L'Amministrazione Provinciale me l'ha assegnato l'appartamento, a tredicimila lire al mese!",
+       "Ma mia moglie che cosa si credeva, di avè na villa co' la piscina?!",
+       "Ne davano ddue soli, e questa era la più grande! Che dovevo fa'?!"] },
+  { k:["orfano","povero","famiglia","mantenere","mantieni","aiutato","aiutare"],
+    r:["Io so' orfano, so' entrato come bidello… e so' riuscito ad avè il posto, no?!",
+       "Neanche lei m'ha aiutato a migliorà le cose, però!",
+       "Io so' stato un grande lavoratore! Andavo pure a arrotondà lo stipendio!"] },
+  { k:["amore","cuore","torna","perdon","ti amo","bene","affetto","insieme"],
+    r:["Sen'è voluta andà, ha trovato n'altro… o ci sta bene o non ci sta, ha chiuso!",
+       "Basta, è chiuso l'argomento! Io non gli ho dato più fastidio!"] },
+  { k:["soldi moglie","vuole soldi","mantenimento","alimenti","denaro","pretende"],
+    r:["Mo pure i soldi vole?! Ma è essa che me rompe i cojoni!",
+       "Come mai lei non ha mai voluto aiutà economicamente, giacché parla così?!"] },
   { k:["concludi","concludere","chiudere","risolvere","soluzione","accordo"],
     r:["Voglio concludere una volta per sempre, benedetto Dio!",
        "Na volta comprata sta benedetta lavatrice è finito il contratto, o no?!",
@@ -288,7 +310,10 @@ const CHAT_DIR_LADDER = [
   "No, guardi, non facciamo i «teste di cazzo», qui: sono già due telefonate da Milano che facciamo per questa lavatrice.",
   "La San Giorgio li fa con i controcazzi st'affari, sa? Lei come ha intenzione di pagarla?",
   "Comunque lei la lavatrice la mette sotto il portone: i cosatori pigliano, via, e le portano la nuova.",
-  "Buonasera, è sempre il Direttore della San Giorgio… no, non abbiamo ancora finito, eh."
+  "Ora questo contrattino scade a ottobre: faccio mettere che lei ha acquistato la San Giorgio, va bene?",
+  "L'unica cosa: la Imperia-Cinque a tutti i costi vuole dar via queste lavatrici, capisce?",
+  "Buonasera, è sempre il Direttore della San Giorgio… no, non abbiamo ancora finito, eh.",
+  "Le passo il ragioniere, che le rispiega tutto da capo, con calma…"
 ];
 const CHAT_DIR = [
   { k:["pagato","pagata","pagai","lire","480","pago","soldi"],
@@ -308,7 +333,16 @@ const CHAT_DIR = [
        "Questo contrattino che lei ha firmato prevede parecchie clausole, signore."] },
   { k:["terrorist","bomba","morto","iscriv"],
     r:["Ma signore, non si agiti! È solo una lavatrice…",
-       "Ohh, non la mettiamo su questo piano, eh. Riparliamone con calma."] }
+       "Ohh, non la mettiamo su questo piano, eh. Riparliamone con calma."] },
+  { k:["frigo","frigorifero","forno","non serve","ce l'ho","occorre"],
+    r:["Eh ma il frigorifero ha il piano ghiacciaia, signore! È un affarone!",
+       "La San Giorgio li fa con i controcazzi st'affari, mica robaccia!"] },
+  { k:["bidello","poliziotto","scuola","lavoro"],
+    r:["Ah, il bidello… a tutte le scuole de L'Aquila? Interessante. Comunque il contratto resta.",
+       "Poliziotto o bidello, signore, la clausola è uguale per tutti!"] },
+  { k:["chi sei","chi parla","chi è","truffator","imbroglio","nome"],
+    r:["Ma le ho detto, sono il Direttore Generale della San Giorgio, da Milano!",
+       "Truffatore io?! Guardi che lei ha firmato, signore!"] }
 ];
 const CHAT_DIR_FALLBACK = [
   "Sì, sì… ma torniamo alla lavatrice, signore.",
