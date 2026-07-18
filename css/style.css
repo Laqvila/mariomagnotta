@@ -614,3 +614,6 @@ a.newscard:hover .news-link{text-decoration:underline}
   .cl-txt{display:none}
   .chat-launcher{padding:.7rem .8rem}
 }
+
+/* immagine opzionale dentro una chicca */
+.chicca-img{width:100%;margin-top:.8rem;border:2px solid var(--ink);border-radius:10px;display:block}

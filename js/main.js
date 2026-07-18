@@ -248,7 +248,7 @@
   function renderChicche() {
     const cg = $("#chicche-grid"); if (!cg || typeof CHICCHE === "undefined") return;
     clear(cg);
-    CHICCHE.forEach(c => cg.appendChild(el("article", "chicca reveal", `<div class="chicca-ico">${c.icona}</div><h3>${tr(c.t)}</h3><p>${tr(c.d)}</p>`)));
+    CHICCHE.forEach(c => cg.appendChild(el("article", "chicca reveal", `<div class="chicca-ico">${c.icona}</div><h3>${tr(c.t)}</h3><p>${tr(c.d)}</p>${c.img ? `<img class="chicca-img" loading="lazy" src="${c.img}" alt="${tr(c.t)}" />` : ""}`)));
   }
   function renderEventi() {
     const eg = $("#eventi-grid"); if (!eg || typeof EVENTI === "undefined") return;
