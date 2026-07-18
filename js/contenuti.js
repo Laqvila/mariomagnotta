@@ -90,11 +90,11 @@ const NEWS = [
   { data:"17 Set 2025", tag:"Magnotta Day",
     titolo:"Magnotta Day: L'Aquila festeggia il suo mito",
     testo:"Il 16 settembre, anniversario di «Lavatrice 4», la città celebra il Magnotta Day tra murale e proiezioni.",
-    url:"https://magnotta.it/magnotta-news/" },
+    url:"https://www.laquilablog.it/magnotta-day-una-maxi-banconota-ricorda-il-bidello-leggenda/" },
   { data:"15 Lug 2025", tag:"TV",
-    titolo:"Magnotta citato in uno sketch su TV8",
-    testo:"Il mito di Mario continua in TV: uno sketch su TV8 omaggia le telefonate più famose d'Italia.",
-    url:"https://magnotta.it/magnotta-news/" },
+    titolo:"Magnotta in uno sketch di Edoardo Ferrario su TV8",
+    testo:"Nello sketch true-crime «In & Out» su TV8, Edoardo Ferrario indaga su Mario Magnotta: il mito continua in TV.",
+    url:"https://www.youtube.com/watch?v=Agg90ZHiJ3o" },
   { data:"Giu 2025", tag:"Evento",
     titolo:"L'Aquila celebra Magnotta all'Emiciclo",
     testo:"Il 25 giugno l'Associazione 3:33 e Mirko Rocci portano Mario all'Emiciclo: scienza, ironia e memoria.",
@@ -139,7 +139,6 @@ const RASSEGNA = [
   { data:"Nov 2023", testata:"Il Post", titolo:"Il più celebre scherzo telefonico italiano di sempre", url:"https://www.ilpost.it/2023/11/02/mario-magnotta-lavatrice/" },
   { data:"Il Giornale", testata:"Il Giornale", titolo:"Il bidello Magnotta e la lavatrice: lo scherzo telefonico più famoso di sempre", url:"https://www.ilgiornale.it/news/attualit/bidello-magnotta-e-lavatrice-scherzo-telefonico-pi-famoso-2237189.html" },
   { data:"Nov 2017", testata:"Leggo", titolo:"«Magnotta Wars», il bidello dello scherzo della lavatrice diventa un fumetto", url:"https://www.leggo.it/italia/cronache/magnotta_wars_lavatrice_moglie_bidello_scherzo_30_novembre_2017-3399146.html" },
-  { data:"Archivio", testata:"magnotta.it", titolo:"L'archivio storico: telefonate, remix, video, foto e tutte le news su Mario", url:"https://magnotta.it/" },
   { data:"Archivio", testata:"Wikipedia", titolo:"Mario Magnotta — la voce sull'enciclopedia libera", url:"https://it.wikipedia.org/wiki/Mario_Magnotta" }
 ];
 
