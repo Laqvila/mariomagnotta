@@ -29,7 +29,8 @@ const I18N = {
   "foot.official":{ it:"Questo è l'<strong>unico sito ufficiale</strong> di Mario Magnotta, realizzato con l'<strong>approvazione di Romina Magnotta</strong>, figlia di Mario e titolare dei diritti. Ogni altro sito non è autorizzato: diffida delle imitazioni.", en:"This is the <strong>only official website</strong> of Mario Magnotta, made with the <strong>approval of Romina Magnotta</strong>, Mario's daughter and rights holder. Any other site is unauthorised: beware of imitations.", es:"Este es el <strong>único sitio oficial</strong> de Mario Magnotta, realizado con la <strong>aprobación de Romina Magnotta</strong>, hija de Mario y titular de los derechos. Cualquier otro sitio no está autorizado: desconfía de las imitaciones." },
 
   "chat.title":   { it:"📞 Chatta con Mario", en:"📞 Chat with Mario", es:"📞 Chatea con Mario" },
-  "chat.sub":     { it:"Frasi autentiche delle telefonate del 1987 · parodia · linguaggio d'epoca", en:"Authentic quotes from the 1987 calls · parody · period language", es:"Frases auténticas de las llamadas de 1987 · parodia · lenguaje de época" },
+  "chat.sub":     { it:"Ti risponde con la sua voce e le frasi originali · online", en:"He replies with his real voice and original quotes · online", es:"Te responde con su voz y sus frases originales · online" },
+  "chat.clear":   { it:"Svuota chat", en:"Clear chat", es:"Vaciar chat" },
   "chat.placeholder":{ it:"Fai lo scherzo a Mario…", en:"Prank Mario…", es:"Gástale la broma a Mario…" },
   "chat.placeholder.dir":{ it:"Rispondi al Direttore…", en:"Reply to the Manager…", es:"Responde al Director…" },
   "chat.send":    { it:"Invia", en:"Send", es:"Enviar" },

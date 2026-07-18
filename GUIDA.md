@@ -92,7 +92,9 @@ Claude modifica i file giusti, verifica l'anteprima e fa **commit + push su GitH
 Se la GitHub Action FTP è attiva (vedi `.github/workflows/deploy-aruba.yml.example`),
 il push pubblica anche sul sito live Aruba automaticamente.
 
-## 💬 Modificare il CHATBOT «Chatta con Mario»
-Le risposte sono in `js/contenuti.js`, sezione `CHAT_REGOLE`:
-ogni blocco ha `k:` (parole chiave da cercare nel messaggio) e `r:` (risposte possibili, scelte a caso).
-`CHAT_BENVENUTO` = saluti iniziali; `CHAT_FALLBACK` = risposte quando nessuna parola corrisponde.
+## 💬 Il CHATBOT «Chatta con Mario» (con voce reale)
+La chat risponde con le **frasi e l'audio reale** di Mario (le stesse dell'app ufficiale).
+- **Frasi + audio**: `js/chat-quotes.js` (generato dall'app — NON modificare a mano) e le clip in `assets/audio/`.
+- **Suggerimenti** cliccabili: modificabili in `js/contenuti.js`, array `CHAT_SUGGESTIONS`.
+- **Argomenti riconosciuti** (parole chiave → frasi pertinenti): in `js/chatbot.js`, array `CHAT_INTENTS`
+  (ogni voce: `kw` = parole chiave, con `*` come prefisso; `ids` = numeri delle frasi da usare).
