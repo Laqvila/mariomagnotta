@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <!-- Sicurezza (vedi anche SECURITY.md per gli header lato server) -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https://i.ytimg.com https://*.ytimg.com data:; media-src 'self' https://*.youtube.com; frame-src https://www.youtube-nocookie.com https://www.youtube.com; script-src 'self' https://www.youtube.com https://s.ytimg.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://*.youtube.com; form-action 'self' mailto:; frame-ancestors 'none'; base-uri 'self'; object-src 'none'" />
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https://i.ytimg.com https://*.ytimg.com data:; media-src 'self' https://*.youtube.com; frame-src https://www.youtube-nocookie.com https://www.youtube.com; script-src 'self' https://www.youtube.com https://s.ytimg.com https://static.cloudflareinsights.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://*.youtube.com https://cloudflareinsights.com; form-action 'self' mailto:; frame-ancestors 'none'; base-uri 'self'; object-src 'none'" />
 <meta name="referrer" content="strict-origin-when-cross-origin" />
 <title>Mario Magnotta — Sito UFFICIALE (l'unico vero) | Telefonate, lo scherzo della lavatrice, il primo meme italiano</title>
 <meta name="description" content="L'unico sito ufficiale di Mario Magnotta, il bidello dell'Aquila diventato leggenda con lo scherzo della lavatrice del 1987: il primo meme italiano. Telefonate e audio rimasterizzati dal canale YouTube ufficiale, foto reali, eventi, news e il docufilm «Semplice Cliente». Diffida delle imitazioni." />
@@ -443,5 +443,21 @@
 <script src="js/data.js"></script>
 <script src="js/main.js"></script>
 <script src="js/chatbot.js"></script>
+
+<!-- Cloudflare Web Analytics — statistiche di navigazione anonime e aggregate, SENZA cookie (nessun consenso richiesto). Dati e grafico visite: dashboard Cloudflare › Analytics & Logs › Web Analytics. -->
+<script>
+  (function () {
+    // 👉 Incolla qui il token del beacon (Cloudflare › Analytics & Logs › Web Analytics › Add a site).
+    //    Finché resta vuoto, nessuno script di analytics viene caricato.
+    var CF_BEACON_TOKEN = "";
+    if (CF_BEACON_TOKEN) {
+      var s = document.createElement("script");
+      s.defer = true;
+      s.src = "https://static.cloudflareinsights.com/beacon.min.js";
+      s.setAttribute("data-cf-beacon", '{"token":"' + CF_BEACON_TOKEN + '"}');
+      document.head.appendChild(s);
+    }
+  })();
+</script>
 </body>
 </html>
