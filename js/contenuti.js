@@ -71,6 +71,10 @@ const GALLERIA = [
    { data:"Mese Anno", tag:"Etichetta", titolo:"…", testo:"…", url:"https://…" },
    ============================================================ */
 const NEWS = [
+  { data:"13 Set 2026", tag:"Eventi",
+    titolo:"«Semplice Cliente» al Pescara Comix & Games",
+    testo:"Il docufilm su Mario Magnotta in Conference Room domenica 13 settembre (ore 14:00), con proiezione e incontro a seguire con i produttori Alessandro De Leonardis, Stefano Bachiocchi e Beatrice Campagna, insieme a Fabrizio Pluc Di Nicola e Antonio Recupero.",
+    url:"https://www.pescaracomix.it/programma/" },
   { data:"22 Dic 2025", tag:"Stampa",
     titolo:"Il Foglio: «Eroe per caso, il mito pop di Mario Magnotta»",
     testo:"Francesco Palmieri racconta su Il Foglio la parabola di Magnotta, da bidello a icona pop.",
