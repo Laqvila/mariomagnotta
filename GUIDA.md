@@ -54,8 +54,17 @@ Nella sezione `const EVIDENZA = [` (massimo 3 voci consigliato):
 ```
 
 ## 6) Pubblicare le modifiche online
-Se il sito è su GitHub collegato ad Aruba: dopo aver salvato `js/contenuti.js`,
-fai commit e push (o ricarica il file via FTP sul server Aruba). La pagina si aggiorna da sola.
+Dopo aver salvato `js/contenuti.js` (o `js/data.js`), **prima del commit** esegui:
+
+```
+node tools/prerender.js
+```
+
+Copia in `index.html` il testo delle sezioni generate da JavaScript (telefonate, frasi,
+news, rassegna...), tra i marcatori `<!--pre:ID-->`. Serve a Google e ai sistemi di
+intelligenza artificiale (ChatGPT, Perplexity, Claude), che non eseguono JavaScript:
+senza questo passo vedono i contenuti vecchi. Deve stampare `11/11 sezioni scritte`.
+Poi aggiorna il `?v=AAAAMMGG` in `index.html` e fai commit e push: GitHub Pages pubblica da solo.
 
 ---
 

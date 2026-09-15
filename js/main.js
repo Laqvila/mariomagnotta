@@ -16,15 +16,30 @@
     if (q && LANGS.includes(q)) return q;
     const saved = localStorage.getItem("mm-lang");
     if (saved && LANGS.includes(saved)) return saved;
-    const nav = (navigator.language || "it").slice(0, 2);
-    return LANGS.includes(nav) ? nav : "it";
+    // Niente deduzione da navigator.language: Googlebot renderizza in en-US e
+    // indicizzerebbe la home italiana in inglese. Default: italiano.
+    return "it";
   }
   let LANG = detectLang();
   const t = (key) => { const e = (typeof I18N !== "undefined") && I18N[key]; return (e && (e[LANG] || e.it)) || key; };
   const tr = (obj) => obj ? (typeof obj === "string" ? obj : (obj[LANG] || obj.it)) : "";
 
+  /* URL, canonical e og:url coerenti con la lingua mostrata (hreflang: /?lang=xx) */
+  function syncLangUrl() {
+    const base = "https://mariomagnotta.com/", href = LANG === "it" ? base : base + "?lang=" + LANG;
+    const can = $('link[rel="canonical"]'); if (can) can.href = href;
+    const og = $('meta[property="og:url"]'); if (og) og.content = href;
+    try {
+      const q = new URLSearchParams(location.search);
+      if (LANG === "it") q.delete("lang"); else q.set("lang", LANG);
+      const qs = q.toString();
+      history.replaceState(null, "", location.pathname + (qs ? "?" + qs : "") + location.hash);
+    } catch (e) {}
+  }
+
   function applyStatic() {
     document.documentElement.lang = LANG;
+    syncLangUrl();
     $$("[data-i18n]").forEach(n => { n.textContent = t(n.dataset.i18n); });
     $$("[data-i18n-html]").forEach(n => { n.innerHTML = t(n.dataset.i18nHtml); });
     $$("#lang-switch button").forEach(b => b.classList.toggle("active", b.dataset.lang === LANG));
