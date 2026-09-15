@@ -3,6 +3,12 @@
    ========================================================= */
 (function () {
   "use strict";
+  // Riserva: se la pagina arriva in http (Cloudflare senza "Always Use HTTPS"),
+  // passa alla versione https, così esiste un solo indirizzo per motori e utenti.
+  if (location.protocol === "http:" && /\.(com|it)$/.test(location.hostname)) {
+    location.replace("https://" + location.host + location.pathname + location.search + location.hash);
+    return;
+  }
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
   const el = (t, c, h) => { const n = document.createElement(t); if (c) n.className = c; if (h != null) n.innerHTML = h; return n; };
@@ -334,10 +340,26 @@
     });
   }
 
+  function renderFaq() {
+    const fl = $("#faq-list"); if (!fl || typeof FAQ === "undefined") return;
+    clear(fl);
+    FAQ.forEach((f, i) => {
+      const d = el("details", "faq reveal");
+      if (i === 0) d.setAttribute("open", "");
+      d.innerHTML = `<summary><h3>${tr(f.q)}</h3></summary><p>${tr(f.a)}</p>`;
+      fl.appendChild(d);
+    });
+    // Dati strutturati FAQPage (in italiano) per motori e AI
+    const ld = el("script"); ld.type = "application/ld+json";
+    ld.textContent = JSON.stringify({ "@context": "https://schema.org", "@type": "FAQPage",
+      "mainEntity": FAQ.map(f => ({ "@type": "Question", "name": f.q.it, "acceptedAnswer": { "@type": "Answer", "text": f.a.it } })) });
+    fl.appendChild(ld);
+  }
+
   function renderAll() {
     renderVideos(); renderSpeciali(); renderGallery(); renderTimeline();
     renderFrasi(); renderChicche(); renderEventi(); renderNews();
-    renderEvidenza(); renderRassegna(); renderShop();
+    renderEvidenza(); renderRassegna(); renderFaq(); renderShop();
     observeReveals();
   }
 

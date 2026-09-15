@@ -617,3 +617,13 @@ a.newscard:hover .news-link{text-decoration:underline}
 
 /* immagine opzionale dentro una chicca */
 .chicca-img{width:100%;margin-top:.8rem;border:2px solid var(--ink);border-radius:10px;display:block}
+
+/* ===== FAQ (domande frequenti) ===== */
+.faq-list{max-width:860px;margin:0 auto}
+.faq{background:#fff;border:3px solid var(--ink);border-radius:var(--r);box-shadow:var(--shadow-sm);margin:0 0 .9rem;padding:0 1.2rem}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1rem 0}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary h3{margin:0;font-size:1.08rem;line-height:1.35}
+.faq summary::after{content:"+";flex:none;font-size:1.6rem;line-height:1;font-weight:700}
+.faq[open] summary::after{content:"–"}
+.faq p{margin:0 0 1.1rem;line-height:1.65}

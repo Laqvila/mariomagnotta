@@ -101,6 +101,9 @@ const I18N = {
 
   "chicche.eyebrow":{ it:"★ Lo sapevi che… ★", en:"★ Did you know… ★", es:"★ ¿Sabías que…? ★" },
   "chicche.title":{ it:"Chicche & <span class='hl'>curiosità</span>", en:"Trivia & <span class='hl'>curiosities</span>", es:"Curiosidades & <span class='hl'>anécdotas</span>" },
+  "faq.eyebrow":  { it:"★ Le domande di tutti ★", en:"★ Everyone's questions ★", es:"★ Las preguntas de todos ★" },
+  "faq.title":    { it:"Domande <span class='hl'>frequenti</span>", en:"Frequently asked <span class='hl'>questions</span>", es:"Preguntas <span class='hl'>frecuentes</span>" },
+  "faq.sub":      { it:"Le risposte brevi alle domande che tutti fanno su Mario Magnotta.", en:"Short answers to the questions everyone asks about Mario Magnotta.", es:"Respuestas breves a las preguntas que todos hacen sobre Mario Magnotta." },
 
   "eventi.eyebrow":{ it:"★ Eventi ★", en:"★ Events ★", es:"★ Eventos ★" },
   "eventi.title": { it:"Magnotta <span class='hl'>dal vivo</span>", en:"Magnotta <span class='hl'>live</span>", es:"Magnotta <span class='hl'>en vivo</span>" },

@@ -1,7 +1,11 @@
 {
   "html": "index.html",
   "baseUrl": "https://mariomagnotta.com/",
-  "scripts": ["js/contenuti.js", "js/data.js", "js/main.js"],
+  "scripts": [
+    "js/contenuti.js",
+    "js/data.js",
+    "js/main.js"
+  ],
   "containers": [
     "timeline-list",
     "gruppi",
@@ -13,6 +17,7 @@
     "news-grid",
     "evidenza-grid",
     "press-list",
-    "shop-mock"
+    "shop-mock",
+    "faq-list"
   ]
 }

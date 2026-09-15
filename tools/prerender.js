@@ -136,7 +136,11 @@ class Element {
   replaceChildren(...cs) { this.childNodes.forEach((c) => (c.parentNode = null)); this.childNodes = []; this.append(...cs); }
   cloneNode(deep) { const e = new Element(this.localName); this.attrs.forEach((v, k) => e.attrs.set(k, v)); if (deep) e.innerHTML = this.innerHTML; return e; }
   get textContent() { return this.childNodes.map((c) => c.textContent).join(""); }
-  set textContent(v) { this.childNodes = []; if (v !== "" && v != null) this.appendChild(new TextNode(escapeText(v))); }
+  set textContent(v) {
+    this.childNodes = [];
+    // dentro <script>/<style> il testo resta grezzo (es. JSON-LD): niente entità
+    if (v !== "" && v != null) this.appendChild(new TextNode(RAW.has(this.localName) ? String(v) : escapeText(v)));
+  }
   get innerText() { return this.textContent; }
   set innerText(v) { this.textContent = v; }
   get innerHTML() { return this.childNodes.map((c) => c.serialize()).join(""); }
