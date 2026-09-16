@@ -5,7 +5,7 @@
    ========================================================= */
 
 const CHANNEL_URL = "https://www.youtube.com/@MarioMagnotta-aq";
-const SHOP_URL = "https://semplicecliente.com";
+const SHOP_URL = "https://magnottaofficial.com";  // store esterno, NON gestito da questo sito
 const FILM_URL = "https://semplicecliente.com";
 const MIRKO_URL = "https://mirkorocci.it";
 const ASSOC_URL = "https://3e33.it";
@@ -145,9 +145,8 @@ const I18N = {
 
   "film.trailer": { it:"▶ Guarda il trailer ufficiale", en:"▶ Watch the official trailer", es:"▶ Ver el tráiler oficial" },
 
-  "shop.soon":    { it:"Presto disponibile", en:"Coming soon", es:"Próximamente" },
-  "shop.introSoon":{ it:"Lo shop ufficiale con magliette, tazze e gadget da collezione dedicati a Mario è <strong>in arrivo</strong>. Torna presto!", en:"The official shop with t-shirts, mugs and collector's gadgets dedicated to Mario is <strong>coming soon</strong>. Check back soon!", es:"La tienda oficial con camisetas, tazas y gadgets de colección dedicados a Mario está <strong>en camino</strong>. ¡Vuelve pronto!" },
-  "shop.ctaSoon": { it:"🛒 Shop in arrivo — presto disponibile", en:"🛒 Shop coming soon", es:"🛒 Tienda próximamente" },
+  "flash.label":  { it:"⚡ Flash news", en:"⚡ Flash news", es:"⚡ Flash news" },
+  "flash.aria":   { it:"Ultime notizie", en:"Latest news", es:"Últimas noticias" },
 
   "romina.eyebrow":{ it:"★ Eventi esclusivi ★", en:"★ Exclusive events ★", es:"★ Eventos exclusivos ★" },
   "romina.title": { it:"Vuoi organizzare un evento con <span class='hl'>Romina Magnotta</span>?", en:"Want to host an event with <span class='hl'>Romina Magnotta</span>?", es:"¿Quieres organizar un evento con <span class='hl'>Romina Magnotta</span>?" },
@@ -157,15 +156,19 @@ const I18N = {
   "shop.eyebrow": { it:"★ Shop ufficiale ★", en:"★ Official shop ★", es:"★ Tienda oficial ★" },
   "shop.title":   { it:"Il <span class='hl'>merchandising</span> ufficiale", en:"The official <span class='hl'>merchandise</span>", es:"El <span class='hl'>merchandising</span> oficial" },
   "shop.intro":   {
-    it:"Magliette, tazze, gadget e chicche da collezione dedicate al mito di Mario. Lo store ufficiale è su <strong>semplicecliente.com</strong>.",
-    en:"T-shirts, mugs, gadgets and collector's items dedicated to the Mario legend. The official store is at <strong>semplicecliente.com</strong>.",
-    es:"Camisetas, tazas, gadgets y piezas de colección dedicadas al mito de Mario. La tienda oficial está en <strong>semplicecliente.com</strong>." },
-  "shop.buy":     { it:"Acquista →", en:"Buy →", es:"Comprar →" },
-  "shop.cta":     { it:"🛒 Entra nello shop · semplicecliente.com", en:"🛒 Enter the shop · semplicecliente.com", es:"🛒 Entra en la tienda · semplicecliente.com" },
-  "prod.tshirt":  { it:"T-shirt «M'iscrivo ai terroristi»", en:"T-shirt «M'iscrivo ai terroristi»", es:"Camiseta «M'iscrivo ai terroristi»" },
-  "prod.mug":     { it:"Tazza «No so Magnotta»", en:"Mug «No so Magnotta»", es:"Taza «No so Magnotta»" },
-  "prod.magnet":  { it:"Calamita Lavatrice San Giorgio", en:"San Giorgio washing-machine magnet", es:"Imán lavadora San Giorgio" },
-  "prod.cap":     { it:"Cappellino «Semplice Cliente»", en:"Cap «Semplice Cliente»", es:"Gorra «Semplice Cliente»" },
+    it:"Magliette, poster, portachiavi, action figure e altre chicche dedicate al mito di Mario si acquistano su <strong>magnottaofficial.com</strong>.",
+    en:"T-shirts, posters, keyrings, action figures and more collector's items dedicated to the Mario legend are sold at <strong>magnottaofficial.com</strong>.",
+    es:"Camisetas, pósters, llaveros, figuras de acción y otras piezas dedicadas al mito de Mario se compran en <strong>magnottaofficial.com</strong>." },
+  "shop.go":      { it:"Vai allo store ↗", en:"Go to the store ↗", es:"Ir a la tienda ↗" },
+  "shop.cta":     { it:"🛒 Vai allo store · magnottaofficial.com ↗", en:"🛒 Go to the store · magnottaofficial.com ↗", es:"🛒 Ir a la tienda · magnottaofficial.com ↗" },
+  "shop.disclaimer": {
+    it:"Link a sito esterno. Lo store magnottaofficial.com <strong>non è gestito da mariomagnotta.com</strong>: vendite, pagamenti, spedizioni, resi e trattamento dei dati sono di esclusiva responsabilità del suo gestore e regolati dalle sue condizioni.",
+    en:"External link. The magnottaofficial.com store <strong>is not operated by mariomagnotta.com</strong>: sales, payments, shipping, returns and data processing are the sole responsibility of its operator and governed by its own terms.",
+    es:"Enlace externo. La tienda magnottaofficial.com <strong>no está gestionada por mariomagnotta.com</strong>: ventas, pagos, envíos, devoluciones y tratamiento de datos son responsabilidad exclusiva de su gestor y se rigen por sus propias condiciones." },
+  "prod.tshirt":  { it:"T-shirt e magliette", en:"T-shirts", es:"Camisetas" },
+  "prod.poster":  { it:"Poster", en:"Posters", es:"Pósters" },
+  "prod.keyring": { it:"Portachiavi", en:"Keyrings", es:"Llaveros" },
+  "prod.figure":  { it:"Action figure", en:"Action figure", es:"Figura de acción" },
 
   "foot.tag":     { it:"Il sito ufficiale del primo meme italiano.<br>mariomagnotta.com", en:"The official website of the first Italian meme.<br>mariomagnotta.com", es:"El sitio oficial del primer meme italiano.<br>mariomagnotta.com" },
   "foot.naviga":  { it:"Naviga", en:"Browse", es:"Navega" },

@@ -50,6 +50,22 @@ img{max-width:100%;display:block}
 .ticker-track span:nth-child(even){color:var(--red)}
 @keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
+/* FLASH NEWS (nastro con le ultime notizie, generato da NEWS) */
+.flash{position:relative;z-index:61;display:flex;align-items:stretch;background:var(--red);color:#fff;border-bottom:3px solid var(--ink);font-family:'Space Mono',monospace;font-weight:700;font-size:.82rem}
+.flash-label{flex:none;display:flex;align-items:center;padding:.45rem .9rem;background:var(--yellow);color:var(--ink);border-right:3px solid var(--ink);text-transform:uppercase;letter-spacing:1px;text-decoration:none;white-space:nowrap}
+.flash-label:hover,.flash-label:focus-visible{background:#fff}
+.flash-viewport{flex:1;min-width:0;overflow:hidden;display:flex;align-items:center;-webkit-mask-image:linear-gradient(90deg,transparent,#000 3%,#000 97%,transparent);mask-image:linear-gradient(90deg,transparent,#000 3%,#000 97%,transparent)}
+.flash-track{display:flex;width:max-content;animation:flash var(--flash-dur,45s) linear infinite}
+.flash:hover .flash-track,.flash:focus-within .flash-track{animation-play-state:paused}
+.flash-group{display:flex;align-items:center;gap:1rem;padding:.45rem 1rem .45rem 0;white-space:nowrap}
+.flash-item{color:#fff;text-decoration:none}
+a.flash-item:hover,a.flash-item:focus-visible{text-decoration:underline;text-underline-offset:3px}
+.flash-item b{color:var(--yellow);margin-right:.25rem}
+.flash-sep{color:var(--ink)}
+@keyframes flash{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.flash-track{animation:none}.flash-viewport{overflow-x:auto}.flash-group[aria-hidden]{display:none}}
+@media (max-width:600px){.flash{font-size:.74rem}.flash-label{padding:.4rem .6rem}}
+
 /* navbar */
 #navbar{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:.7rem clamp(1rem,4vw,2.5rem);background:rgba(255,251,242,.92);backdrop-filter:blur(8px);border-bottom:3px solid var(--ink)}
 .brand{display:flex;align-items:center;gap:.5rem;font-family:'Anton';font-size:1.35rem}
@@ -275,8 +291,10 @@ img{max-width:100%;display:block}
 .prod:hover{transform:translateY(-6px)}
 .prod-img{font-size:3rem;margin-bottom:.6rem}
 .prod-name{display:block;font-weight:600;font-size:.92rem;margin-bottom:.6rem}
-.prod-soon{font-family:'Space Mono';font-weight:700;font-size:.72rem;background:var(--yellow);border:2px solid var(--ink);padding:.15rem .55rem;border-radius:20px;display:inline-block}
+a.prod{display:block;text-decoration:none}
+.prod-go{font-family:'Space Mono';font-weight:700;font-size:.72rem;background:var(--yellow);border:2px solid var(--ink);padding:.15rem .55rem;border-radius:20px;display:inline-block}
 .shop-cta{margin-top:1.6rem}
+.shop-disclaimer{max-width:640px;margin:1.1rem auto 0;font-size:.8rem;line-height:1.45;opacity:.8}
 
 /* FOOTER */
 #footer{background:var(--ink);color:var(--cream);padding:3rem clamp(1.1rem,5vw,4rem) 1.5rem}
@@ -456,9 +474,6 @@ a.newscard:hover .news-link{text-decoration:underline}
 .trailer-consent .cv-yt{display:inline-block;margin-left:.6rem;font-family:'Space Mono',monospace;font-weight:700;font-size:.8rem;color:var(--yellow)}
 
 /* SHOP coming soon */
-.prod.soon{opacity:.95}
-.shop-soon-btn{cursor:default;opacity:.95}
-.shop-soon-btn:hover{transform:none;box-shadow:var(--shadow-sm)}
 
 /* ============ v5 — SITO UFFICIALE (emphasis) ============ */
 :root{ --green:#1aa34a; }

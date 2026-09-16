@@ -319,14 +319,47 @@
       ng.appendChild(tag);
     });
   }
+  /* nastro FLASH NEWS in cima: le prime FLASH_NEWS_MAX notizie di NEWS.
+     Il gruppo è ripetuto due volte per lo scorrimento continuo; la copia è
+     nascosta agli screen reader e fuori dall'ordine di tabulazione. */
+  function renderFlash() {
+    const bar = $("#flash"), ft = $("#flash-track");
+    if (!bar || !ft || typeof NEWS === "undefined") return;
+    const max = typeof FLASH_NEWS_MAX === "number" ? FLASH_NEWS_MAX : 6;
+    const items = NEWS.slice(0, Math.max(0, max));
+    bar.hidden = !items.length;
+    bar.setAttribute("aria-label", t("flash.aria"));
+    clear(ft);
+    if (!items.length) return;
+    const group = (copy) => {
+      const g = el("div", "flash-group");
+      if (copy) g.setAttribute("aria-hidden", "true");
+      items.forEach(n => {
+        const it = el(n.url ? "a" : "span", "flash-item",
+          `<b>${tr(n.data)}</b> ${tr(n.titolo)}`);
+        if (n.url) {
+          it.href = n.url; it.target = "_blank"; it.rel = "noopener";
+          if (copy) it.setAttribute("tabindex", "-1");
+        }
+        g.appendChild(it);
+        g.appendChild(el("span", "flash-sep", "★"));
+      });
+      return g;
+    };
+    ft.appendChild(group(false));
+    ft.appendChild(group(true));
+    // velocità costante: la durata cresce con la lunghezza del testo
+    const chars = items.reduce((s, n) => s + tr(n.data).length + tr(n.titolo).length, 0);
+    if (ft.style && ft.style.setProperty) ft.style.setProperty("--flash-dur", Math.max(25, Math.round(chars * 0.2)) + "s");
+  }
   function renderShop() {
     const sm = $("#shop-mock"); if (!sm) return;
     clear(sm);
-    const prods = [["👕", "prod.tshirt"], ["☕", "prod.mug"], ["🧲", "prod.magnet"], ["🧢", "prod.cap"]];
+    const prods = [["👕", "prod.tshirt"], ["🖼️", "prod.poster"], ["🔑", "prod.keyring"], ["🧸", "prod.figure"]];
     prods.forEach(([ico, key]) => {
-      const d = el("div", "prod soon");
-      d.innerHTML = `<div class="prod-img">${ico}</div><span class="prod-name">${t(key)}</span><span class="prod-soon">${t("shop.soon")}</span>`;
-      sm.appendChild(d);
+      const a = el("a", "prod", `<div class="prod-img">${ico}</div><span class="prod-name">${t(key)}</span><span class="prod-go">${t("shop.go")}</span>`);
+      a.href = SHOP_URL; a.target = "_blank"; a.rel = "noopener";
+      sm.appendChild(a);
     });
   }
   function renderEvidenza() {
@@ -358,7 +391,7 @@
 
   function renderAll() {
     renderVideos(); renderSpeciali(); renderGallery(); renderTimeline();
-    renderFrasi(); renderChicche(); renderEventi(); renderNews();
+    renderFrasi(); renderChicche(); renderEventi(); renderNews(); renderFlash();
     renderEvidenza(); renderRassegna(); renderFaq(); renderShop();
     observeReveals();
   }
