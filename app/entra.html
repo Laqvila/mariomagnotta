@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#e63419">
+<meta name="robots" content="noindex, nofollow">
+<title>Mario Magnotta Official — Accesso all'app</title>
+<style>
+  :root { --rosso:#e63419; --giallo:#ffce2b; --inchiostro:#1d1a17; --carta:#fffbf2; --crema:#fff5e1; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 2.5rem 1.25rem 4rem;
+    background: var(--crema);
+    background-image: radial-gradient(#e8d9bd 1px, transparent 1px);
+    background-size: 1rem 1rem;
+    font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    color: var(--inchiostro);
+  }
+  .scatola {
+    max-width: 30rem; margin: 0 auto; padding: 1.5rem;
+    background: var(--carta); border: 3px solid var(--inchiostro);
+    border-radius: 1.125rem; box-shadow: 6px 6px 0 var(--inchiostro);
+  }
+  h1 { font-size: 1.5rem; margin: 0 0 .25rem; }
+  .occhiello {
+    display: inline-block; margin-bottom: .75rem; padding: .25rem .625rem;
+    background: var(--inchiostro); color: var(--giallo); border-radius: 999px;
+    font-size: .6875rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  }
+  p { margin: .75rem 0; }
+  label { display: block; font-size: .75rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; margin-bottom: .25rem; }
+  input {
+    width: 100%; min-height: 2.875rem; padding: .5rem .75rem; font: inherit;
+    background: var(--crema); border: 3px solid var(--inchiostro); border-radius: 1rem;
+  }
+  button {
+    width: 100%; min-height: 3rem; margin-top: 1rem; font: inherit; font-weight: 700;
+    color: #fff; background: var(--rosso); border: 3px solid var(--inchiostro);
+    border-radius: 1rem; box-shadow: 4px 4px 0 var(--inchiostro); cursor: pointer;
+  }
+  button.secondario { background: var(--giallo); color: var(--inchiostro); }
+  button:disabled { opacity: .55; cursor: default; }
+  .esito { margin-top: 1rem; font-weight: 600; min-height: 1.4rem; }
+  .esito.no { color: #b3200f; }
+  .esito.si { color: #1d7a45; }
+  .piede { max-width: 30rem; margin: 1.5rem auto 0; font-size: .8125rem; text-align: center; }
+  .piede a { color: var(--inchiostro); }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<main class="scatola">
+  <span class="occhiello">Mario Magnotta Official</span>
+
+  <section id="carica">
+    <h1>Un attimo…</h1>
+    <p>Sto leggendo il collegamento che hai aperto.</p>
+  </section>
+
+  <section id="password" hidden>
+    <h1>Scegli una nuova password</h1>
+    <p>Almeno 8 caratteri. Poi torni nell'app e entri con questa.</p>
+    <form id="modulo">
+      <label for="p1">Nuova password</label>
+      <input id="p1" type="password" autocomplete="new-password" minlength="8" required>
+      <label for="p2" style="margin-top:1rem">Ripetila</label>
+      <input id="p2" type="password" autocomplete="new-password" minlength="8" required>
+      <button type="submit" id="invia">Salva la password</button>
+    </form>
+  </section>
+
+  <section id="confermata" hidden>
+    <h1>Email confermata</h1>
+    <p>Tutto a posto: l'indirizzo è verificato. Torna nell'app e accedi.</p>
+  </section>
+
+  <section id="guasto" hidden>
+    <h1>Collegamento non valido</h1>
+    <p>Il collegamento è scaduto o è già stato usato. Chiedine un altro dall'app, da «Ho dimenticato la password».</p>
+  </section>
+
+  <p class="esito" id="esito" role="status" aria-live="polite"></p>
+  <button class="secondario" id="apri" hidden>Apri l'app</button>
+</main>
+
+<p class="piede"><a href="https://mariomagnotta.com/">mariomagnotta.com</a> · <a href="/app/privacy.html">Privacy</a> · <a href="/app/termini.html">Termini</a></p>
+
+<script>
+(function () {
+  var URL_API = 'https://ikstmmedshpskgnwsmio.supabase.co';
+  var CHIAVE = 'sb_publishable_VY5Dw27ra3dNFxdRiQ_5ZQ_MxCHa_PK';
+
+  var $ = function (id) { return document.getElementById(id); };
+  function mostra(quale) {
+    ['carica', 'password', 'confermata', 'guasto'].forEach(function (s) { $(s).hidden = s !== quale; });
+  }
+  function dillo(testo, ok) {
+    $('esito').textContent = testo || '';
+    $('esito').className = 'esito ' + (testo ? (ok ? 'si' : 'no') : '');
+  }
+
+  // Supabase mette i gettoni nel frammento: #access_token=…&type=recovery
+  var pezzo = (location.hash || '').replace(/^#/, '') || (location.search || '').replace(/^\?/, '');
+  var p = new URLSearchParams(pezzo);
+  var token = p.get('access_token');
+  var tipo = p.get('type') || '';
+  var errore = p.get('error_description') || p.get('error');
+
+  if (errore) { mostra('guasto'); dillo(decodeURIComponent(errore.replace(/\+/g, ' ')), false); }
+  else if (token && tipo === 'recovery') { mostra('password'); }
+  else if (token) { mostra('confermata'); $('apri').hidden = false; }
+  else { mostra('guasto'); }
+
+  $('apri').addEventListener('click', function () { location.href = 'magnotta://auth'; });
+
+  $('modulo').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var a = $('p1').value, b = $('p2').value;
+    if (a.length < 8) return dillo('La password deve avere almeno 8 caratteri.', false);
+    if (a !== b) return dillo('Le due password non coincidono.', false);
+    $('invia').disabled = true;
+    dillo('Sto salvando…', true);
+    fetch(URL_API + '/auth/v1/user', {
+      method: 'PUT',
+      headers: { apikey: CHIAVE, Authorization: 'Bearer ' + token, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ password: a })
+    }).then(function (r) {
+      return r.json().then(function (j) { return { ok: r.ok, corpo: j }; });
+    }).then(function (r) {
+      if (!r.ok) throw new Error((r.corpo && (r.corpo.msg || r.corpo.message)) || 'errore');
+      mostra('confermata');
+      $('confermata').querySelector('h1').textContent = 'Password cambiata';
+      $('confermata').querySelector('p').textContent = 'Ora torna nell’app e accedi con la password nuova.';
+      $('apri').hidden = false;
+      dillo('Fatto.', true);
+    }).catch(function (err) {
+      $('invia').disabled = false;
+      var m = String(err && err.message || '');
+      if (/expired|invalid/i.test(m)) dillo('Il collegamento è scaduto: chiedine un altro dall’app.', false);
+      else dillo('Non ci sono riuscito: ' + m, false);
+    });
+  });
+})();
+</script>
+</body>
+</html>
