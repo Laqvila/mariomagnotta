@@ -62,6 +62,48 @@
     localStorage.setItem(CONSENT_KEY, v);
     if (banner) banner.hidden = true;
     if (v === "all") document.dispatchEvent(new Event("yt-consent-granted"));
+    document.dispatchEvent(new Event("mm-consent-done"));
+  }
+
+  /* =========================================================
+     BANNER VINILE (si apre una volta sola, poi resta chiuso)
+     ========================================================= */
+  const PROMO_KEY = "mm-promo-vinile";
+  const promo = $("#promo");
+  let promoBack = null;
+  const store = {
+    get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
+    set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+  };
+  function promoKeys(e) {
+    if (e.key === "Escape") { closePromo(); return; }
+    if (e.key !== "Tab" || !promo || promo.hidden) return;
+    // il tab resta dentro al banner finché è aperto
+    const f = $$("button, a[href]", promo);
+    if (!f.length) return;
+    const first = f[0], last = f[f.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  }
+  function openPromo() {
+    if (!promo || !promo.hidden || store.get(PROMO_KEY)) return;
+    promoBack = document.activeElement;
+    promo.hidden = false;
+    document.addEventListener("keydown", promoKeys);
+    const x = $("#promo-x", promo); if (x) x.focus();
+  }
+  function closePromo() {
+    if (!promo || promo.hidden) return;
+    promo.hidden = true;
+    store.set(PROMO_KEY, "1");
+    document.removeEventListener("keydown", promoKeys);
+    if (promoBack && promoBack.focus) promoBack.focus();
+  }
+  if (promo) {
+    ["#promo-x", "#promo-close", "#promo-cta"].forEach(sel => {
+      const n = $(sel, promo); if (n) n.addEventListener("click", closePromo);
+    });
+    promo.addEventListener("click", e => { if (e.target === promo) closePromo(); });
   }
   $("#cookie-accept") && $("#cookie-accept").addEventListener("click", () => setConsent("all"));
   $("#cookie-reject") && $("#cookie-reject").addEventListener("click", () => setConsent("necessary"));
@@ -353,13 +395,17 @@
     const chars = items.reduce((s, n) => s + tr(n.data).length + tr(n.titolo).length, 0);
     if (ft.style && ft.style.setProperty) ft.style.setProperty("--flash-dur", Math.max(25, Math.round(chars * 0.2)) + "s");
   }
+  /* prodotti reali dello store ufficiale (elenco STORE in contenuti.js) */
   function renderShop() {
-    const sm = $("#shop-mock"); if (!sm) return;
+    const sm = $("#shop-mock"); if (!sm || typeof STORE === "undefined") return;
     clear(sm);
-    const prods = [["👕", "prod.tshirt"], ["🖼️", "prod.poster"], ["🔑", "prod.keyring"], ["🧸", "prod.figure"]];
-    prods.forEach(([ico, key]) => {
-      const a = el("a", "prod", `<div class="prod-img">${ico}</div><span class="prod-name">${t(key)}</span><span class="prod-go">${t("shop.go")}</span>`);
-      a.href = SHOP_URL; a.target = "_blank"; a.rel = "noopener";
+    STORE.forEach(p => {
+      const a = el("a", "prod",
+        `<img class="prod-img" src="${p.img}" alt="${p.nome}" width="440" height="440" loading="lazy" decoding="async" />
+         <span class="prod-name">${p.nome}</span>
+         <span class="prod-price">${p.prezzo}</span>
+         <span class="prod-go">${t("shop.buy")}</span>`);
+      a.href = p.url || SHOP_URL; a.target = "_blank"; a.rel = "noopener";
       sm.appendChild(a);
     });
   }
@@ -451,7 +497,19 @@
   }
   // scroll progress + to top
   const prog = $("#scroll-progress"), toTop = $("#to-top");
-  window.addEventListener("scroll", () => { const h = document.documentElement; if (prog) prog.style.width = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100 + "%"; }, { passive: true });
+  // Un solo aggiornamento per fotogramma, con scaleX: scrivere la larghezza a ogni
+  // evento di scroll rifaceva il layout della pagina e faceva scattare lo scorrimento.
+  if (prog) {
+    let progRaf = 0;
+    window.addEventListener("scroll", () => {
+      if (progRaf) return;
+      progRaf = requestAnimationFrame(() => {
+        progRaf = 0;
+        const h = document.documentElement, max = h.scrollHeight - h.clientHeight;
+        prog.style.transform = "scaleX(" + (max > 0 ? h.scrollTop / max : 0) + ")";
+      });
+    }, { passive: true });
+  }
   if (toTop) toTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 
   // language switch
@@ -464,6 +522,9 @@
   applyStatic();
   renderAll();
   showBanner();
+  // il banner del vinile aspetta che l'utente abbia risposto ai cookie, così non si sovrappongono
+  if (banner && !store.get(CONSENT_KEY)) document.addEventListener("mm-consent-done", () => setTimeout(openPromo, 400));
+  else setTimeout(openPromo, 800);
 
   // trailer (consent-gated)
   const trailerBtn = $("#trailer-btn"), trailerBox = $("#film-trailer");
@@ -495,7 +556,16 @@
   }
   const stage = $("#portrait-stage");
   if (stage && matchMedia("(pointer:fine)").matches) {
-    window.addEventListener("mousemove", (e) => { const x = (e.clientX / innerWidth - 0.5), y = (e.clientY / innerHeight - 0.5); stage.style.transform = `rotateY(${x * 8}deg) rotateX(${-y * 8}deg)`; }, { passive: true });
+    // il mouse manda molti più eventi dei fotogrammi disponibili: ne teniamo uno per fotogramma
+    let mx = 0, my = 0, stageRaf = 0;
+    window.addEventListener("mousemove", (e) => {
+      mx = e.clientX / innerWidth - 0.5; my = e.clientY / innerHeight - 0.5;
+      if (stageRaf) return;
+      stageRaf = requestAnimationFrame(() => {
+        stageRaf = 0;
+        stage.style.transform = `rotateY(${mx * 8}deg) rotateX(${-my * 8}deg)`;
+      });
+    }, { passive: true });
   }
 
   // nav active state

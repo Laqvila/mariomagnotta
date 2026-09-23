@@ -212,3 +212,25 @@ const FAQ = [
   { q:{"it": "Perché questo è il sito ufficiale e chi lo ha approvato?", "en": "Why is this the official site and who approved it?", "es": "¿Por qué este es el sitio oficial y quién lo ha aprobado?"},
     a:{"it": "Questo è l'unico sito ufficiale perché reca la dicitura «L'UNICO SITO UFFICIALE · APPROVATO DA ROMINA MAGNOTTA», figlia di Mario, e ospita i contenuti autorizzati: audio rimasterizzati, foto d'archivio, eventi, news e il link al docufilm «Semplice Cliente».", "en": "This is the only official site because it bears the wording «L'UNICO SITO UFFICIALE · APPROVATO DA ROMINA MAGNOTTA», Mario's daughter, and hosts authorized content: remastered audio, archive photos, events, news, and the link to the docufilm «Semplice Cliente».", "es": "Este es el único sitio oficial porque lleva la dicitura «L'UNICO SITO UFFICIALE · APPROVATO DA ROMINA MAGNOTTA», hija de Mario, y alberga los contenidos autorizados: audio remasterizados, fotos de archivo, eventos, noticias y el enlace al docufilm «Semplice Cliente»."} },
 ];
+
+
+/* ============================================================
+   7) STORE (i prodotti mostrati nella sezione Shop)
+   Vengono dallo store ufficiale magnottaofficial.com.
+   Per aggiungerne uno: copia nome e prezzo dallo store, metti il link
+   del prodotto e salva la foto in assets/img/shop/ (quadrata, 440px).
+   ============================================================ */
+const STORE = [
+  { nome:"Mario Magnotta Action Figure", prezzo:"50 €", url:"https://magnottaofficial.com/prodotto/mariomagnottaactionfigure/", img:"assets/img/shop/mariomagnottaactionfigure.jpg" },
+  { nome:"T-Shirt «Mario Warhol»", prezzo:"20 €", url:"https://magnottaofficial.com/prodotto/t-shirt-mario-warhol/", img:"assets/img/shop/t-shirt-mario-warhol.jpg" },
+  { nome:"T-Shirt «Super Mario Magnotta»", prezzo:"20 €", url:"https://magnottaofficial.com/prodotto/t-shirt-super-mario-magnotta/", img:"assets/img/shop/t-shirt-super-mario-magnotta.jpg" },
+  { nome:"T-Shirt «MARIO, manuale d’istruzioni»", prezzo:"20 €", url:"https://magnottaofficial.com/prodotto/t-shirt-mario-manuale-distruzioni/", img:"assets/img/shop/t-shirt-mario-manuale-distruzioni.jpg" },
+  { nome:"T-Shirt «Cassetta nostalgia»", prezzo:"20 €", url:"https://magnottaofficial.com/prodotto/maglietta-no-so-magnotta-nostalgia-cassetta/", img:"assets/img/shop/maglietta-no-so-magnotta-nostalgia-cassetta.jpg" },
+  { nome:"Poster «Magnotta» 33x70", prezzo:"12 €", url:"https://magnottaofficial.com/prodotto/poster-33x70-magnotta/", img:"assets/img/shop/poster-33x70-magnotta.jpg" },
+  { nome:"Poster «Lavatrice meccanica» 33x70", prezzo:"12 €", url:"https://magnottaofficial.com/prodotto/poster-33x70-lavatrice-meccanica/", img:"assets/img/shop/poster-33x70-lavatrice-meccanica.jpg" },
+  { nome:"Poster «Un giorno di ordinaria lavanderia» 33x70", prezzo:"12 €", url:"https://magnottaofficial.com/prodotto/poster-33x70-un-giorno-di-ordinaria-lavanderia/", img:"assets/img/shop/poster-33x70-un-giorno-di-ordinaria-lavanderia.jpg" },
+  { nome:"Portachiavi «Toon Mario»", prezzo:"5 €", url:"https://magnottaofficial.com/prodotto/portachiavi-toon-mario/", img:"assets/img/shop/portachiavi-toon-mario.jpg" },
+  { nome:"Portachiavi «Cassetta»", prezzo:"5 €", url:"https://magnottaofficial.com/prodotto/portachiavi-cassetta/", img:"assets/img/shop/portachiavi-cassetta.jpg" },
+  { nome:"Birra «Magnotta» by Microbirrificio Opperbacco", prezzo:"5 €", url:"https://magnottaofficial.com/prodotto/birra-magnotta-by-microbirrificio-opperbacco/", img:"assets/img/shop/birra-magnotta-by-microbirrificio-opperbacco.jpg" },
+  { nome:"Camomilla «TE ‘NGAZZI INUTILMENTE» by Ferri dal 1905", prezzo:"5 €", url:"https://magnottaofficial.com/prodotto/camomilla-te-ngazzi-inutilmente-by-ferri-dal-1905/", img:"assets/img/shop/camomilla-te-ngazzi-inutilmente-by-ferri-dal-1905.jpg" },
+];
