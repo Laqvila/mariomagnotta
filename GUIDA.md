@@ -39,6 +39,8 @@ Nella sezione `const NEWS = [`, metti la più recente **in alto**:
 - `tag` è l'etichetta colorata (es. Cinema, Evento, Città…).
 - `url` è il link; se non c'è, scrivi `url:""`.
 - Le prime notizie scorrono da sole anche nel nastro **⚡ FLASH NEWS** in cima al sito.
+  Aggiungendo `hot:true` alla notizia, questa passa per prima nel nastro e riceve
+  l'etichetta «Novità» sia nel nastro sia nel riquadro della sezione News.
   Quante ne mostra lo decide `const FLASH_NEWS_MAX = 6;` (sopra `NEWS`); `0` nasconde il nastro.
 
 ## 4) Aggiungere un ARTICOLO alla Rassegna stampa

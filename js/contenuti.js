@@ -51,6 +51,7 @@ const FRASI = [
    2. Aggiungi una riga: { src:"assets/img/NOME.jpg", cap:"didascalia" },
    ============================================================ */
 const GALLERIA = [
+  { src:"assets/img/vinile-magnotta.jpg",           cap:"Il vinile «Magnotta, lo scherzo della lavatrice», copia unica 1/1 firmata (ideazione Mirko Rocci, disegni Fabrizio Pluc Di Nicola)" },
   { src:"assets/img/magnotta-ritratto.jpg",         cap:"Mario al telefono — il ritratto iconico" },
   { src:"assets/img/mario-02f.jpg",                 cap:"Mario in posa da culturista — l'ironia prima di tutto (archivio magnotta.it)" },
   { src:"assets/img/mario-13.jpg",                  cap:"Mario al basso sul palco, 1969 (archivio magnotta.it)" },
@@ -74,6 +75,10 @@ const GALLERIA = [
    ============================================================ */
 const FLASH_NEWS_MAX = 6;
 const NEWS = [
+  { data:"23 Set 2026", tag:"Asta", hot:true,
+    titolo:"Lo scherzo della lavatrice diventa un vinile, copia unica all'asta",
+    testo:"Dopo musicassette, CD e MP3 arriva il 33 giri, in un solo esemplare firmato da Romina Magnotta, dagli autori dello scherzo Maurizio Videtta e Antonello De Dominicis, dal regista Alessio De Leonardis e dal produttore Stefano Bacchiocchi di «Semplice Cliente», da Fabrizio Pluc Di Nicola, autore dei «Magnotta WARS», e dall'ideatore Mirko Rocci. Il disco sarà battuto all'asta in esemplare unico e tutto il ricavato andrà a Romina, la figlia di Mario. I dettagli dell'asta arrivano a breve.",
+    url:"" },
   { data:"13 Set 2026", tag:"Eventi",
     titolo:"«Semplice Cliente» al Pescara Comix & Games",
     testo:"Il docufilm su Mario Magnotta proiettato nel pomeriggio di domenica 13 settembre al Pala Dean Martin di Montesilvano, presentato dal regista Alessio De Leonardis e dal produttore Stefano Bacchiocchi (Duende Film).",

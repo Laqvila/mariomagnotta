@@ -147,6 +147,7 @@ const I18N = {
 
   "flash.label":  { it:"⚡ Flash news", en:"⚡ Flash news", es:"⚡ Flash news" },
   "flash.aria":   { it:"Ultime notizie", en:"Latest news", es:"Últimas noticias" },
+  "flash.hot":    { it:"Novità", en:"New", es:"Novedad" },
 
   "romina.eyebrow":{ it:"★ Eventi esclusivi ★", en:"★ Exclusive events ★", es:"★ Eventos exclusivos ★" },
   "romina.title": { it:"Vuoi organizzare un evento con <span class='hl'>Romina Magnotta</span>?", en:"Want to host an event with <span class='hl'>Romina Magnotta</span>?", es:"¿Quieres organizar un evento con <span class='hl'>Romina Magnotta</span>?" },

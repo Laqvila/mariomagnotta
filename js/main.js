@@ -311,10 +311,10 @@
     const ng = $("#news-grid"); if (!ng || typeof NEWS === "undefined") return;
     clear(ng);
     NEWS.forEach(n => {
-      const tag = el(n.url ? "a" : "article", "newscard reveal");
+      const tag = el(n.url ? "a" : "article", "newscard reveal" + (n.hot ? " hot" : ""));
       if (n.url) { tag.href = n.url; tag.target = "_blank"; tag.rel = "noopener"; }
       tag.innerHTML =
-        `<div class="news-top"><span class="news-tag">${tr(n.tag)}</span><span class="news-date">${tr(n.data)}</span></div>
+        `<div class="news-top"><span class="news-tags"><span class="news-tag">${tr(n.tag)}</span>${n.hot ? `<span class="news-hot">${t("flash.hot")}</span>` : ""}</span><span class="news-date">${tr(n.data)}</span></div>
          <h3>${tr(n.titolo)}</h3><p>${tr(n.testo)}</p>${n.url ? `<span class="news-link">${t("news.read")}</span>` : ""}`;
       ng.appendChild(tag);
     });
@@ -326,7 +326,8 @@
     const bar = $("#flash"), ft = $("#flash-track");
     if (!bar || !ft || typeof NEWS === "undefined") return;
     const max = typeof FLASH_NEWS_MAX === "number" ? FLASH_NEWS_MAX : 6;
-    const items = NEWS.slice(0, Math.max(0, max));
+    // le notizie con hot:true scorrono per prime
+    const items = [...NEWS.filter(n => n.hot), ...NEWS.filter(n => !n.hot)].slice(0, Math.max(0, max));
     bar.hidden = !items.length;
     bar.setAttribute("aria-label", t("flash.aria"));
     clear(ft);
@@ -335,8 +336,8 @@
       const g = el("div", "flash-group");
       if (copy) g.setAttribute("aria-hidden", "true");
       items.forEach(n => {
-        const it = el(n.url ? "a" : "span", "flash-item",
-          `<b>${tr(n.data)}</b> ${tr(n.titolo)}`);
+        const it = el(n.url ? "a" : "span", "flash-item" + (n.hot ? " hot" : ""),
+          `${n.hot ? `<i class="flash-hot">${t("flash.hot")}</i>` : ""}<b>${tr(n.data)}</b> ${tr(n.titolo)}`);
         if (n.url) {
           it.href = n.url; it.target = "_blank"; it.rel = "noopener";
           if (copy) it.setAttribute("tabindex", "-1");

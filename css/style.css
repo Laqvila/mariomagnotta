@@ -61,6 +61,8 @@ img{max-width:100%;display:block}
 .flash-item{color:#fff;text-decoration:none}
 a.flash-item:hover,a.flash-item:focus-visible{text-decoration:underline;text-underline-offset:3px}
 .flash-item b{color:var(--yellow);margin-right:.25rem}
+.flash-hot{font-style:normal;background:var(--yellow);color:var(--ink);border-radius:20px;padding:.05rem .5rem;margin-right:.4rem;letter-spacing:.5px;text-transform:uppercase}
+.flash-item.hot b{color:#fff}
 .flash-sep{color:var(--ink)}
 @keyframes flash{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media (prefers-reduced-motion:reduce){.flash-track{animation:none}.flash-viewport{overflow-x:auto}.flash-group[aria-hidden]{display:none}}
@@ -278,6 +280,9 @@ a.flash-item:hover,a.flash-item:focus-visible{text-decoration:underline;text-und
 .newscard.in{opacity:1;transform:none}
 .newscard:hover{transform:translateY(-4px)}
 .news-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:.7rem}
+.news-tags{display:flex;align-items:center;gap:.4rem;flex-wrap:wrap}
+.news-hot{background:var(--red);color:#fff;font-family:'Space Mono';font-weight:700;font-size:.72rem;padding:.2rem .6rem;border:2px solid var(--ink);border-radius:20px;text-transform:uppercase}
+.newscard.hot{border-color:var(--red);box-shadow:6px 6px 0 var(--red)}
 .news-tag{background:var(--teal);color:#fff;font-family:'Space Mono';font-weight:700;font-size:.72rem;padding:.2rem .6rem;border:2px solid var(--ink);border-radius:20px}
 .news-date{font-family:'Space Mono';font-size:.78rem;font-weight:700;opacity:.6}
 .newscard h3{font-size:1.3rem;margin-bottom:.4rem}
