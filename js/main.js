@@ -68,8 +68,9 @@
   /* =========================================================
      BANNER VINILE (si apre una volta sola, poi resta chiuso)
      ========================================================= */
-  const PROMO_KEY = "mm-promo-vinile";
   const promo = $("#promo");
+  const PROMO_KEY = "mm-promo-" + ((promo && promo.dataset.key) || "x");
+  const promoScaduto = () => { const u = promo && promo.dataset.until; return !!u && new Date() >= new Date(u); };
   let promoBack = null;
   const store = {
     get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
@@ -86,7 +87,7 @@
     else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
   }
   function openPromo() {
-    if (!promo || !promo.hidden || store.get(PROMO_KEY)) return;
+    if (!promo || !promo.hidden || store.get(PROMO_KEY) || promoScaduto()) return;
     promoBack = document.activeElement;
     promo.hidden = false;
     document.addEventListener("keydown", promoKeys);
@@ -317,10 +318,11 @@
     const eg = $("#eventi-grid"); if (!eg || typeof EVENTI === "undefined") return;
     clear(eg);
     EVENTI.forEach(e => {
-      const card = el("article", "evento reveal",
+      const card = el("article", "evento reveal" + (e.prossimo ? " prossimo" : ""),
         `<div class="ev-date"><span class="ev-badge">${tr(e.badge)}</span><span class="ev-day">${tr(e.data)}</span></div>
          <div class="ev-body"><h3>${tr(e.titolo)}</h3><div class="ev-meta">📍 ${tr(e.luogo)}</div><div class="ev-org">${tr(e.org)}</div><p>${tr(e.desc)}</p>
-         ${e.url ? `<a class="ev-link" href="${e.url}" target="_blank" rel="noopener">${t("news.read")}</a>` : ""}</div>`);
+         ${e.url ? `<a class="ev-link" href="${e.url}" target="_blank" rel="noopener">${t("news.read")}</a>` : ""}
+         ${e.img ? `<a class="ev-poster" href="${e.img}" target="_blank" rel="noopener"><img loading="lazy" src="${e.img}" alt="${tr(e.imgAlt) || tr(e.titolo)}" width="1080" height="1350" /><span>${t("eventi.poster")}</span></a>` : ""}</div>`);
       if (e.video) {
         const body = $(".ev-body", card);
         const vbox = el("div", "ev-video");
@@ -354,7 +356,7 @@
     clear(ng);
     NEWS.forEach(n => {
       const tag = el(n.url ? "a" : "article", "newscard reveal" + (n.hot ? " hot" : ""));
-      if (n.url) { tag.href = n.url; tag.target = "_blank"; tag.rel = "noopener"; }
+      if (n.url) { tag.href = n.url; if (n.url.charAt(0) !== "#") { tag.target = "_blank"; tag.rel = "noopener"; } }
       tag.innerHTML =
         `<div class="news-top"><span class="news-tags"><span class="news-tag">${tr(n.tag)}</span>${n.hot ? `<span class="news-hot">${t("flash.hot")}</span>` : ""}</span><span class="news-date">${tr(n.data)}</span></div>
          <h3>${tr(n.titolo)}</h3><p>${tr(n.testo)}</p>${n.url ? `<span class="news-link">${t("news.read")}</span>` : ""}`;
@@ -381,7 +383,7 @@
         const it = el(n.url ? "a" : "span", "flash-item" + (n.hot ? " hot" : ""),
           `${n.hot ? `<i class="flash-hot">${t("flash.hot")}</i>` : ""}<b>${tr(n.data)}</b> ${tr(n.titolo)}`);
         if (n.url) {
-          it.href = n.url; it.target = "_blank"; it.rel = "noopener";
+          it.href = n.url; if (n.url.charAt(0) !== "#") { it.target = "_blank"; it.rel = "noopener"; }
           if (copy) it.setAttribute("tabindex", "-1");
         }
         g.appendChild(it);

@@ -75,6 +75,10 @@ const GALLERIA = [
    ============================================================ */
 const FLASH_NEWS_MAX = 6;
 const NEWS = [
+  { data:"18 Ott 2026", tag:"Evento", hot:true,
+    titolo:"«Te lo ricordi Mario?» a Spazio Rimediato, L'Aquila",
+    testo:"Domenica 18 ottobre alle 18:00 un pomeriggio di incontri, ricordi e risate con Romina Magnotta, Maurizio Videtta, Paolo Totti, Mirko Rocci, Antonio Recupero e Roberto Di Leo. Roberto Pavoni dipinge dal vivo e modera Ngulo che Strina. Spazio Rimediato, via Fontesecco 24, ingresso gratuito.",
+    url:"#eventi" },
   { data:"23 Set 2026", tag:"Asta", hot:true,
     titolo:"Lo scherzo della lavatrice diventa un vinile, copia unica all'asta",
     testo:"Dopo musicassette, CD e MP3 arriva il 33 giri, in un solo esemplare firmato da Romina Magnotta, dagli autori dello scherzo Maurizio Videtta e Antonello De Dominicis, dal regista Alessio De Leonardis e dal produttore Stefano Bacchiocchi di «Semplice Cliente», da Fabrizio Pluc Di Nicola, autore dei «Magnotta WARS», e dall'ideatore Mirko Rocci. Il disco sarà battuto all'asta in esemplare unico e tutto il ricavato andrà a Romina, la figlia di Mario. I dettagli dell'asta arrivano a breve.",

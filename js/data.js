@@ -106,6 +106,7 @@ const I18N = {
   "faq.sub":      { it:"Le risposte brevi alle domande che tutti fanno su Mario Magnotta.", en:"Short answers to the questions everyone asks about Mario Magnotta.", es:"Respuestas breves a las preguntas que todos hacen sobre Mario Magnotta." },
 
   "eventi.eyebrow":{ it:"★ Eventi ★", en:"★ Events ★", es:"★ Eventos ★" },
+  "eventi.poster":{ it:"Apri la locandina ↗", en:"Open the poster ↗", es:"Abrir el cartel ↗" },
   "eventi.title": { it:"Magnotta <span class='hl'>dal vivo</span>", en:"Magnotta <span class='hl'>live</span>", es:"Magnotta <span class='hl'>en vivo</span>" },
 
   "film.eyebrow": { it:"★ Al cinema ★", en:"★ In cinemas ★", es:"★ En cines ★" },
@@ -148,12 +149,14 @@ const I18N = {
   "flash.label":  { it:"⚡ Flash news", en:"⚡ Flash news", es:"⚡ Flash news" },
   "flash.aria":   { it:"Ultime notizie", en:"Latest news", es:"Últimas noticias" },
   "flash.hot":    { it:"Novità", en:"New", es:"Novedad" },
-  "promo.title":  { it:"Il vinile della Lavatrice, copia unica", en:"The washing-machine prank on vinyl, one of a kind", es:"El vinilo de la lavadora, copia única" },
+  "promo.badge":  { it:"Prossimo evento", en:"Upcoming event", es:"Próximo evento" },
+  "promo.title":  { it:"Te lo ricordi Mario?", en:"Te lo ricordi Mario?", es:"Te lo ricordi Mario?" },
+  "promo.when":   { it:"Domenica 18 ottobre, ore 18:00 · Spazio Rimediato, L'Aquila", en:"Sunday 18 October, 6:00 PM · Spazio Rimediato, L'Aquila", es:"Domingo 18 de octubre, 18:00 · Spazio Rimediato, L'Aquila" },
   "promo.text":   {
-    it:"Un 33 giri in un solo esemplare, firmato da Romina Magnotta, dagli autori dello scherzo e dai protagonisti di «Semplice Cliente». Andrà all'asta e tutto il ricavato sarà per Romina, la figlia di Mario.",
-    en:"A 33 rpm record in a single copy, signed by Romina Magnotta, by the authors of the prank and by the people behind «Semplice Cliente». It goes to auction and all proceeds go to Romina, Mario's daughter.",
-    es:"Un 33 revoluciones en un solo ejemplar, firmado por Romina Magnotta, por los autores de la broma y por los protagonistas de «Semplice Cliente». Saldrá a subasta y toda la recaudación será para Romina, la hija de Mario." },
-  "promo.cta":    { it:"Scopri di più", en:"Find out more", es:"Descubre más" },
+    it:"Un pomeriggio di incontri, di ricordi e di risate con Romina Magnotta, Maurizio Videtta, Paolo Totti, Mirko Rocci, Antonio Recupero e Roberto Di Leo. Roberto Pavoni dipinge dal vivo, modera Ngulo che Strina. Ingresso gratuito.",
+    en:"An afternoon of encounters, memories and laughter with Romina Magnotta, Maurizio Videtta, Paolo Totti, Mirko Rocci, Antonio Recupero and Roberto Di Leo. Roberto Pavoni paints live, hosted by Ngulo che Strina. Free entry.",
+    es:"Una tarde de encuentros, recuerdos y risas con Romina Magnotta, Maurizio Videtta, Paolo Totti, Mirko Rocci, Antonio Recupero y Roberto Di Leo. Roberto Pavoni pinta en directo, modera Ngulo che Strina. Entrada gratuita." },
+  "promo.cta":    { it:"Vedi l'evento", en:"See the event", es:"Ver el evento" },
   "promo.close":  { it:"Chiudi", en:"Close", es:"Cerrar" },
 
   "romina.eyebrow":{ it:"★ Eventi esclusivi ★", en:"★ Exclusive events ★", es:"★ Eventos exclusivos ★" },
@@ -281,6 +284,21 @@ const TIMELINE = [
 
 /* ---------- EVENTI ---------- */
 const EVENTI = [
+  {
+    prossimo: true,
+    badge: L("Prossimo evento","Upcoming event","Próximo evento"),
+    data: L("Domenica 18 ottobre 2026","Sunday 18 October 2026","Domingo 18 de octubre de 2026"),
+    titolo: L("Te lo ricordi Mario?","Te lo ricordi Mario? (Do you remember Mario?)","Te lo ricordi Mario? (¿Te acuerdas de Mario?)"),
+    luogo: L("Spazio Rimediato, via Fontesecco 24, L'Aquila · ore 18:00 · ingresso gratuito","Spazio Rimediato, via Fontesecco 24, L'Aquila · 6:00 PM · free entry","Spazio Rimediato, via Fontesecco 24, L'Aquila · 18:00 · entrada gratuita"),
+    org: L("Presentato da Spazio Rimediato · modera Ngulo che Strina","Presented by Spazio Rimediato · hosted by Ngulo che Strina","Presentado por Spazio Rimediato · modera Ngulo che Strina"),
+    desc: L(
+      "Un pomeriggio di incontri, di ricordi e di risate. Sul palco <strong>Romina Magnotta</strong>, <strong>Maurizio Videtta</strong>, <strong>Paolo Totti</strong>, <strong>Mirko Rocci</strong>, <strong>Antonio Recupero</strong> e <strong>Roberto Di Leo</strong>, con la partecipazione di <strong>Roberto Pavoni</strong> che dipinge dal vivo.",
+      "An afternoon of encounters, memories and laughter. On stage <strong>Romina Magnotta</strong>, <strong>Maurizio Videtta</strong>, <strong>Paolo Totti</strong>, <strong>Mirko Rocci</strong>, <strong>Antonio Recupero</strong> and <strong>Roberto Di Leo</strong>, with <strong>Roberto Pavoni</strong> painting live.",
+      "Una tarde de encuentros, recuerdos y risas. En el escenario <strong>Romina Magnotta</strong>, <strong>Maurizio Videtta</strong>, <strong>Paolo Totti</strong>, <strong>Mirko Rocci</strong>, <strong>Antonio Recupero</strong> y <strong>Roberto Di Leo</strong>, con la participación de <strong>Roberto Pavoni</strong>, que pinta en directo."),
+    img: "assets/img/te-lo-ricordi-mario.jpg",
+    imgAlt: L("Locandina dell'evento «Te lo ricordi Mario?»","Poster of the event «Te lo ricordi Mario?»","Cartel del evento «Te lo ricordi Mario?»"),
+    url: ""
+  },
   {
     badge: L("Evento celebrativo","Celebration event","Evento conmemorativo"),
     data: L("25 giugno 2025","25 June 2025","25 de junio de 2025"),
