@@ -30,11 +30,11 @@
   const t = (key) => { const e = (typeof I18N !== "undefined") && I18N[key]; return (e && (e[LANG] || e.it)) || key; };
   const tr = (obj) => obj ? (typeof obj === "string" ? obj : (obj[LANG] || obj.it)) : "";
 
-  /* URL, canonical e og:url coerenti con la lingua mostrata (hreflang: /?lang=xx) */
+  /* L'indirizzo segue la lingua mostrata (?lang=xx), utile per condividere il link.
+     Canonical e og:url restano sempre sulla home: inglese e spagnolo sono la stessa
+     pagina tradotta dal JavaScript, e dichiararle come pagine a parte faceva scattare
+     in Search Console "Google ha scelto una pagina canonica diversa". */
   function syncLangUrl() {
-    const base = "https://mariomagnotta.com/", href = LANG === "it" ? base : base + "?lang=" + LANG;
-    const can = $('link[rel="canonical"]'); if (can) can.href = href;
-    const og = $('meta[property="og:url"]'); if (og) og.content = href;
     try {
       const q = new URLSearchParams(location.search);
       if (LANG === "it") q.delete("lang"); else q.set("lang", LANG);
