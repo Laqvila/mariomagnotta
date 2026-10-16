@@ -72,6 +72,20 @@ Poi aggiorna il `?v=AAAAMMGG` in `index.html` e fai commit e push: GitHub Pages 
 
 ---
 
+## 📱 Quando l'app esce sugli store
+La pagina dell'app è `app/index.html` (indirizzo mariomagnotta.com/app/) e in home c'è la
+fascia gialla `<section id="app">`. Finché l'app non è pubblicata, i bottoni degli store sono
+`<span class="store-badge soon">` con la scritta «In arrivo su». Quando esce:
+1. in `index.html` (1 coppia di bottoni) e in `app/index.html` (2 coppie) cambia ogni
+   `<span class="store-badge soon">…</span>` in
+   `<a class="store-badge" href="LINK DELLO STORE" target="_blank" rel="noopener">…</a>`;
+2. in `js/data.js` cambia `"app.soon"` in «Scarica da» / «Download on» / «Descárgala en»;
+3. in `app/index.html` e in `js/app-pagina.js` togli la frase `ap.note` («Sta per arrivare…»)
+   e aggiungi i due link in `installUrl` dentro lo schema JSON-LD della pagina;
+4. in `llms.txt` sostituisci «In arrivo su App Store e Google Play» con i due link.
+
+---
+
 ## ➕ Aggiungere una TELEFONATA (video YouTube)
 Questo sta in `js/data.js`, sezione `GRUPPI`. Copia un blocco video e cambia l'`id`
 (l'`id` è la parte dopo `watch?v=` nel link di YouTube). Esempio:

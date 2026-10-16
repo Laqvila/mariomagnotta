@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- Sicurezza: come la home, senza YouTube (qui non ci sono video) -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; script-src 'self' https://static.cloudflareinsights.com; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://cloudflareinsights.com; form-action 'self' mailto:; base-uri 'self'; object-src 'none'" />
+<meta name="referrer" content="strict-origin-when-cross-origin" />
+<title>App ufficiale Magnotta · Frasi, chat, scherzi e giochi | mariomagnotta.com</title>
+<meta name="description" content="«Magnotta, un semplice cliente» è l'unica app ufficiale di Mario Magnotta, approvata da Romina Magnotta. Le 323 frasi originali, la chat con la sua voce, gli scherzi completi, quattro giochi e il negozio ufficiale. In arrivo su App Store e Google Play." />
+<meta name="author" content="mariomagnotta.com" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#e63419" />
+<link rel="icon" href="/favicon.ico" sizes="32x32" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<link rel="canonical" href="https://mariomagnotta.com/app/" />
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="Mario Magnotta — L'unico sito ufficiale" />
+<meta property="og:title" content="Magnotta, un semplice cliente · L'app ufficiale" />
+<meta property="og:description" content="Le 323 frasi originali, la chat con la voce di Mario, gli scherzi completi, quattro giochi e il negozio ufficiale. Approvata da Romina Magnotta." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://mariomagnotta.com/app/" />
+<meta property="og:image" content="https://mariomagnotta.com/assets/img/app/og-app.jpg" />
+<meta property="og:image:width" content="1024" />
+<meta property="og:image:height" content="500" />
+<meta property="og:image:alt" content="Magnotta, un semplice cliente. L'unica app ufficiale, approvata da Romina Magnotta" />
+<meta property="og:locale" content="it_IT" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Magnotta, un semplice cliente · L'app ufficiale" />
+<meta name="twitter:description" content="Frasi originali, chat con la voce di Mario, scherzi, giochi e negozio ufficiale. Approvata da Romina Magnotta." />
+<meta name="twitter:image" content="https://mariomagnotta.com/assets/img/app/og-app.jpg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Fredoka:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/css/style.css?v=20261016" />
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"BreadcrumbList",
+      "itemListElement":[
+        {"@type":"ListItem","position":1,"name":"Mario Magnotta","item":"https://mariomagnotta.com/"},
+        {"@type":"ListItem","position":2,"name":"L'app ufficiale","item":"https://mariomagnotta.com/app/"}
+      ]
+    },
+    {
+      "@type":"MobileApplication",
+      "@id":"https://mariomagnotta.com/app/#app",
+      "name":"Magnotta - un semplice cliente",
+      "alternateName":"App ufficiale di Mario Magnotta",
+      "url":"https://mariomagnotta.com/app/",
+      "description":"L'unica app ufficiale di Mario Magnotta, approvata dalla figlia Romina Magnotta: 323 frasi originali, chat che risponde con la voce di Mario, scherzi telefonici completi dal canale YouTube ufficiale, quattro giochi offline, curiosità, news e negozio ufficiale. Senza pubblicità, riservata ai maggiorenni.",
+      "image":"https://mariomagnotta.com/assets/img/app/icona.png",
+      "screenshot":[
+        "https://mariomagnotta.com/assets/img/app/home.jpg",
+        "https://mariomagnotta.com/assets/img/app/frasi.jpg",
+        "https://mariomagnotta.com/assets/img/app/chat.jpg"
+      ],
+      "applicationCategory":"EntertainmentApplication",
+      "operatingSystem":"Android, iOS",
+      "inLanguage":"it",
+      "contentRating":"18+",
+      "offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},
+      "about":{"@id":"https://mariomagnotta.com/#mario"},
+      "author":{"@type":"Person","name":"Mirko Rocci","url":"https://mirkorocci.it/"},
+      "isPartOf":{"@id":"https://mariomagnotta.com/#website"}
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="aurora" aria-hidden="true"></div>
+<div class="halftone" aria-hidden="true"></div>
+<div class="floaties" aria-hidden="true">
+  <span>📞</span><span>📱</span><span>📼</span><span>☎️</span><span>🧺</span><span>⭐</span><span>📞</span><span>📱</span>
+</div>
+<div id="scroll-progress" aria-hidden="true"></div>
+
+<div class="official-bar">
+  <span class="official-check">✓</span>
+  <span data-i18n-html="official.bar">Sito ufficiale, l'<strong>unico vero</strong> sito ufficiale di Mario Magnotta</span>
+</div>
+
+<header id="navbar">
+  <a href="/" class="brand">
+    <span class="brand-mark">📞</span>
+    <span class="brand-name">Mario&nbsp;Magnotta</span>
+    <span class="brand-official" data-i18n="official.badge" title="Sito ufficiale">UFFICIALE</span>
+  </a>
+  <nav class="nav-links" id="nav-links">
+    <a href="/#storia" data-i18n="nav.storia">La Storia</a>
+    <a href="/#telefonate" data-i18n="nav.telefonate">Telefonate</a>
+    <a href="/#galleria" data-i18n="nav.foto">Foto</a>
+    <a href="/#murale" data-i18n="nav.murale">Murale</a>
+    <a href="/#chicche" data-i18n="nav.chicche">Chicche</a>
+    <a href="/#eventi" data-i18n="nav.eventi">Eventi</a>
+    <a href="/#film" data-i18n="nav.film">Il Film</a>
+    <a href="/#news" data-i18n="nav.news">News</a>
+    <a href="/#rassegna" data-i18n="nav.rassegna">Rassegna stampa</a>
+    <a href="/app/" class="active" aria-current="page" data-i18n="nav.app">App</a>
+    <a href="/#shop" class="nav-cta" data-i18n="nav.shop">Shop</a>
+  </nav>
+  <div class="nav-tools">
+    <div class="lang-switch" id="lang-switch" role="group" aria-label="Lingua">
+      <button data-lang="it" class="active">IT</button>
+      <button data-lang="en">EN</button>
+      <button data-lang="es">ES</button>
+    </div>
+    <button id="menu-toggle" class="menu-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="nav-backdrop" id="nav-backdrop" aria-hidden="true"></div>
+
+<main>
+
+<!-- APERTURA -->
+<section class="section app-hero">
+  <div class="app-hero-grid">
+    <div>
+      <nav class="crumbs" aria-label="Percorso"><a href="/" data-i18n="ap.crumbHome">Home</a><span aria-hidden="true">›</span><span aria-current="page" data-i18n="ap.crumbApp">L'app</span></nav>
+      <p class="hero-kicker" data-i18n="ap.kicker">★ L'unica app ufficiale ★</p>
+      <h1><span class="app-title">MAGNOTTA</span><span class="app-title-sub">un semplice cliente</span></h1>
+      <p class="app-lead" data-i18n="ap.lead">L'app ufficiale di Mario Magnotta, approvata dalla figlia Romina. Dentro ci sono le 323 frasi originali, la chat che ti risponde con la sua voce, gli scherzi completi, quattro giochi e il negozio ufficiale.</p>
+      <ul class="app-chips">
+        <li data-i18n="ap.chip1">✓ Gratis e senza pubblicità</li>
+        <li data-i18n="ap.chip2">📱 iPhone e Android</li>
+        <li data-i18n="ap.chip3">🔞 Per maggiorenni</li>
+        <li data-i18n="ap.chip4">🗣️ In italiano</li>
+      </ul>
+      <!-- Quando l'app esce: ogni <span class="store-badge soon"> diventa
+           <a class="store-badge" href="LINK DELLO STORE" target="_blank" rel="noopener"> e «In arrivo su» diventa «Scarica da» (vedi GUIDA.md) -->
+      <div class="app-stores">
+        <span class="store-badge soon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg><span><small data-i18n="app.soon">In arrivo su</small><b>App Store</b></span></span>
+        <span class="store-badge soon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22.018 13.298l-3.919 2.218-3.515-3.493 3.543-3.521 3.891 2.202a1.49 1.49 0 0 1 0 2.594zM1.337.924a1.486 1.486 0 0 0-.112.568v21.017c0 .217.045.419.124.6l11.155-11.087L1.337.924zm12.207 10.065l3.258-3.238L3.45.195a1.466 1.466 0 0 0-.946-.179l11.04 10.973zm0 2.067l-11 10.933c.298.036.612-.016.906-.183l13.324-7.54-3.23-3.21z"/></svg><span><small data-i18n="app.soon">In arrivo su</small><b>Google Play</b></span></span>
+      </div>
+      <p class="app-note" data-i18n="ap.note">Sta per arrivare su App Store e Google Play. Appena è pubblicata, qui trovi i link per scaricarla.</p>
+    </div>
+    <div class="app-visual">
+      <figure class="phone phone-tilt"><img src="/assets/img/app/home.jpg" alt="La Home dell'app ufficiale Magnotta con la telefonata di oggi" width="540" height="1080" fetchpriority="high" /></figure>
+      <span class="app-float f1" aria-hidden="true" data-i18n="ap.f1">📞 Squilla! È per te</span>
+      <span class="app-float f2" aria-hidden="true" data-i18n="ap.f2">323 frasi originali</span>
+      <span class="app-float f3" aria-hidden="true" data-i18n="ap.f3">✓ Approvata da Romina Magnotta</span>
+    </div>
+  </div>
+</section>
+
+<!-- COSA C'È DENTRO -->
+<section class="section section-cream">
+  <div class="section-head">
+    <span class="eyebrow" data-i18n="ap.feat.eyebrow">★ Cosa trovi nell'app ★</span>
+    <h2 data-i18n-html="app.title">Tutto Magnotta <span class="hl">in tasca</span></h2>
+    <p class="section-intro" data-i18n="ap.feat.intro">Le registrazioni del 1986-87 messe in ordine e pronte da ascoltare, insieme a tutto quello che è nato dopo.</p>
+  </div>
+  <div class="feat-grid">
+    <article class="feat"><div class="feat-ico" aria-hidden="true">📞</div><h3 data-i18n="ap.k1t">La telefonata di oggi</h3><p data-i18n="ap.k1d">Ogni giorno Mario ti chiama con una frase scelta per te. Tocca Rispondi e ascolta.</p></article>
+    <article class="feat"><div class="feat-ico" aria-hidden="true">📼</div><h3 data-i18n="ap.k2t">323 frasi originali</h3><p data-i18n="ap.k2d">Tre volumi (Lavatrice, Moglie e Telefono Azzurro) con la ricerca, le preferite e la condivisione come file audio.</p></article>
+    <article class="feat"><div class="feat-ico" aria-hidden="true">💬</div><h3 data-i18n="ap.k3t">Chatta con Mario</h3><p data-i18n="ap.k3d">Gli scrivi quello che vuoi e lui ti risponde con una delle sue frasi, con la sua voce vera.</p></article>
+    <article class="feat"><div class="feat-ico" aria-hidden="true">☎️</div><h3 data-i18n="ap.k4t">Gli scherzi completi</h3><p data-i18n="ap.k4d">Le telefonate intere e rimasterizzate dal canale YouTube ufficiale, dalla Lavatrice al Telefono Azzurro.</p></article>
+    <article class="feat"><div class="feat-ico" aria-hidden="true">🎮</div><h3 data-i18n="ap.k5t">Quattro giochi</h3><p data-i18n="ap.k5d">Indovina la telefonata, completa la frase, vero o falso e il quiz. Dieci domande a partita e le medaglie da collezionare.</p></article>
+    <article class="feat"><div class="feat-ico" aria-hidden="true">💸</div><h3 data-i18n="ap.k6t">Curiosità e figurine</h3><p data-i18n="ap.k6d">La banconota da 480.000 lire, l'album delle figurine, la cronologia, il glossario aquilano e i luoghi di Mario.</p></article>
+    <article class="feat"><div class="feat-ico" aria-hidden="true">📰</div><h3 data-i18n="ap.k7t">News ogni giorno</h3><p data-i18n="ap.k7d">Le novità del sito ufficiale, dagli eventi al docufilm «Semplice Cliente».</p></article>
+    <article class="feat"><div class="feat-ico" aria-hidden="true">🛒</div><h3 data-i18n="ap.k8t">Negozio ufficiale</h3><p data-i18n="ap.k8d">Il catalogo di magnottaofficial.com. Si compra sul sito, che si apre nel browser.</p></article>
+  </div>
+</section>
+
+<!-- SCHERMATE -->
+<section class="section">
+  <div class="section-head">
+    <span class="eyebrow" data-i18n="ap.shots.eyebrow">★ Uno sguardo all'app ★</span>
+    <h2>Pronto? <span class="hl">Buonasera Milano!</span></h2>
+  </div>
+  <div class="shots">
+    <figure class="shot"><div class="phone"><img src="/assets/img/app/frasi.jpg" alt="Le frasi: 323 clip originali divise in tre volumi" width="540" height="1080" loading="lazy" decoding="async" /></div><figcaption data-i18n="ap.s1">Le frasi</figcaption></figure>
+    <figure class="shot"><div class="phone"><img src="/assets/img/app/chat.jpg" alt="La chat con Mario, che risponde con la sua voce" width="540" height="1080" loading="lazy" decoding="async" /></div><figcaption data-i18n="ap.s2">La chat</figcaption></figure>
+    <figure class="shot"><div class="phone"><img src="/assets/img/app/scherzi.jpg" alt="Gli scherzi telefonici completi, a partire da Lavatrice 1" width="540" height="1080" loading="lazy" decoding="async" /></div><figcaption data-i18n="ap.s3">Gli scherzi</figcaption></figure>
+    <figure class="shot"><div class="phone"><img src="/assets/img/app/curiosita.jpg" alt="Le curiosità, con la banconota da 480.000 lire" width="540" height="1080" loading="lazy" decoding="async" /></div><figcaption data-i18n="ap.s4">Le curiosità</figcaption></figure>
+  </div>
+</section>
+
+<!-- TRE COSE DA FARE -->
+<section class="section section-cream">
+  <div class="app-steps-wrap">
+    <div class="app-steps-visual">
+      <figure class="phone phone-tilt"><img src="/assets/img/app/gioca.jpg" alt="I quattro giochi dell'app, che funzionano anche senza internet" width="540" height="1080" loading="lazy" decoding="async" /></figure>
+    </div>
+    <div>
+      <span class="eyebrow" data-i18n="ap.steps.eyebrow">★ Appena la apri ★</span>
+      <h2 data-i18n-html="ap.steps.title">Tre cose da <span class="hl">fare subito</span></h2>
+      <ol class="app-steps">
+        <li><b>1</b><div><h3 data-i18n="ap.st1t">Rispondi a Mario</h3><p data-i18n="ap.st1d">In Home c'è la telefonata del giorno. Tocca Rispondi e senti cosa ha da dirti.</p></div></li>
+        <li><b>2</b><div><h3 data-i18n="ap.st2t">Passala agli amici</h3><p data-i18n="ap.st2d">Cerca la frase giusta e mandala come audio su WhatsApp, pronta per ogni discussione di gruppo.</p></div></li>
+        <li><b>3</b><div><h3 data-i18n="ap.st3t">Sfida chi ne sa di più</h3><p data-i18n="ap.st3d">Quattro giochi che funzionano anche senza internet. Dieci domande, un minuto scarso, e le medaglie restano tue.</p></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- UFFICIALE -->
+<section class="section section-film">
+  <div class="app-off">
+    <span class="eyebrow" data-i18n="ap.off.eyebrow">★ Ufficiale ★</span>
+    <h2 data-i18n-html="ap.off.title">Approvata dalla <span class="hl">famiglia</span></h2>
+    <p class="section-intro light" data-i18n-html="ap.off.text">È l'unica app ufficiale di Mario Magnotta, approvata dalla figlia Romina Magnotta. L'ha ideata e prodotta <a class="inline-link" href="https://mirkorocci.it" target="_blank" rel="noopener">Mirko Rocci</a>, che con la famiglia cura anche questo sito e il canale YouTube ufficiale.</p>
+    <ul class="app-facts">
+      <li><strong data-i18n="ap.o1t">Per maggiorenni</strong><span data-i18n="ap.o1d">Le registrazioni originali sono piene di parolacce. Il filtro «Per famiglie» nasconde le frasi più colorite.</span></li>
+      <li><strong data-i18n="ap.o2t">Anche senza rete</strong><span data-i18n="ap.o2d">Frasi, chat e giochi funzionano ovunque. Internet serve solo per news, video e negozio.</span></li>
+      <li><strong data-i18n="ap.o3t">Niente pubblicità</strong><span data-i18n="ap.o3d">Nessun acquisto nell'app. L'account è facoltativo e serve solo a ritrovare preferite e medaglie su un altro telefono.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- SCARICA -->
+<section class="section">
+  <div class="app-cta">
+    <img class="app-cta-ico" src="/assets/img/app/icona.png" alt="L'icona dell'app Magnotta" width="96" height="96" loading="lazy" decoding="async" />
+    <h2 data-i18n-html="ap.cta.title">Scarica <span class="hl">Magnotta</span></h2>
+    <p data-i18n="ap.cta.text">Gratis e senza pubblicità, per iPhone e Android.</p>
+    <div class="app-stores">
+      <span class="store-badge soon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg><span><small data-i18n="app.soon">In arrivo su</small><b>App Store</b></span></span>
+      <span class="store-badge soon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22.018 13.298l-3.919 2.218-3.515-3.493 3.543-3.521 3.891 2.202a1.49 1.49 0 0 1 0 2.594zM1.337.924a1.486 1.486 0 0 0-.112.568v21.017c0 .217.045.419.124.6l11.155-11.087L1.337.924zm12.207 10.065l3.258-3.238L3.45.195a1.466 1.466 0 0 0-.946-.179l11.04 10.973zm0 2.067l-11 10.933c.298.036.612-.016.906-.183l13.324-7.54-3.23-3.21z"/></svg><span><small data-i18n="app.soon">In arrivo su</small><b>Google Play</b></span></span>
+    </div>
+    <p class="app-note" data-i18n="ap.note">Sta per arrivare su App Store e Google Play. Appena è pubblicata, qui trovi i link per scaricarla.</p>
+    <nav class="app-legal" aria-label="Documenti dell'app">
+      <a href="/app/privacy" data-i18n="ap.l1">Privacy dell'app</a>
+      <a href="/app/termini" data-i18n="ap.l2">Termini d'uso</a>
+      <a href="/app/elimina-account" data-i18n="ap.l3">Eliminare l'account</a>
+    </nav>
+  </div>
+</section>
+
+</main>
+
+<footer id="footer">
+  <div class="foot-grid">
+    <div class="foot-col">
+      <span class="foot-brand">📞 Mario Magnotta <span class="foot-official-badge" data-i18n="official.badge">UFFICIALE</span></span>
+      <p class="foot-official-note" data-i18n-html="foot.official"></p>
+      <p class="foot-tag" data-i18n-html="foot.tag"></p>
+    </div>
+    <div class="foot-col">
+      <h4 data-i18n="foot.naviga">Naviga</h4>
+      <a href="/#storia" data-i18n="nav.storia">La Storia</a>
+      <a href="/#telefonate" data-i18n="nav.telefonate">Telefonate</a>
+      <a href="/#galleria" data-i18n="nav.foto">Foto</a>
+      <a href="/#eventi" data-i18n="nav.eventi">Eventi</a>
+      <a href="/#film" data-i18n="nav.film">Il Film</a>
+      <a href="/app/" data-i18n="foot.app">📱 L'app ufficiale</a>
+    </div>
+    <div class="foot-col">
+      <h4 data-i18n="foot.link">Link ufficiali</h4>
+      <a href="https://www.youtube.com/@MarioMagnotta-aq" target="_blank" rel="noopener">▶ YouTube</a>
+      <a href="https://semplicecliente.com" target="_blank" rel="noopener">🎬 Semplice Cliente</a>
+      <a href="https://3e33.it" target="_blank" rel="noopener">🎭 Associazione 3:33</a>
+      <a href="https://mirkorocci.it" target="_blank" rel="noopener">👤 Mirko Rocci</a>
+      <a href="https://it.wikipedia.org/wiki/Mario_Magnotta" target="_blank" rel="noopener">📖 Wikipedia</a>
+      <a href="mailto:magnotta@mirkorocci.com">✉️ magnotta@mirkorocci.com</a>
+    </div>
+    <div class="foot-col">
+      <h4 data-i18n="foot.progetto">Progetto</h4>
+      <p class="foot-small" data-i18n-html="foot.progettoT"></p>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© <span id="year">2026</span> mariomagnotta.com · <span data-i18n="foot.rights">Tutti i diritti riservati.</span></span>
+    <a href="/app/privacy" class="foot-privacy" data-i18n="ap.l1">Privacy dell'app</a>
+    <button class="to-top" id="to-top" aria-label="Top">↑</button>
+  </div>
+</footer>
+
+<script src="/js/data.js?v=20261016"></script>
+<script src="/js/app-pagina.js?v=20261016"></script>
+</body>
+</html>

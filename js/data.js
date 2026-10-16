@@ -22,6 +22,7 @@ const I18N = {
   "nav.film":     { it:"Il Film", en:"The Film", es:"La Película" },
   "nav.news":     { it:"News", en:"News", es:"Noticias" },
   "nav.shop":     { it:"Shop", en:"Shop", es:"Tienda" },
+  "nav.app":      { it:"App", en:"App", es:"App" },
 
   "official.bar": { it:"L'<strong>unico</strong> sito ufficiale di Mario Magnotta — approvato dalla figlia <strong>Romina Magnotta</strong>", en:"The <strong>one and only</strong> official website of Mario Magnotta — endorsed by his daughter <strong>Romina Magnotta</strong>", es:"El <strong>único</strong> sitio oficial de Mario Magnotta — aprobado por su hija <strong>Romina Magnotta</strong>" },
   "official.badge":{ it:"UFFICIALE", en:"OFFICIAL", es:"OFICIAL" },
@@ -98,6 +99,19 @@ const I18N = {
   "frasi.eyebrow":{ it:"★ Il Magnotta-pensiero ★", en:"★ The Magnotta wisdom ★", es:"★ El pensamiento Magnotta ★" },
   "frasi.title":  { it:"Frasi che hanno fatto <span class='hl'>la storia</span>", en:"Quotes that made <span class='hl'>history</span>", es:"Frases que hicieron <span class='hl'>historia</span>" },
   "frasi.note":   { it:"Citazioni autentiche dalle telefonate, in dialetto aquilano. Niente censure: è il bello di Mario.", en:"Authentic quotes from the calls, in L'Aquila dialect. No censorship: that's the beauty of Mario.", es:"Citas auténticas de las llamadas, en dialecto de L'Aquila. Sin censura: esa es la gracia de Mario." },
+
+  /* fascia dell'app ufficiale (#app), porta alla pagina /app/ */
+  "app.eyebrow":  { it:"★ L'app ufficiale ★", en:"★ The official app ★", es:"★ La app oficial ★" },
+  "app.title":    { it:"Tutto Magnotta <span class='hl'>in tasca</span>", en:"All of Magnotta <span class='hl'>in your pocket</span>", es:"Todo Magnotta <span class='hl'>en el bolsillo</span>" },
+  "app.text":     { it:"Le 323 frasi originali, la chat che ti risponde con la voce di Mario, gli scherzi completi, quattro giochi e il negozio ufficiale. È l'unica app approvata da Romina Magnotta, gratis e senza pubblicità.",
+                    en:"The 323 original quotes, a chat that answers in Mario's own voice, the full prank calls, four games and the official shop. It is the only app endorsed by Romina Magnotta, free and ad-free.",
+                    es:"Las 323 frases originales, el chat que te responde con la voz de Mario, las bromas completas, cuatro juegos y la tienda oficial. Es la única app aprobada por Romina Magnotta, gratis y sin publicidad." },
+  "app.c1":       { it:"📼 323 frasi", en:"📼 323 quotes", es:"📼 323 frases" },
+  "app.c2":       { it:"💬 Chat con la sua voce", en:"💬 Chat in his voice", es:"💬 Chat con su voz" },
+  "app.c3":       { it:"🎮 4 giochi", en:"🎮 4 games", es:"🎮 4 juegos" },
+  "app.c4":       { it:"📵 Anche senza rete", en:"📵 Works offline", es:"📵 También sin conexión" },
+  "app.soon":     { it:"In arrivo su", en:"Coming soon to", es:"Próximamente en" },
+  "app.cta":      { it:"📱 Scopri l'app", en:"📱 Discover the app", es:"📱 Descubre la app" },
 
   "chicche.eyebrow":{ it:"★ Lo sapevi che… ★", en:"★ Did you know… ★", es:"★ ¿Sabías que…? ★" },
   "chicche.title":{ it:"Chicche & <span class='hl'>curiosità</span>", en:"Trivia & <span class='hl'>curiosities</span>", es:"Curiosidades & <span class='hl'>anécdotas</span>" },
@@ -187,6 +201,7 @@ const I18N = {
     es:"Evento en el Emiciclo a cargo de la Asociación Cultural 3:33 y de <a href='"+MIRKO_URL+"' target='_blank' rel='noopener'>Mirko Rocci</a>. Docufilm «<a href='"+FILM_URL+"' target='_blank' rel='noopener'>Semplice Cliente</a>» de Alessio De Leonardis — Duende Film." },
   "foot.rights":  { it:"Tutti i diritti riservati.", en:"All rights reserved.", es:"Todos los derechos reservados." },
   "foot.privacy": { it:"Privacy & Cookie", en:"Privacy & Cookies", es:"Privacidad & Cookies" },
+  "foot.app":     { it:"📱 L'app ufficiale", en:"📱 The official app", es:"📱 La app oficial" },
 
   "cookie.text":  {
     it:"Usiamo solo cookie tecnici necessari. I contenuti di YouTube (video e audio) sono di terze parti e possono installare cookie: si caricano <strong>solo dopo il tuo consenso</strong>.",
