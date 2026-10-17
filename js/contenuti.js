@@ -152,7 +152,9 @@ const EVIDENZA = [
    { data:"GG Mese Anno", testata:"…", titolo:"…", url:"https://…" },
    ============================================================ */
 const RASSEGNA = [
+  { data:"1 Ott 2026", testata:"Rai News · TGR", titolo:"Il «Semplice cliente» che fece ridere tutta l'Italia", url:"https://www.rainews.it/tgr/news/articoli/2026/10/il-semplice-cliente-che-fece-ridere-tutta-italia-ecdd5f6c-cb08-4f06-bb82-d2981ca6aea2.html" },
   { data:"16 Set 2026", testata:"Nerdando", titolo:"Pescara Comix 2026 – «Semplice Cliente», una storia iconica ed emozionante", url:"https://nerdando.com/2026/09/16/pescara-comix-2026-semplice-cliente-una-storia-iconica-ed-emozionante/" },
+  { data:"11 Gen 2026", testata:"Taxidrivers", titolo:"«Semplice cliente», il docufilm sul mitico scherzo a Mario Magnotta (di Pierpaolo Marcone)", url:"https://www.taxidrivers.it/492154/review/in-sala/semplice-cliente-il-docufilm-sul-mitico-scherzo-a-mario-magnotta.html" },
   { data:"8 Gen 2026", testata:"Leggo", titolo:"Mario Magnotta, chi era il bidello diventato leggenda: lo scherzo della lavatrice che oggi è un film", url:"https://www.leggo.it/spettacoli/cinema/08_gennaio_2026_mario_magnotta_chi_e_bidello_scherzo_telefonico_lavatrice_film-9285547.html" },
   { data:"Gen 2026", testata:"ChietiToday", titolo:"All'UCI Cinemas Luxe di Megalò «Semplice Cliente», il film sulla storia di Mario Magnotta", url:"https://www.chietitoday.it/eventi/cinema/semplice-cliente-film-mario-magnotta-chieti-12-13-gennaio-2026.html" },
   { data:"5 Gen 2026", testata:"L'Aquila Blog", titolo:"«Semplice Cliente», torna al cinema il film su Magnotta", url:"https://www.laquilablog.it/semplice-cliente-torna-al-cinema-il-film-su-magnotta/" },
