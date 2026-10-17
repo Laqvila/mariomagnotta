@@ -152,6 +152,7 @@ const EVIDENZA = [
    { data:"GG Mese Anno", testata:"…", titolo:"…", url:"https://…" },
    ============================================================ */
 const RASSEGNA = [
+  { data:"17 Ott 2026", testata:"AbruzzoLive", titolo:"L'Aquila ricorda Mario Magnotta: aneddoti, risate e omaggio allo storico scherzo della lavatrice", url:"https://abruzzolive.it/laquila-ricorda-mario-magnotta-aneddoti-risate-e-omaggio-allo-storico-scherzo-della-lavatrice/" },
   { data:"17 Ott 2026", testata:"L'Aquila Blog", titolo:"«Te lo ricordi Mario?»: a Spazio Rimediato il pomeriggio dedicato a Mario Magnotta", url:"https://www.laquilablog.it/te-lo-ricordi-mario/" },
   { data:"1 Ott 2026", testata:"Rai News · TGR", titolo:"Il «Semplice cliente» che fece ridere tutta l'Italia", url:"https://www.rainews.it/tgr/news/articoli/2026/10/il-semplice-cliente-che-fece-ridere-tutta-italia-ecdd5f6c-cb08-4f06-bb82-d2981ca6aea2.html" },
   { data:"16 Set 2026", testata:"Nerdando", titolo:"Pescara Comix 2026 – «Semplice Cliente», una storia iconica ed emozionante", url:"https://nerdando.com/2026/09/16/pescara-comix-2026-semplice-cliente-una-storia-iconica-ed-emozionante/" },
