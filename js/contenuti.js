@@ -135,9 +135,9 @@ const NEWS = [
    { testata:"…", titolo:"…", estratto:"…", url:"https://…" },
    ============================================================ */
 const EVIDENZA = [
-  { testata:"Il Giornale", titolo:"Lo scherzo telefonico più famoso di sempre",
-    estratto:"«Quando gli rivelano che è tutta una burla, Magnotta è già il bidello più famoso d'Italia.»",
-    url:"https://www.ilgiornale.it/news/attualit/bidello-magnotta-e-lavatrice-scherzo-telefonico-pi-famoso-2237189.html" },
+  { testata:"Rai News · TGR", titolo:"Il «Semplice cliente» che fece ridere tutta l'Italia",
+    estratto:"Il TGR racconta il docufilm che ricostruisce gli scherzi telefonici a Mario Magnotta e il mito nato da quelle cassette.",
+    url:"https://www.rainews.it/tgr/news/articoli/2026/10/il-semplice-cliente-che-fece-ridere-tutta-italia-ecdd5f6c-cb08-4f06-bb82-d2981ca6aea2.html" },
   { testata:"Il Post", titolo:"Il più celebre scherzo telefonico italiano di sempre",
     estratto:"La storia completa dello scherzo della lavatrice e di come è diventato un fenomeno nazionale.",
     url:"https://www.ilpost.it/2023/11/02/mario-magnotta-lavatrice/" },
