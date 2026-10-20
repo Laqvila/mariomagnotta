@@ -152,7 +152,9 @@ const EVIDENZA = [
    { data:"GG Mese Anno", testata:"…", titolo:"…", url:"https://…" },
    ============================================================ */
 const RASSEGNA = [
+  { data:"18 Ott 2026", testata:"News-Town", titolo:"«Te lo ricordi Mario?»: a L'Aquila un pomeriggio per Mario Magnotta", url:"https://news-town.it/2026/10/18/eventi/te-lo-ricordi-mario-a-spazio-rimediato-un-pomeriggio-per-magnotta/" },
   { data:"18 Ott 2026", testata:"Vento Nuovo", titolo:"Un evento dedicato a Mario Magnotta oggi a L'Aquila (di Marco Vittoria)", url:"https://www.ventonuovo.eu/2026/10/18/un-evento-dedicato-a-mario-magnotta-oggi-a-laquila/" },
+  { data:"18 Ott 2026", testata:"Il Centro (edizione cartacea)", titolo:"Rivive il mito di Magnotta: pomeriggio tra ricordi e risate", url:"assets/img/stampa/il-centro-2026-10-18.jpg" },
   { data:"17 Ott 2026", testata:"AbruzzoLive", titolo:"L'Aquila ricorda Mario Magnotta: aneddoti, risate e omaggio allo storico scherzo della lavatrice", url:"https://abruzzolive.it/laquila-ricorda-mario-magnotta-aneddoti-risate-e-omaggio-allo-storico-scherzo-della-lavatrice/" },
   { data:"17 Ott 2026", testata:"L'Aquila Blog", titolo:"«Te lo ricordi Mario?»: a Spazio Rimediato il pomeriggio dedicato a Mario Magnotta", url:"https://www.laquilablog.it/te-lo-ricordi-mario/" },
   { data:"1 Ott 2026", testata:"Rai News · TGR", titolo:"Il «Semplice cliente» che fece ridere tutta l'Italia", url:"https://www.rainews.it/tgr/news/articoli/2026/10/il-semplice-cliente-che-fece-ridere-tutta-italia-ecdd5f6c-cb08-4f06-bb82-d2981ca6aea2.html" },
