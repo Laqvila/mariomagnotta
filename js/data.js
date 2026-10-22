@@ -120,6 +120,7 @@ const I18N = {
   "faq.sub":      { it:"Le risposte brevi alle domande che tutti fanno su Mario Magnotta.", en:"Short answers to the questions everyone asks about Mario Magnotta.", es:"Respuestas breves a las preguntas que todos hacen sobre Mario Magnotta." },
 
   "eventi.eyebrow":{ it:"★ Eventi ★", en:"★ Events ★", es:"★ Eventos ★" },
+  "eventi.reel":  { it:"La rassegna stampa in 18 secondi", en:"The press coverage in 18 seconds", es:"La prensa en 18 segundos" },
   "eventi.poster":{ it:"Apri la locandina ↗", en:"Open the poster ↗", es:"Abrir el cartel ↗" },
   "eventi.title": { it:"Magnotta <span class='hl'>dal vivo</span>", en:"Magnotta <span class='hl'>live</span>", es:"Magnotta <span class='hl'>en vivo</span>" },
 
@@ -300,8 +301,9 @@ const TIMELINE = [
 /* ---------- EVENTI ---------- */
 const EVENTI = [
   {
-    prossimo: true,
-    badge: L("Prossimo evento","Upcoming event","Próximo evento"),
+    badge: L("Evento","Event","Evento"),
+    reel: "assets/video/rassegna-te-lo-ricordi-mario.mp4",
+    reelPoster: "assets/video/rassegna-te-lo-ricordi-mario.jpg",
     data: L("Domenica 18 ottobre 2026","Sunday 18 October 2026","Domingo 18 de octubre de 2026"),
     titolo: L("Te lo ricordi Mario?","Te lo ricordi Mario? (Do you remember Mario?)","Te lo ricordi Mario? (¿Te acuerdas de Mario?)"),
     luogo: L("Spazio Rimediato, via Fontesecco 24, L'Aquila · ore 18:00 · ingresso gratuito","Spazio Rimediato, via Fontesecco 24, L'Aquila · 6:00 PM · free entry","Spazio Rimediato, via Fontesecco 24, L'Aquila · 18:00 · entrada gratuita"),

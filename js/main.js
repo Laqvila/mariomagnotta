@@ -314,6 +314,18 @@
     clear(cg);
     CHICCHE.forEach(c => cg.appendChild(el("article", "chicca reveal", `<div class="chicca-ico">${c.icona}</div><h3>${tr(c.t)}</h3><p>${tr(c.d)}</p>${c.img ? `<img class="chicca-img" loading="lazy" src="${c.img}" alt="${tr(c.t)}" />` : ""}`)));
   }
+  /* video degli eventi: partono senza audio quando sono visibili, si fermano quando escono;
+     con «riduci animazioni» resta il fotogramma fisso */
+  let reelIO = null;
+  function observeReels() {
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (!reelIO) reelIO = new IntersectionObserver(es => es.forEach(en => {
+      const v = en.target;
+      if (en.isIntersecting) { v.preload = "auto"; const p = v.play(); if (p && p.catch) p.catch(() => {}); }
+      else v.pause();
+    }), { threshold: 0.35 });
+    $$(".ev-reel video").forEach(v => reelIO.observe(v));
+  }
   function renderEventi() {
     const eg = $("#eventi-grid"); if (!eg || typeof EVENTI === "undefined") return;
     clear(eg);
@@ -322,7 +334,7 @@
         `<div class="ev-date"><span class="ev-badge">${tr(e.badge)}</span><span class="ev-day">${tr(e.data)}</span></div>
          <div class="ev-body"><h3>${tr(e.titolo)}</h3><div class="ev-meta">📍 ${tr(e.luogo)}</div><div class="ev-org">${tr(e.org)}</div><p>${tr(e.desc)}</p>
          ${e.url ? `<a class="ev-link" href="${e.url}" target="_blank" rel="noopener">${t("news.read")}</a>` : ""}
-         ${e.img ? `<a class="ev-poster" href="${e.img}" target="_blank" rel="noopener"><img loading="lazy" src="${e.img}" alt="${tr(e.imgAlt) || tr(e.titolo)}" width="1080" height="1350" /><span>${t("eventi.poster")}</span></a>` : ""}</div>`);
+         ${(e.img || e.reel) ? `<div class="ev-media">` : ""}${e.img ? `<a class="ev-poster" href="${e.img}" target="_blank" rel="noopener"><img loading="lazy" src="${e.img}" alt="${tr(e.imgAlt) || tr(e.titolo)}" width="1080" height="1350" /><span>${t("eventi.poster")}</span></a>` : ""}${e.reel ? `<figure class="ev-reel"><video src="${e.reel}"${e.reelPoster ? ` poster="${e.reelPoster}"` : ""} muted loop playsinline preload="none" aria-label="${t("eventi.reel")}"></video><figcaption>${t("eventi.reel")}</figcaption></figure>` : ""}${(e.img || e.reel) ? `</div>` : ""}</div>`);
       if (e.video) {
         const body = $(".ev-body", card);
         const vbox = el("div", "ev-video");
@@ -336,6 +348,7 @@
       }
       eg.appendChild(card);
     });
+    observeReels();
   }
   function renderRassegna() {
     const pl = $("#press-list"); if (!pl || typeof RASSEGNA === "undefined") return;
