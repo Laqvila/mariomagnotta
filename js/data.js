@@ -302,8 +302,8 @@ const TIMELINE = [
 const EVENTI = [
   {
     badge: L("Evento","Event","Evento"),
-    reel: "assets/video/rassegna-te-lo-ricordi-mario.mp4",
-    reelPoster: "assets/video/rassegna-te-lo-ricordi-mario.jpg",
+    reel: "assets/video/rassegna-te-lo-ricordi-mario.mp4?v=20261024",
+    reelPoster: "assets/video/rassegna-te-lo-ricordi-mario.jpg?v=20261024",
     data: L("Domenica 18 ottobre 2026","Sunday 18 October 2026","Domingo 18 de octubre de 2026"),
     titolo: L("Te lo ricordi Mario?","Te lo ricordi Mario? (Do you remember Mario?)","Te lo ricordi Mario? (¿Te acuerdas de Mario?)"),
     luogo: L("Spazio Rimediato, via Fontesecco 24, L'Aquila · ore 18:00 · ingresso gratuito","Spazio Rimediato, via Fontesecco 24, L'Aquila · 6:00 PM · free entry","Spazio Rimediato, via Fontesecco 24, L'Aquila · 18:00 · entrada gratuita"),

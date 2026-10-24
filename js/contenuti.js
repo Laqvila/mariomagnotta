@@ -152,6 +152,7 @@ const EVIDENZA = [
    { data:"GG Mese Anno", testata:"…", titolo:"…", url:"https://…" },
    ============================================================ */
 const RASSEGNA = [
+  { data:"22 Ott 2026", testata:"Danger Of Music", titolo:"Te lo ricordi Mario? Un successo l'evento dedicato a Mario Magnotta, tra emozioni e risate", url:"https://realdangerofmusic.com/2026/10/22/te-lo-ricordi-mario-un-successo-levento-dedicato-a-mario-magnotta-tra-emozioni-e-risate/" },
   { data:"21 Ott 2026", testata:"Abruzzo Sera", titolo:"«Te lo ricordi Mario?». Risate e commozione nel pomeriggio dedicato a Magnotta", url:"https://abruzzosera.it/cultura-e-societa/te-lo-ricordi-mario-risate-e-commozione-nel-pomeriggio-dedicato-a-magnotta/" },
   { data:"18 Ott 2026", testata:"News-Town", titolo:"«Te lo ricordi Mario?»: a L'Aquila un pomeriggio per Mario Magnotta", url:"https://news-town.it/2026/10/18/eventi/te-lo-ricordi-mario-a-spazio-rimediato-un-pomeriggio-per-magnotta/" },
   { data:"18 Ott 2026", testata:"Vento Nuovo", titolo:"Un evento dedicato a Mario Magnotta oggi a L'Aquila (di Marco Vittoria)", url:"https://www.ventonuovo.eu/2026/10/18/un-evento-dedicato-a-mario-magnotta-oggi-a-laquila/" },
