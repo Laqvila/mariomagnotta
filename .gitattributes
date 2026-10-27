@@ -1,0 +1,4 @@
+# Aggiornamenti OTA dell'app Magnotta: i file si chiamano con la loro impronta SHA-256,
+# quindi git non deve mai toccarne i fine riga.
+app/ota/files/** -text
+app/ota/*.json -text
