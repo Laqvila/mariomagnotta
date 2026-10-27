@@ -73,6 +73,8 @@ Poi aggiorna il `?v=AAAAMMGG` in `index.html` e fai commit e push: GitHub Pages 
 ---
 
 ## 📱 Quando l'app esce sugli store
+**Stato al 27/10/2026:** App Store FATTO (link https://apps.apple.com/it/app/magnotta-un-semplice-cliente/id6814653074, scritta `app.get` «Scarica da» in `js/data.js`, `installUrl` nello schema della pagina, striscia «ORA SU APP STORE» in home). Per Google Play resta da fare lo stesso sui bottoni Google Play, poi togliere la nota `ap.note` e mettere «ORA SU APP STORE E GOOGLE PLAY».
+
 La pagina dell'app è `app/index.html` (indirizzo mariomagnotta.com/app/) e in home c'è la
 fascia gialla `<section id="app">`. Finché l'app non è pubblicata, i bottoni degli store sono
 `<span class="store-badge soon">` con la scritta «In arrivo su». Quando esce:

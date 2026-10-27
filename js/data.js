@@ -111,6 +111,7 @@ const I18N = {
   "app.c3":       { it:"🎮 4 giochi", en:"🎮 4 games", es:"🎮 4 juegos" },
   "app.c4":       { it:"📵 Anche senza rete", en:"📵 Works offline", es:"📵 También sin conexión" },
   "app.soon":     { it:"In arrivo su", en:"Coming soon to", es:"Próximamente en" },
+  "app.get":      { it:"Scarica da", en:"Download on the", es:"Descárgala en" },
   "app.cta":      { it:"📱 Scopri l'app", en:"📱 Discover the app", es:"📱 Descubre la app" },
 
   "chicche.eyebrow":{ it:"★ Lo sapevi che… ★", en:"★ Did you know… ★", es:"★ ¿Sabías que…? ★" },
