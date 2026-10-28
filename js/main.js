@@ -91,17 +91,22 @@
     promoBack = document.activeElement;
     promo.hidden = false;
     document.addEventListener("keydown", promoKeys);
+    const pv = $(".pn-reel", promo);   // il reel parte solo se è visibile (su telefono c'è la foto) e senza «riduci animazioni»
+    if (pv && pv.offsetParent && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      pv.preload = "auto"; const pp = pv.play(); if (pp && pp.catch) pp.catch(() => {});
+    }
     const x = $("#promo-x", promo); if (x) x.focus();
   }
   function closePromo() {
     if (!promo || promo.hidden) return;
     promo.hidden = true;
     store.set(PROMO_KEY, "1");
+    const pv = $(".pn-reel", promo); if (pv) pv.pause();
     document.removeEventListener("keydown", promoKeys);
     if (promoBack && promoBack.focus) promoBack.focus();
   }
   if (promo) {
-    ["#promo-x", "#promo-close", "#promo-cta"].forEach(sel => {
+    ["#promo-x", "#promo-close", "#promo-cta", "#promo-cta2"].forEach(sel => {
       const n = $(sel, promo); if (n) n.addEventListener("click", closePromo);
     });
     promo.addEventListener("click", e => { if (e.target === promo) closePromo(); });

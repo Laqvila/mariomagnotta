@@ -38,7 +38,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Fredoka:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="css/style.css?v=20261027" />
+<link rel="stylesheet" href="css/style.css?v=20261028" />
 
 <!-- Structured data: JSON-LD -->
 <script type="application/ld+json">
@@ -689,21 +689,30 @@
   </div>
 </footer>
 
-<!-- POP-UP DI APERTURA: annuncio in evidenza. data-key = nome dell'annuncio (cambiandolo si ripresenta a tutti),
-     data-until = giorno dopo l'evento, da quel momento non compare piu' -->
-<div id="promo" class="promo" role="dialog" aria-modal="true" aria-labelledby="promo-title" data-key="te-lo-ricordi-mario" data-until="2026-10-19T00:00:00+02:00" hidden>
-  <div class="promo-card promo-poster">
+<!-- POP-UP DI APERTURA: le novità di ottobre 2026. data-key = nome dell'annuncio (cambiandolo si ripresenta a tutti),
+     data-until = da quel momento non compare più -->
+<div id="promo" class="promo" role="dialog" aria-modal="true" aria-labelledby="promo-title" data-key="novita-ottobre-2026" data-until="2026-11-30T23:59:59+01:00" hidden>
+  <div class="promo-card promo-news">
     <button class="promo-x" id="promo-x" aria-label="Chiudi">&#10005;</button>
-    <img class="promo-img" src="assets/img/te-lo-ricordi-mario.jpg" alt="Locandina dell'evento «Te lo ricordi Mario?», domenica 18 ottobre ore 18:00, Spazio Rimediato, L'Aquila" width="1080" height="1350" />
-    <div class="promo-body">
-      <span class="promo-badge" data-i18n="promo.badge">Prossimo evento</span>
-      <h3 id="promo-title" data-i18n="promo.title">Te lo ricordi Mario?</h3>
-      <p class="promo-when" data-i18n="promo.when">Domenica 18 ottobre, ore 18:00 · Spazio Rimediato, L'Aquila</p>
-      <p data-i18n="promo.text">Un pomeriggio di incontri, di ricordi e di risate con Romina Magnotta, Maurizio Videtta, Paolo Totti, Mirko Rocci, Antonio Recupero e Roberto Di Leo. Roberto Pavoni dipinge dal vivo, modera Ngulo che Strina. Ingresso gratuito.</p>
+    <div class="pn-media">
+      <video class="pn-reel" src="assets/video/rassegna-te-lo-ricordi-mario.mp4?v=20261024" poster="assets/video/rassegna-te-lo-ricordi-mario.jpg?v=20261024" muted loop playsinline preload="none" aria-hidden="true"></video>
+      <img class="pn-banner" src="assets/img/vinile-magnotta.jpg" alt="Il vinile «Magnotta, lo scherzo della lavatrice», copia unica" width="1600" height="651" />
+    </div>
+    <div class="promo-body pn-body">
+      <span class="promo-badge" data-i18n="flash.hot">Novità</span>
+      <h3 id="promo-title" data-i18n="pn.title">Mario è tornato</h3>
+      <p class="pn-sub" data-i18n="pn.sub">In vinile, a teatro e sul telefono.</p>
+      <ul class="pn-list">
+        <li><span class="pn-ico" aria-hidden="true">💿</span><span data-i18n-html="pn.vinile"></span></li>
+        <li><span class="pn-ico" aria-hidden="true">🎭</span><span data-i18n-html="pn.serata"></span></li>
+        <li><span class="pn-ico" aria-hidden="true">🌐</span><span data-i18n-html="pn.sito"></span></li>
+        <li><span class="pn-ico" aria-hidden="true">📱</span><span data-i18n-html="pn.app"></span></li>
+      </ul>
       <div class="promo-actions">
-        <a href="#eventi" class="btn btn-primary" id="promo-cta" data-i18n="promo.cta">Vedi l'evento</a>
-        <button class="btn btn-ghost btn-sm" id="promo-close" data-i18n="promo.close">Chiudi</button>
+        <a href="https://apps.apple.com/it/app/magnotta-un-semplice-cliente/id6814653074" target="_blank" rel="noopener" class="btn btn-primary" id="promo-cta" data-i18n="pn.cta">📱 Scarica l'app</a>
+        <a href="#eventi" class="btn btn-ghost btn-sm" id="promo-cta2" data-i18n="pn.cta2">Guarda la serata</a>
       </div>
+      <button class="pn-close" id="promo-close" data-i18n="promo.close">Chiudi</button>
     </div>
   </div>
 </div>
@@ -733,11 +742,11 @@
 <!-- hidden host for YouTube audio players -->
 <div id="yt-audio-host" aria-hidden="true" style="position:fixed;width:1px;height:1px;left:-9999px;top:-9999px;overflow:hidden"></div>
 
-<script src="js/contenuti.js?v=20261027"></script>
-<script src="js/chat-quotes.js?v=20261027"></script>
-<script src="js/data.js?v=20261027"></script>
-<script src="js/main.js?v=20261027"></script>
-<script src="js/chatbot.js?v=20261027"></script>
+<script src="js/contenuti.js?v=20261028"></script>
+<script src="js/chat-quotes.js?v=20261028"></script>
+<script src="js/data.js?v=20261028"></script>
+<script src="js/main.js?v=20261028"></script>
+<script src="js/chatbot.js?v=20261028"></script>
 
 <!-- Cloudflare Web Analytics — statistiche di navigazione anonime e aggregate, SENZA cookie (nessun consenso richiesto). Dati e grafico visite: dashboard Cloudflare › Analytics & Logs › Web Analytics. -->
 <script>
