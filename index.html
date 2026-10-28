@@ -38,7 +38,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Fredoka:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="css/style.css?v=20261028" />
+<link rel="stylesheet" href="css/style.css?v=20261028b" />
 
 <!-- Structured data: JSON-LD -->
 <script type="application/ld+json">
@@ -689,14 +689,14 @@
   </div>
 </footer>
 
-<!-- POP-UP DI APERTURA: le novità di ottobre 2026. data-key = nome dell'annuncio (cambiandolo si ripresenta a tutti),
-     data-until = da quel momento non compare più -->
-<div id="promo" class="promo" role="dialog" aria-modal="true" aria-labelledby="promo-title" data-key="novita-ottobre-2026" data-until="2026-11-30T23:59:59+01:00" hidden>
+<!-- POP-UP DI APERTURA: le novità di ottobre 2026. data-sempre="1" = compare a ogni visita (per tornare a mostrarlo
+     una volta sola basta togliere l'attributo); data-until (facoltativo) = da quel momento non compare più -->
+<div id="promo" class="promo" role="dialog" aria-modal="true" aria-labelledby="promo-title" data-key="novita-ottobre-2026" data-sempre="1" hidden>
   <div class="promo-card promo-news">
     <button class="promo-x" id="promo-x" aria-label="Chiudi">&#10005;</button>
     <div class="pn-media">
-      <video class="pn-reel" src="assets/video/rassegna-te-lo-ricordi-mario.mp4?v=20261024" poster="assets/video/rassegna-te-lo-ricordi-mario.jpg?v=20261024" muted loop playsinline preload="none" aria-hidden="true"></video>
-      <img class="pn-banner" src="assets/img/vinile-magnotta.jpg" alt="Il vinile «Magnotta, lo scherzo della lavatrice», copia unica" width="1600" height="651" />
+      <video class="pn-reel" src="assets/video/rassegna-te-lo-ricordi-mario.mp4?v=20261024" poster="assets/video/rassegna-te-lo-ricordi-mario.jpg?v=20261024" muted playsinline preload="none" aria-hidden="true"></video>
+      <img class="pn-foto" src="assets/img/mirko-vinile.jpg" alt="Mirko Rocci mostra il vinile «Magnotta, lo scherzo della lavatrice» durante «Te lo ricordi Mario?»" width="900" height="1200" />
     </div>
     <div class="promo-body pn-body">
       <span class="promo-badge" data-i18n="flash.hot">Novità</span>
@@ -742,11 +742,11 @@
 <!-- hidden host for YouTube audio players -->
 <div id="yt-audio-host" aria-hidden="true" style="position:fixed;width:1px;height:1px;left:-9999px;top:-9999px;overflow:hidden"></div>
 
-<script src="js/contenuti.js?v=20261028"></script>
-<script src="js/chat-quotes.js?v=20261028"></script>
-<script src="js/data.js?v=20261028"></script>
-<script src="js/main.js?v=20261028"></script>
-<script src="js/chatbot.js?v=20261028"></script>
+<script src="js/contenuti.js?v=20261028b"></script>
+<script src="js/chat-quotes.js?v=20261028b"></script>
+<script src="js/data.js?v=20261028b"></script>
+<script src="js/main.js?v=20261028b"></script>
+<script src="js/chatbot.js?v=20261028b"></script>
 
 <!-- Cloudflare Web Analytics — statistiche di navigazione anonime e aggregate, SENZA cookie (nessun consenso richiesto). Dati e grafico visite: dashboard Cloudflare › Analytics & Logs › Web Analytics. -->
 <script>

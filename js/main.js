@@ -66,7 +66,7 @@
   }
 
   /* =========================================================
-     BANNER VINILE (si apre una volta sola, poi resta chiuso)
+     POP-UP DI APERTURA (con data-sempre compare a ogni visita, altrimenti una volta sola)
      ========================================================= */
   const promo = $("#promo");
   const PROMO_KEY = "mm-promo-" + ((promo && promo.dataset.key) || "x");
@@ -86,22 +86,44 @@
     if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
     else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
   }
+  /* colonna sinistra del pop-up (solo su schermi larghi): prima la foto di Mirko con il vinile,
+     poi sfuma nel reel della rassegna stampa; a fine reel torna la foto e il ciclo riparte.
+     Su telefono il reel è nascosto e resta la foto; con «riduci animazioni» resta la foto ferma. */
+  let promoTimer = 0;
+  function startPromoMedia() {
+    const pv = $(".pn-reel", promo), pf = $(".pn-foto", promo);
+    if (!pv || !pf) return;
+    pf.classList.remove("off");
+    if (!pv.offsetParent || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    pv.preload = "auto";
+    const giro = () => {
+      promoTimer = setTimeout(() => {
+        pf.classList.add("off");
+        try { pv.currentTime = 0; } catch (e) {}
+        const pp = pv.play(); if (pp && pp.catch) pp.catch(() => pf.classList.remove("off"));
+      }, 3500);
+    };
+    pv.onended = () => { pf.classList.remove("off"); giro(); };
+    giro();
+  }
+  function stopPromoMedia() {
+    clearTimeout(promoTimer);
+    const pv = $(".pn-reel", promo); if (pv) { pv.pause(); pv.onended = null; }
+  }
   function openPromo() {
-    if (!promo || !promo.hidden || store.get(PROMO_KEY) || promoScaduto()) return;
+    const sempre = promo && promo.dataset.sempre;
+    if (!promo || !promo.hidden || (!sempre && store.get(PROMO_KEY)) || promoScaduto()) return;
     promoBack = document.activeElement;
     promo.hidden = false;
     document.addEventListener("keydown", promoKeys);
-    const pv = $(".pn-reel", promo);   // il reel parte solo se è visibile (su telefono c'è la foto) e senza «riduci animazioni»
-    if (pv && pv.offsetParent && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      pv.preload = "auto"; const pp = pv.play(); if (pp && pp.catch) pp.catch(() => {});
-    }
+    startPromoMedia();
     const x = $("#promo-x", promo); if (x) x.focus();
   }
   function closePromo() {
     if (!promo || promo.hidden) return;
     promo.hidden = true;
-    store.set(PROMO_KEY, "1");
-    const pv = $(".pn-reel", promo); if (pv) pv.pause();
+    if (!promo.dataset.sempre) store.set(PROMO_KEY, "1");
+    stopPromoMedia();
     document.removeEventListener("keydown", promoKeys);
     if (promoBack && promoBack.focus) promoBack.focus();
   }
