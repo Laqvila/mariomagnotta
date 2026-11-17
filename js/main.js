@@ -132,7 +132,7 @@
     if (promoBack && promoBack.focus) promoBack.focus();
   }
   if (promo) {
-    ["#promo-x", "#promo-close", "#promo-cta", "#promo-cta2"].forEach(sel => {
+    ["#promo-x", "#promo-close", "#promo-cta", "#promo-cta2", "#promo-cta3"].forEach(sel => {
       const n = $(sel, promo); if (n) n.addEventListener("click", closePromo);
     });
     promo.addEventListener("click", e => { if (e.target === promo) closePromo(); });
