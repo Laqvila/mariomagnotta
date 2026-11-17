@@ -7,11 +7,11 @@ Sito **statico** (solo HTML/CSS/JS): nessun backend, nessun database, nessun for
 ## ✅ Già a posto nel codice
 - **Nessun segreto**: niente API key, password, token o `.env` (scansione effettuata). ✔
 - **Link esterni sicuri**: tutti i `target="_blank"` hanno `rel="noopener"`. ✔
-- **Cookie/GDPR**: contenuti YouTube caricati **solo dopo consenso**; banner + privacy policy in 3 lingue. ✔
-- **CSP** via `<meta>`: `object-src 'none'`, `frame-ancestors 'none'`, `base-uri 'self'`, sorgenti limitate a YouTube/Google Fonts. ✔
+- **Cookie/GDPR**: contenuti YouTube caricati **solo dopo consenso**; banner con «Solo necessari» e «Accetta tutto» di pari peso, X che vale «Solo necessari», «Gestisci cookie» nel piede; informativa in 3 lingue (`privacy.body` in `js/data.js`, aperta anche da `/#privacy`), aggiornata il 17/11/2026. ✔
+- **CSP** via `<meta>`: `object-src 'none'`, `frame-ancestors 'none'`, `base-uri 'self'`, sorgenti esterne limitate a YouTube (solo dopo consenso); font e anteprime dei video ospitati sul sito. ✔
 - **Referrer-Policy**: `strict-origin-when-cross-origin`. ✔
 - **Nessun input utente** finisce nel DOM (i contenuti arrivano solo dai file che modifichi tu): rischio XSS nullo. ✔
-- L'unico contatto è un **`mailto:` (magnotta@mirkorocci.com)**: nessun dato transita dal sito. ✔
+- L'unico contatto è un **`mailto:` (mirko.rocci@gmail.com)**, lo stesso in tutto il sito: nessun dato transita dal sito. ✔
 
 ## ☁️ Configurazione Cloudflare (consigliata)
 Nel pannello Cloudflare del dominio **mariomagnotta.com**:
@@ -55,6 +55,6 @@ Options -Indexes
 
 ## 🔁 Manutenzione
 - Contenuti: modifica solo `js/contenuti.js` (vedi `GUIDA.md`).
-- Nessuna dipendenza npm; gli unici esterni sono Google Fonts e YouTube (CDN ufficiali).
+- Nessuna dipendenza npm; l'unico servizio esterno è YouTube, caricato solo dopo il consenso. Font in `assets/fonts/`, anteprime dei video in `assets/img/yt/`.
 
 _Ultimo controllo: build v5._

@@ -58,6 +58,8 @@
   const hasYTConsent = () => localStorage.getItem(CONSENT_KEY) === "all";
   const banner = $("#cookie-banner");
   function showBanner() { if (banner && !localStorage.getItem(CONSENT_KEY)) banner.hidden = false; }
+  /* «Gestisci cookie» nel piede: riapre la scelta anche se è già stata fatta */
+  function openCookieChoice(e) { if (e) e.preventDefault(); if (banner) banner.hidden = false; const b = $("#cookie-reject"); if (b) b.focus(); }
   function setConsent(v) {
     localStorage.setItem(CONSENT_KEY, v);
     if (banner) banner.hidden = true;
@@ -113,6 +115,8 @@
   function openPromo() {
     const sempre = promo && promo.dataset.sempre;
     if (!promo || !promo.hidden || (!sempre && store.get(PROMO_KEY)) || promoScaduto()) return;
+    // chi arriva per leggere l'informativa (/#privacy) non riceve il pop-up sopra
+    if (location.hash === "#privacy" || (pModal && !pModal.hidden)) return;
     promoBack = document.activeElement;
     promo.hidden = false;
     document.addEventListener("keydown", promoKeys);
@@ -135,12 +139,17 @@
   }
   $("#cookie-accept") && $("#cookie-accept").addEventListener("click", () => setConsent("all"));
   $("#cookie-reject") && $("#cookie-reject").addEventListener("click", () => setConsent("necessary"));
+  // la X chiude il banner come «Solo necessari»
+  $("#cookie-x") && $("#cookie-x").addEventListener("click", () => setConsent("necessary"));
+  $("#open-cookie") && $("#open-cookie").addEventListener("click", openCookieChoice);
 
   /* privacy modal */
   const pModal = $("#privacy-modal");
   function openPrivacy(e) { if (e) e.preventDefault(); if (pModal) pModal.hidden = false; }
   function closePrivacy() { if (pModal) pModal.hidden = true; }
-  $("#open-privacy") && $("#open-privacy").addEventListener("click", openPrivacy);
+  // ogni link a #privacy (piede, banner dei cookie) apre l'informativa; /#privacy la apre all'arrivo
+  document.addEventListener("click", e => { const a = e.target.closest && e.target.closest('a[href="#privacy"]'); if (a) openPrivacy(e); });
+  if (location.hash === "#privacy") openPrivacy();
   $("#privacy-x") && $("#privacy-x").addEventListener("click", closePrivacy);
   $("#privacy-close") && $("#privacy-close").addEventListener("click", closePrivacy);
   pModal && pModal.addEventListener("click", e => { if (e.target === pModal) closePrivacy(); });
@@ -162,7 +171,9 @@
   /* =========================================================
      COMMON HELPERS
      ========================================================= */
-  const YT_THUMB = id => `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
+  // anteprime salvate sul sito (assets/img/yt/ID.jpg): aprire la pagina non contatta YouTube.
+  // Per un video nuovo scarica la sua anteprima, vedi GUIDA.md.
+  const YT_THUMB = id => `assets/img/yt/${id}.jpg`;
   const YT_WATCH = id => `https://www.youtube.com/watch?v=${id}`;
 
   function embedFrame(thumb, id, title, start) {

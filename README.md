@@ -28,4 +28,4 @@ Vedi [`SECURITY.md`](SECURITY.md) per la configurazione consigliata di **Cloudfl
 - Archivio storico: [magnotta.it](https://magnotta.it)
 - Murale di Daniele Gottastia, L'Aquila
 
-© mariomagnotta.com — Tutti i diritti riservati. Contatti: magnotta@mirkorocci.com
+© mariomagnotta.com — Tutti i diritti riservati. Contatti: mirko.rocci@gmail.com

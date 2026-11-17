@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <!-- Sicurezza: come la home, senza YouTube (qui non ci sono video) -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; script-src 'self' https://static.cloudflareinsights.com; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://cloudflareinsights.com; form-action 'self' mailto:; base-uri 'self'; object-src 'none'" />
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; script-src 'self' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self' https://cloudflareinsights.com; form-action 'self' mailto:; base-uri 'self'; object-src 'none'" />
 <meta name="referrer" content="strict-origin-when-cross-origin" />
 <title>App ufficiale Magnotta · Frasi, chat, scherzi e giochi | mariomagnotta.com</title>
 <meta name="description" content="«Magnotta, un semplice cliente» è l'unica app ufficiale di Mario Magnotta, approvata da Romina Magnotta. Le 323 frasi originali, la chat con la sua voce, gli scherzi completi, quattro giochi e il negozio ufficiale. In arrivo su App Store e Google Play." />
@@ -33,10 +33,8 @@
 <meta name="twitter:description" content="Frasi originali, chat con la voce di Mario, scherzi, giochi e negozio ufficiale. Approvata da Romina Magnotta." />
 <meta name="twitter:image" content="https://mariomagnotta.com/assets/img/app/og-app.jpg" />
 
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Fredoka:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="/css/style.css?v=20261027" />
+<link rel="preload" href="/assets/fonts/fredoka-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/css/style.css?v=20261117" />
 
 <script type="application/ld+json">
 {
@@ -262,7 +260,7 @@
       <a href="https://3e33.it" target="_blank" rel="noopener">🎭 Associazione 3:33</a>
       <a href="https://mirkorocci.it" target="_blank" rel="noopener">👤 Mirko Rocci</a>
       <a href="https://it.wikipedia.org/wiki/Mario_Magnotta" target="_blank" rel="noopener">📖 Wikipedia</a>
-      <a href="mailto:magnotta@mirkorocci.com">✉️ magnotta@mirkorocci.com</a>
+      <a href="mailto:mirko.rocci@gmail.com">✉️ mirko.rocci@gmail.com</a>
     </div>
     <div class="foot-col">
       <h4 data-i18n="foot.progetto">Progetto</h4>
@@ -270,13 +268,13 @@
     </div>
   </div>
   <div class="foot-bottom">
-    <span>© <span id="year">2026</span> mariomagnotta.com · <span data-i18n="foot.rights">Tutti i diritti riservati.</span></span>
-    <a href="/app/privacy" class="foot-privacy" data-i18n="ap.l1">Privacy dell'app</a>
+    <span>© <span id="year">2026</span> mariomagnotta.com · <span data-i18n="foot.curato">Sito curato da</span> Mirko Rocci · <a href="mailto:mirko.rocci@gmail.com">mirko.rocci@gmail.com</a> · <span data-i18n="foot.rights">Tutti i diritti riservati.</span></span>
+    <span class="foot-links"><a href="/#privacy" class="foot-privacy" data-i18n="foot.sitePrivacy">Privacy del sito</a> · <a href="/app/privacy" class="foot-privacy" data-i18n="ap.l1">Privacy dell'app</a></span>
     <button class="to-top" id="to-top" aria-label="Top">↑</button>
   </div>
 </footer>
 
-<script src="/js/data.js?v=20261027"></script>
-<script src="/js/app-pagina.js?v=20261027"></script>
+<script src="/js/data.js?v=20261117"></script>
+<script src="/js/app-pagina.js?v=20261117"></script>
 </body>
 </html>

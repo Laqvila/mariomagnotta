@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <!-- Sicurezza (vedi anche SECURITY.md per gli header lato server) -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https://i.ytimg.com https://*.ytimg.com data:; media-src 'self' https://*.youtube.com; frame-src https://www.youtube-nocookie.com https://www.youtube.com; script-src 'self' https://www.youtube.com https://s.ytimg.com https://static.cloudflareinsights.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://*.youtube.com https://cloudflareinsights.com; form-action 'self' mailto:; frame-ancestors 'none'; base-uri 'self'; object-src 'none'" />
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; media-src 'self' https://*.youtube.com; frame-src https://www.youtube-nocookie.com https://www.youtube.com; script-src 'self' https://www.youtube.com https://s.ytimg.com https://static.cloudflareinsights.com 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self' https://*.youtube.com https://cloudflareinsights.com; form-action 'self' mailto:; frame-ancestors 'none'; base-uri 'self'; object-src 'none'" />
 <meta name="referrer" content="strict-origin-when-cross-origin" />
 <title>Mario Magnotta — Sito UFFICIALE (l'unico vero) | Telefonate, lo scherzo della lavatrice, il primo meme italiano</title>
 <meta name="description" content="L'unico sito ufficiale di Mario Magnotta, il bidello dell'Aquila diventato leggenda con lo scherzo della lavatrice del 1987: il primo meme italiano. Telefonate e audio rimasterizzati dal canale YouTube ufficiale, foto reali, eventi, news e il docufilm «Semplice Cliente». Diffida delle imitazioni." />
@@ -35,10 +35,8 @@
 <meta name="twitter:description" content="Il primo meme italiano: telefonate, audio rimasterizzati, foto e il docufilm «Semplice Cliente»." />
 <meta name="twitter:image" content="https://mariomagnotta.com/assets/img/magnotta-ritratto.jpg" />
 
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Fredoka:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="css/style.css?v=20261028b" />
+<link rel="preload" href="/assets/fonts/fredoka-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="css/style.css?v=20261117" />
 
 <!-- Structured data: JSON-LD -->
 <script type="application/ld+json">
@@ -278,31 +276,31 @@
     <h2 class="light" data-i18n-html="tel.title">Le <span class="hl-y">Telefonate</span></h2>
     <p class="section-intro light" data-i18n-html="tel.intro"></p>
   </div>
-  <div id="gruppi"><!--pre:gruppi--><div class="gruppo"><div class="gruppo-head reveal"><h3>🧺 Saga della Lavatrice</h3><p>Lo scherzo che ha fatto la storia: il contratto fantasma della San Giorgio.</p></div><div class="video-grid"><article class="vcard reveal"><div class="vthumb"><img loading="lazy" src="https://i.ytimg.com/vi/sYP8UNLM4KM/hqdefault.jpg" alt="Lavatrice 1"><span class="vbadge">📞 L'inizio</span><div class="vplay"><span>▶</span></div></div><div class="vbody"><h3>Lavatrice 1</h3><div class="vdate">📞 1987 · HQ 2025</div><p>La prima telefonata: comincia l'incubo del contratto mai firmato. Audio rimasterizzato, versione integrale.</p><div class="audiobar"><button class="ab-play" aria-label="Audio">▶</button>
+  <div id="gruppi"><!--pre:gruppi--><div class="gruppo"><div class="gruppo-head reveal"><h3>🧺 Saga della Lavatrice</h3><p>Lo scherzo che ha fatto la storia: il contratto fantasma della San Giorgio.</p></div><div class="video-grid"><article class="vcard reveal"><div class="vthumb"><img loading="lazy" src="assets/img/yt/sYP8UNLM4KM.jpg" alt="Lavatrice 1"><span class="vbadge">📞 L'inizio</span><div class="vplay"><span>▶</span></div></div><div class="vbody"><h3>Lavatrice 1</h3><div class="vdate">📞 1987 · HQ 2025</div><p>La prima telefonata: comincia l'incubo del contratto mai firmato. Audio rimasterizzato, versione integrale.</p><div class="audiobar"><button class="ab-play" aria-label="Audio">▶</button>
        <div class="ab-mid"><div class="ab-label">🎧 Audio rimasterizzato</div>
          <div class="ab-track"><div class="ab-fill"></div></div></div>
-       <div class="ab-time">0:00</div></div></div></article><article class="vcard reveal"><div class="vthumb"><img loading="lazy" src="https://i.ytimg.com/vi/5Psrny-010I/hqdefault.jpg" alt="Lavatrice 2"><span class="vbadge">📞 Sale la tensione</span><div class="vplay"><span>▶</span></div></div><div class="vbody"><h3>Lavatrice 2</h3><div class="vdate">📞 1987 · HQ 2025</div><p>Barzetti e Marzandelli rincarano la dose. Mario inizia a spazientirsi sul serio.</p><div class="audiobar"><button class="ab-play" aria-label="Audio">▶</button>
+       <div class="ab-time">0:00</div></div></div></article><article class="vcard reveal"><div class="vthumb"><img loading="lazy" src="assets/img/yt/5Psrny-010I.jpg" alt="Lavatrice 2"><span class="vbadge">📞 Sale la tensione</span><div class="vplay"><span>▶</span></div></div><div class="vbody"><h3>Lavatrice 2</h3><div class="vdate">📞 1987 · HQ 2025</div><p>Barzetti e Marzandelli rincarano la dose. Mario inizia a spazientirsi sul serio.</p><div class="audiobar"><button class="ab-play" aria-label="Audio">▶</button>
        <div class="ab-mid"><div class="ab-label">🎧 Audio rimasterizzato</div>
          <div class="ab-track"><div class="ab-fill"></div></div></div>
-       <div class="ab-time">0:00</div></div></div></article><article class="vcard reveal"><div class="vthumb"><img loading="lazy" src="https://i.ytimg.com/vi/pWy6QmBMrJk/hqdefault.jpg" alt="Lavatrice 3"><span class="vbadge">📞 Verso il culmine</span><div class="vplay"><span>▶</span></div></div><div class="vbody"><h3>Lavatrice 3</h3><div class="vdate">📞 1987 · HQ 2025</div><p>L'assurdo tocca vette nuove. Una delle puntate più amate dell'intera saga.</p><div class="audiobar"><button class="ab-play" aria-label="Audio">▶</button>
+       <div class="ab-time">0:00</div></div></div></article><article class="vcard reveal"><div class="vthumb"><img loading="lazy" src="assets/img/yt/pWy6QmBMrJk.jpg" alt="Lavatrice 3"><span class="vbadge">📞 Verso il culmine</span><div class="vplay"><span>▶</span></div></div><div class="vbody"><h3>Lavatrice 3</h3><div class="vdate">📞 1987 · HQ 2025</div><p>L'assurdo tocca vette nuove. Una delle puntate più amate dell'intera saga.</p><div class="audiobar"><button class="ab-play" aria-label="Audio">▶</button>
        <div class="ab-mid"><div class="ab-label">🎧 Audio rimasterizzato</div>
          <div class="ab-track"><div class="ab-fill"></div></div></div>
-       <div class="ab-time">0:00</div></div></div></article><article class="vcard reveal"><div class="vthumb"><img loading="lazy" src="https://i.ytimg.com/vi/jcPB62tMOIU/hqdefault.jpg" alt="Lavatrice 4"><span class="vbadge">🏆 La leggenda</span><div class="vplay"><span>▶</span></div></div><div class="vbody"><h3>Lavatrice 4</h3><div class="vdate">📞 16 set 1987 · HQ 2025</div><p>Il capolavoro. «Veramente io m'iscrivo ai terroristi!»: nasce il primo meme italiano della storia.</p><div class="audiobar"><button class="ab-play" aria-label="Audio">▶</button>
+       <div class="ab-time">0:00</div></div></div></article><article class="vcard reveal"><div class="vthumb"><img loading="lazy" src="assets/img/yt/jcPB62tMOIU.jpg" alt="Lavatrice 4"><span class="vbadge">🏆 La leggenda</span><div class="vplay"><span>▶</span></div></div><div class="vbody"><h3>Lavatrice 4</h3><div class="vdate">📞 16 set 1987 · HQ 2025</div><p>Il capolavoro. «Veramente io m'iscrivo ai terroristi!»: nasce il primo meme italiano della storia.</p><div class="audiobar"><button class="ab-play" aria-label="Audio">▶</button>
        <div class="ab-mid"><div class="ab-label">🎧 Audio rimasterizzato</div>
          <div class="ab-track"><div class="ab-fill"></div></div></div>
-       <div class="ab-time">0:00</div></div></div></article></div></div><div class="gruppo"><div class="gruppo-head reveal"><h3>💍 Saga della Moglie</h3><p>L'altra trilogia leggendaria, tutta tempi comici involontari.</p></div><div class="video-grid"><article class="vcard reveal"><div class="vthumb"><img loading="lazy" src="https://i.ytimg.com/vi/8R8BG3F0Cj0/hqdefault.jpg" alt="Moglie 1"><span class="vbadge">📞 Prima telefonata</span><div class="vplay"><span>▶</span></div></div><div class="vbody"><h3>Moglie 1</h3><div class="vdate">📞 1986–87 · HQ 2025</div><p>Parte la saga della moglie: malinteso su malinteso, in puro stile aquilano.</p><div class="audiobar"><button class="ab-play" aria-label="Audio">▶</button>
+       <div class="ab-time">0:00</div></div></div></article></div></div><div class="gruppo"><div class="gruppo-head reveal"><h3>💍 Saga della Moglie</h3><p>L'altra trilogia leggendaria, tutta tempi comici involontari.</p></div><div class="video-grid"><article class="vcard reveal"><div class="vthumb"><img loading="lazy" src="assets/img/yt/8R8BG3F0Cj0.jpg" alt="Moglie 1"><span class="vbadge">📞 Prima telefonata</span><div class="vplay"><span>▶</span></div></div><div class="vbody"><h3>Moglie 1</h3><div class="vdate">📞 1986–87 · HQ 2025</div><p>Parte la saga della moglie: malinteso su malinteso, in puro stile aquilano.</p><div class="audiobar"><button class="ab-play" aria-label="Audio">▶</button>
        <div class="ab-mid"><div class="ab-label">🎧 Audio rimasterizzato</div>
          <div class="ab-track"><div class="ab-fill"></div></div></div>
-       <div class="ab-time">0:00</div></div></div></article><article class="vcard reveal"><div class="vthumb"><img loading="lazy" src="https://i.ytimg.com/vi/TeKj0NcL6pg/hqdefault.jpg" alt="Moglie 2"><span class="vbadge">📞 Si continua</span><div class="vplay"><span>▶</span></div></div><div class="vbody"><h3>Moglie 2</h3><div class="vdate">📞 1986–87 · HQ 2025</div><p>La seconda puntata alza ancora l'asticella della comicità spontanea.</p><div class="audiobar"><button class="ab-play" aria-label="Audio">▶</button>
+       <div class="ab-time">0:00</div></div></div></article><article class="vcard reveal"><div class="vthumb"><img loading="lazy" src="assets/img/yt/TeKj0NcL6pg.jpg" alt="Moglie 2"><span class="vbadge">📞 Si continua</span><div class="vplay"><span>▶</span></div></div><div class="vbody"><h3>Moglie 2</h3><div class="vdate">📞 1986–87 · HQ 2025</div><p>La seconda puntata alza ancora l'asticella della comicità spontanea.</p><div class="audiobar"><button class="ab-play" aria-label="Audio">▶</button>
        <div class="ab-mid"><div class="ab-label">🎧 Audio rimasterizzato</div>
          <div class="ab-track"><div class="ab-fill"></div></div></div>
-       <div class="ab-time">0:00</div></div></div></article><article class="vcard reveal"><div class="vthumb"><img loading="lazy" src="https://i.ytimg.com/vi/ExshdLmDMAk/hqdefault.jpg" alt="Moglie 3"><span class="vbadge">📞 Epilogo</span><div class="vplay"><span>▶</span></div></div><div class="vbody"><h3>Moglie 3</h3><div class="vdate">📞 1986–87 · HQ 2025</div><p>Il gran finale (terza telefonata, epilogo): un classico assoluto.</p><div class="audiobar"><button class="ab-play" aria-label="Audio">▶</button>
+       <div class="ab-time">0:00</div></div></div></article><article class="vcard reveal"><div class="vthumb"><img loading="lazy" src="assets/img/yt/ExshdLmDMAk.jpg" alt="Moglie 3"><span class="vbadge">📞 Epilogo</span><div class="vplay"><span>▶</span></div></div><div class="vbody"><h3>Moglie 3</h3><div class="vdate">📞 1986–87 · HQ 2025</div><p>Il gran finale (terza telefonata, epilogo): un classico assoluto.</p><div class="audiobar"><button class="ab-play" aria-label="Audio">▶</button>
        <div class="ab-mid"><div class="ab-label">🎧 Audio rimasterizzato</div>
          <div class="ab-track"><div class="ab-fill"></div></div></div>
-       <div class="ab-time">0:00</div></div></div></article></div></div><div class="gruppo"><div class="gruppo-head reveal"><h3>☎️ Telefono Azzurro</h3><p>Altre perle dall'archivio storico delle telefonate.</p></div><div class="video-grid"><article class="vcard reveal"><div class="vthumb"><img loading="lazy" src="https://i.ytimg.com/vi/leIC9q-nrBU/hqdefault.jpg" alt="Telefono Azzurro 1"><span class="vbadge">📞 Rarità</span><div class="vplay"><span>▶</span></div></div><div class="vbody"><h3>Telefono Azzurro 1</h3><div class="vdate">📞 Archivio</div><p>Un'altra gemma dall'archivio delle telefonate di Mario.</p><div class="audiobar"><button class="ab-play" aria-label="Audio">▶</button>
+       <div class="ab-time">0:00</div></div></div></article></div></div><div class="gruppo"><div class="gruppo-head reveal"><h3>☎️ Telefono Azzurro</h3><p>Altre perle dall'archivio storico delle telefonate.</p></div><div class="video-grid"><article class="vcard reveal"><div class="vthumb"><img loading="lazy" src="assets/img/yt/leIC9q-nrBU.jpg" alt="Telefono Azzurro 1"><span class="vbadge">📞 Rarità</span><div class="vplay"><span>▶</span></div></div><div class="vbody"><h3>Telefono Azzurro 1</h3><div class="vdate">📞 Archivio</div><p>Un'altra gemma dall'archivio delle telefonate di Mario.</p><div class="audiobar"><button class="ab-play" aria-label="Audio">▶</button>
        <div class="ab-mid"><div class="ab-label">🎧 Audio rimasterizzato</div>
          <div class="ab-track"><div class="ab-fill"></div></div></div>
-       <div class="ab-time">0:00</div></div></div></article><article class="vcard reveal"><div class="vthumb"><img loading="lazy" src="https://i.ytimg.com/vi/QytQv58ht_A/hqdefault.jpg" alt="Telefono Azzurro 2"><span class="vbadge">📞 Rarità</span><div class="vplay"><span>▶</span></div></div><div class="vbody"><h3>Telefono Azzurro 2</h3><div class="vdate">📞 Archivio</div><p>Il seguito: ancora comicità involontaria d'autore.</p><div class="audiobar"><button class="ab-play" aria-label="Audio">▶</button>
+       <div class="ab-time">0:00</div></div></div></article><article class="vcard reveal"><div class="vthumb"><img loading="lazy" src="assets/img/yt/QytQv58ht_A.jpg" alt="Telefono Azzurro 2"><span class="vbadge">📞 Rarità</span><div class="vplay"><span>▶</span></div></div><div class="vbody"><h3>Telefono Azzurro 2</h3><div class="vdate">📞 Archivio</div><p>Il seguito: ancora comicità involontaria d'autore.</p><div class="audiobar"><button class="ab-play" aria-label="Audio">▶</button>
        <div class="ab-mid"><div class="ab-label">🎧 Audio rimasterizzato</div>
          <div class="ab-track"><div class="ab-fill"></div></div></div>
        <div class="ab-time">0:00</div></div></div></article></div></div><!--/pre:gruppi--></div>
@@ -310,10 +308,10 @@
     <a href="https://www.youtube.com/@MarioMagnotta-aq" target="_blank" rel="noopener" class="btn btn-yt btn-big" data-i18n="tel.allyt">▶ Tutti i video sul canale YouTube</a>
   </div>
   <h3 class="speciali-title" data-i18n="tel.speciali">⭐ Interviste &amp; speciali</h3>
-  <div class="speciali" id="speciali"><!--pre:speciali--><article class="scard reveal"><div class="vthumb"><img loading="lazy" src="https://i.ytimg.com/vi/a6QC_zW3GOU/hqdefault.jpg" alt="Intervista a Radio Rock (1991)"><div class="vplay"><span>▶</span></div></div><div class="scard-text"><h3>⭐ Intervista a Radio Rock (1991)</h3><p>INEDITO · L'intervista storica di Giampiero Vigorito a Mario Magnotta su Radio Rock, 1991. Audio integrale in qualità digitale HD.</p><div class="audiobar"><button class="ab-play" aria-label="Audio">▶</button>
+  <div class="speciali" id="speciali"><!--pre:speciali--><article class="scard reveal"><div class="vthumb"><img loading="lazy" src="assets/img/yt/a6QC_zW3GOU.jpg" alt="Intervista a Radio Rock (1991)"><div class="vplay"><span>▶</span></div></div><div class="scard-text"><h3>⭐ Intervista a Radio Rock (1991)</h3><p>INEDITO · L'intervista storica di Giampiero Vigorito a Mario Magnotta su Radio Rock, 1991. Audio integrale in qualità digitale HD.</p><div class="audiobar"><button class="ab-play" aria-label="Audio">▶</button>
        <div class="ab-mid"><div class="ab-label">🎧 Audio rimasterizzato</div>
          <div class="ab-track"><div class="ab-fill"></div></div></div>
-       <div class="ab-time">0:00</div></div></div></article><article class="scard reveal"><div class="vthumb"><img loading="lazy" src="https://i.ytimg.com/vi/68eTG7Ke9us/hqdefault.jpg" alt="Parla Romina, la figlia di Mario"><div class="vplay"><span>▶</span></div></div><div class="scard-text"><h3>⭐ Parla Romina, la figlia di Mario</h3><p>L'intervista esclusiva: «Ho smesso di soffrire grazie al film». La voce più autentica dietro il mito.</p></div></article><!--/pre:speciali--></div>
+       <div class="ab-time">0:00</div></div></div></article><article class="scard reveal"><div class="vthumb"><img loading="lazy" src="assets/img/yt/68eTG7Ke9us.jpg" alt="Parla Romina, la figlia di Mario"><div class="vplay"><span>▶</span></div></div><div class="scard-text"><h3>⭐ Parla Romina, la figlia di Mario</h3><p>L'intervista esclusiva: «Ho smesso di soffrire grazie al film». La voce più autentica dietro il mito.</p></div></article><!--/pre:speciali--></div>
 </section>
 
 <!-- GALLERIA -->
@@ -402,7 +400,7 @@
          <div class="ev-media"><a class="ev-poster" href="assets/img/te-lo-ricordi-mario.jpg" target="_blank" rel="noopener"><img loading="lazy" src="assets/img/te-lo-ricordi-mario.jpg" alt="Locandina dell'evento «Te lo ricordi Mario?»" width="1080" height="1350"><span>Apri la locandina ↗</span></a><figure class="ev-reel"><video src="assets/video/rassegna-te-lo-ricordi-mario.mp4?v=20261024" poster="assets/video/rassegna-te-lo-ricordi-mario.jpg?v=20261024" muted="" loop="" playsinline="" preload="none" aria-label="La rassegna stampa in 18 secondi"></video><figcaption>La rassegna stampa in 18 secondi</figcaption></figure></div></div></article><article class="evento reveal"><div class="ev-date"><span class="ev-badge">Evento celebrativo</span><span class="ev-day">25 giugno 2025</span></div>
          <div class="ev-body"><h3>Magnotta: viralità spontanea che anticipa l'era degli influencer</h3><div class="ev-meta">📍 Sala Ipogea — Palazzo dell'Emiciclo, L'Aquila · ore 17:00 · ingresso libero</div><div class="ev-org"><a href="https://3e33.it" target="_blank" rel="noopener" class="inline-link">Associazione Culturale 3:33</a> · a cura di <a href="https://mirkorocci.it" target="_blank" rel="noopener" class="inline-link">Mirko Rocci</a></div><p>Un incontro che unisce rigore accademico, testimonianze dirette ed emozione popolare. Sul palco gli autori dello scherzo, la figlia Romina, esperti di psicologia e data science e l'influencer Zio Command. Modera Alberto Orsini, con la partecipazione del Sindaco dell'Aquila, dell'Assessore alla Cultura della Regione Abruzzo e del Direttore della Casa delle Tecnologie Emergenti.</p>
          <a class="ev-link" href="https://www.ilcapoluogo.it/2025/06/25/mario-magnotta-superstar-laquila-celebra-il-bidello-che-ha-fatto-ridere-tutta-italia-senza-volerlo/" target="_blank" rel="noopener">Leggi la notizia →</a>
-         <div class="ev-video"><div class="vthumb"><img loading="lazy" src="https://i.ytimg.com/vi/hQIC4tNF3qo/hqdefault.jpg" alt="Magnotta: viralità spontanea che anticipa l'era degli influencer"><div class="vplay"><span>▶</span></div></div><a class="ev-vlabel" href="https://www.youtube.com/watch?v=hQIC4tNF3qo" target="_blank" rel="noopener">▶ Guarda il video integrale dell'evento</a></div></div></article><!--/pre:eventi-grid--></div>
+         <div class="ev-video"><div class="vthumb"><img loading="lazy" src="assets/img/yt/hQIC4tNF3qo.jpg" alt="Magnotta: viralità spontanea che anticipa l'era degli influencer"><div class="vplay"><span>▶</span></div></div><a class="ev-vlabel" href="https://www.youtube.com/watch?v=hQIC4tNF3qo" target="_blank" rel="noopener">▶ Guarda il video integrale dell'evento</a></div></div></article><!--/pre:eventi-grid--></div>
 </section>
 
 <!-- FILM -->
@@ -597,7 +595,7 @@
     <span class="eyebrow" data-i18n="romina.eyebrow">★ Eventi esclusivi ★</span>
     <h2 data-i18n-html="romina.title">Vuoi organizzare un evento con <span class="hl">Romina Magnotta</span>?</h2>
     <p class="section-intro" data-i18n-html="romina.text"></p>
-    <a href="mailto:magnotta@mirkorocci.com?subject=Richiesta%20evento%20con%20Romina%20Magnotta" class="btn btn-primary btn-big" data-i18n="romina.cta">✉️ Scrivi a magnotta@mirkorocci.com</a>
+    <a href="mailto:mirko.rocci@gmail.com?subject=Richiesta%20evento%20con%20Romina%20Magnotta" class="btn btn-primary btn-big" data-i18n="romina.cta">✉️ Scrivi a mirko.rocci@gmail.com</a>
   </div>
 </section>
 
@@ -675,7 +673,7 @@
       <a href="https://3e33.it" target="_blank" rel="noopener">🎭 Associazione 3:33</a>
       <a href="https://mirkorocci.it" target="_blank" rel="noopener">👤 Mirko Rocci</a>
       <a href="https://it.wikipedia.org/wiki/Mario_Magnotta" target="_blank" rel="noopener">📖 Wikipedia</a>
-      <a href="mailto:magnotta@mirkorocci.com">✉️ magnotta@mirkorocci.com</a>
+      <a href="mailto:mirko.rocci@gmail.com">✉️ mirko.rocci@gmail.com</a>
     </div>
     <div class="foot-col">
       <h4 data-i18n="foot.progetto">Progetto</h4>
@@ -683,8 +681,8 @@
     </div>
   </div>
   <div class="foot-bottom">
-    <span>© <span id="year"></span> mariomagnotta.com — <span data-i18n="foot.rights">Tutti i diritti riservati.</span></span>
-    <a href="#" id="open-privacy" class="foot-privacy" data-i18n="foot.privacy">Privacy &amp; Cookie</a>
+    <span>© <span id="year"></span> mariomagnotta.com · <span data-i18n="foot.curato">Sito curato da</span> Mirko Rocci · <a href="mailto:mirko.rocci@gmail.com">mirko.rocci@gmail.com</a> · <span data-i18n="foot.rights">Tutti i diritti riservati.</span></span>
+    <span class="foot-links"><a href="#privacy" id="open-privacy" class="foot-privacy" data-i18n="foot.privacy">Privacy &amp; Cookie</a> · <a href="#" id="open-cookie" class="foot-privacy" data-i18n="foot.cookie">Gestisci cookie</a></span>
     <button class="to-top" id="to-top" aria-label="Top">↑</button>
   </div>
 </footer>
@@ -718,13 +716,14 @@
 </div>
 
 <!-- COOKIE BANNER -->
-<div id="cookie-banner" class="cookie-banner" hidden>
+<div id="cookie-banner" class="cookie-banner" role="dialog" aria-labelledby="cookie-title" hidden>
+  <button class="cookie-x" id="cookie-x" type="button" aria-label="Chiudi, solo cookie necessari">&#10005;</button>
   <div class="cookie-inner">
-    <strong class="cookie-title" data-i18n="cookie.title">🍪 Cookie</strong>
+    <strong class="cookie-title" id="cookie-title" data-i18n="cookie.title">🍪 Cookie</strong>
     <p data-i18n-html="cookie.text"></p>
     <div class="cookie-actions">
-      <button id="cookie-reject" class="btn btn-ghost btn-sm" data-i18n="cookie.reject">Solo necessari</button>
-      <button id="cookie-accept" class="btn btn-primary btn-sm" data-i18n="cookie.accept">Accetta tutto</button>
+      <button id="cookie-reject" class="btn btn-sm cookie-btn" data-i18n="cookie.reject">Solo necessari</button>
+      <button id="cookie-accept" class="btn btn-sm cookie-btn" data-i18n="cookie.accept">Accetta tutto</button>
     </div>
   </div>
 </div>
@@ -734,7 +733,7 @@
   <div class="privacy-card">
     <button class="privacy-x" id="privacy-x" aria-label="X">✕</button>
     <h3 data-i18n="privacy.title">Privacy & Cookie Policy</h3>
-    <div class="privacy-body" data-i18n-html="privacy.body"></div>
+    <div class="privacy-body" id="privacy-body" data-i18n-html="privacy.body"><!--pre:privacy-body--><p><strong>Aggiornata il 17 novembre 2026.</strong></p><p><strong>Chi è il titolare.</strong> Il titolare del trattamento è Mirko Rocci, persona fisica, che cura questo sito con l'approvazione di Romina Magnotta. Per domande sulla privacy e per esercitare i tuoi diritti scrivi a <a href="mailto:mirko.rocci@gmail.com">mirko.rocci@gmail.com</a>.</p><p><strong>Dati di navigazione.</strong> Quando apri una pagina, il tuo browser invia ai server che ospitano il sito alcune informazioni tecniche, come l'indirizzo IP, la data e l'ora, la pagina richiesta e il tipo di browser. Servono a mostrarti il sito e a proteggerlo da abusi e attacchi informatici, e nessuno li usa per riconoscerti o per creare profili. Il sito è ospitato da GitHub Pages (GitHub, Inc., Stati Uniti, che consegna le pagine con la rete Fastly) e passa da Cloudflare (Cloudflare, Inc., Stati Uniti), che lo distribuisce e lo protegge. I due fornitori conservano questi dati nei loro registri per il tempo che stabiliscono per il funzionamento e la sicurezza del servizio. La base giuridica è il legittimo interesse a offrire un sito funzionante e sicuro (art. 6, par. 1, lett. f GDPR).</p><p><strong>Email.</strong> Se scrivi a mirko.rocci@gmail.com, per esempio per organizzare un evento con Romina Magnotta, ricevo il tuo indirizzo e quello che scegli di raccontare. Uso questi dati solo per risponderti e per seguire la richiesta, sulla base della richiesta stessa (lett. b), e li tengo il tempo necessario a gestirla. La casella è un account Gmail di Google (Google Ireland Limited, con possibili trasferimenti a Google LLC negli Stati Uniti).</p><p><strong>Cosa resta sul tuo dispositivo.</strong> Il sito non installa cookie propri. Nel <code>localStorage</code> del browser salva la lingua scelta, la tua scelta sui contenuti di YouTube e, se usi «Chatta con Mario», la conversazione, che nessuno riceve e che cancelli con il cestino della chat. Sono strumenti tecnici che servono a darti quello che chiedi, quindi la legge non richiede il consenso. Puoi cancellarli quando vuoi dalle impostazioni del browser.</p><p><strong>YouTube.</strong> Le anteprime dei video sono copie salvate su questo sito e molte telefonate si ascoltano da file audio ospitati qui. I video, e gli audio che il sito non ha, arrivano invece da YouTube (Google Ireland Limited) e si caricano solo se accetti nel banner o premi «Accetta e guarda». Da quel momento YouTube riceve il tuo indirizzo IP e può installare i propri cookie secondo la <a href="https://policies.google.com/privacy?hl=it" target="_blank" rel="noopener">privacy policy di Google</a>. La base giuridica è il tuo consenso (lett. a). Se scegli «Solo necessari», o chiudi il banner con la X, YouTube resta spento. Puoi cambiare idea quando vuoi con «Gestisci cookie» in fondo alla pagina.</p><p><strong>Statistiche e pubblicità.</strong> Il sito non usa strumenti di statistica, di pubblicità o di profilazione. Anche i caratteri tipografici sono ospitati qui.</p><p><strong>Link esterni.</strong> Lo shop magnottaofficial.com, YouTube, Wikipedia e gli altri siti collegati hanno informative proprie. Lo shop è gestito da altri, che trattano in autonomia i dati di acquisti e spedizioni.</p><p><strong>Trasferimenti fuori dall'Unione europea.</strong> GitHub, Cloudflare e Google sono società statunitensi o di gruppi statunitensi e aderiscono all'EU-U.S. Data Privacy Framework, riconosciuto adeguato dalla Commissione europea con la decisione del 10 luglio 2023.</p><p><strong>I tuoi diritti.</strong> Puoi chiedere l'accesso ai tuoi dati, la rettifica, la cancellazione, la limitazione del trattamento e la portabilità, e puoi opporti al trattamento basato sul legittimo interesse (articoli da 15 a 21 del GDPR). Scrivi a <a href="mailto:mirko.rocci@gmail.com">mirko.rocci@gmail.com</a>, la risposta arriva entro un mese e senza costi. Puoi anche proporre reclamo al Garante per la protezione dei dati personali, <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">www.garanteprivacy.it</a>.</p><p><strong>L'app ufficiale.</strong> L'app «Magnotta - un semplice cliente» ha una propria <a href="/app/privacy">informativa privacy</a>.</p><!--/pre:privacy-body--></div>
     <button id="privacy-close" class="btn btn-primary btn-sm" data-i18n="privacy.close">Ho capito</button>
   </div>
 </div>
@@ -742,17 +741,18 @@
 <!-- hidden host for YouTube audio players -->
 <div id="yt-audio-host" aria-hidden="true" style="position:fixed;width:1px;height:1px;left:-9999px;top:-9999px;overflow:hidden"></div>
 
-<script src="js/contenuti.js?v=20261028b"></script>
-<script src="js/chat-quotes.js?v=20261028b"></script>
-<script src="js/data.js?v=20261028b"></script>
-<script src="js/main.js?v=20261028b"></script>
-<script src="js/chatbot.js?v=20261028b"></script>
+<script src="js/contenuti.js?v=20261117"></script>
+<script src="js/chat-quotes.js?v=20261117"></script>
+<script src="js/data.js?v=20261117"></script>
+<script src="js/main.js?v=20261117"></script>
+<script src="js/chatbot.js?v=20261117"></script>
 
 <!-- Cloudflare Web Analytics — statistiche di navigazione anonime e aggregate, SENZA cookie (nessun consenso richiesto). Dati e grafico visite: dashboard Cloudflare › Analytics & Logs › Web Analytics. -->
 <script>
   (function () {
     // 👉 Incolla qui il token del beacon (Cloudflare › Analytics & Logs › Web Analytics › Add a site).
-    //    Finché resta vuoto, nessuno script di analytics viene caricato.
+    //    Finché resta vuoto, nessuno script di analytics viene caricato (stato al 17/11/2026: spento).
+    //    Se lo accendi, aggiorna l'informativa (privacy.body in js/data.js), che oggi dice che il sito non usa statistiche.
     var CF_BEACON_TOKEN = "";
     if (CF_BEACON_TOKEN) {
       var s = document.createElement("script");

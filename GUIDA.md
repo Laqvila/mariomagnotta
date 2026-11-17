@@ -67,7 +67,7 @@ node tools/prerender.js
 Copia in `index.html` il testo delle sezioni generate da JavaScript (telefonate, frasi,
 news, rassegna...), tra i marcatori `<!--pre:ID-->`. Serve a Google e ai sistemi di
 intelligenza artificiale (ChatGPT, Perplexity, Claude), che non eseguono JavaScript:
-senza questo passo vedono i contenuti vecchi. Deve stampare `11/11 sezioni scritte`.
+senza questo passo vedono i contenuti vecchi. Deve stampare `14/14 sezioni scritte`.
 Poi aggiorna il `?v=AAAAMMGG` in `index.html` e fai commit e push: GitHub Pages pubblica da solo.
 
 ---
@@ -90,7 +90,14 @@ fascia gialla `<section id="app">`. Finché l'app non è pubblicata, i bottoni d
 
 ## ➕ Aggiungere una TELEFONATA (video YouTube)
 Questo sta in `js/data.js`, sezione `GRUPPI`. Copia un blocco video e cambia l'`id`
-(l'`id` è la parte dopo `watch?v=` nel link di YouTube). Esempio:
+(l'`id` è la parte dopo `watch?v=` nel link di YouTube).
+
+**Anteprima del video**: il sito non carica più le anteprime da YouTube (privacy). Per ogni
+video nuovo, anche negli eventi, scarica una volta la sua anteprima nella cartella giusta:
+```
+curl -o assets/img/yt/XXXXXXXXXXX.jpg https://i.ytimg.com/vi/XXXXXXXXXXX/hqdefault.jpg
+```
+Esempio:
 ```js
 { id:"XXXXXXXXXXX", titolo:"Lavatrice 5", badge:L("📞 Nuova","📞 New","📞 Nueva"),
   data:"1987", audio:"", desc:L("Descrizione it","Description en","Descripción es") },
@@ -102,7 +109,10 @@ Questo sta in `js/data.js`, sezione `GRUPPI`. Copia un blocco video e cambia l'`
 - **Le foto non si vedono** → controlla che il nome del file in `src:"..."` sia identico
   (maiuscole/minuscole comprese) a quello dentro `assets/img/`.
 - **I video non partono** → al primo accesso bisogna accettare i cookie di YouTube
-  (banner in basso): è richiesto dalla legge sulla privacy.
+  (banner in basso): è richiesto dalla legge sulla privacy. La scelta si cambia da
+  «Gestisci cookie» in fondo alla pagina.
+- **Privacy** → il testo dell'informativa è `privacy.body` in `js/data.js` (italiano, inglese,
+  spagnolo). Se aggiungi statistiche, moduli o altri servizi esterni va aggiornato.
 
 Buon lavoro! 🧺📞
 
